@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+import "gtfs-realtime.proto";
+
+message IntersectionTripUpdate {
+  optional string headsign = 1;
+}
+
+message IntersectionStopTimeUpdate {
+  optional string track = 1;
+  optional transit_realtime.TripUpdate.StopTimeEvent scheduled_arrival = 2;
+  optional transit_realtime.TripUpdate.StopTimeEvent scheduled_departure = 3;
+}
+
+extend transit_realtime.TripUpdate {
+  optional IntersectionTripUpdate intersection_trip_update = 1987;
+}
+
+extend transit_realtime.TripUpdate.StopTimeUpdate {
+  optional IntersectionStopTimeUpdate intersection_stop_time_update = 1987;
+}
