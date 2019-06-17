@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "trip_id": "1234_20190404",
+            "seconds": 528,
+            "minutes": 8,
+            "block_id": "607",
+            "route_id": "801",
+            "is_departing": true,
+            "run_id": "801_1_var0"
+        },
+        {
+            "trip_id": "1235",
+            "seconds": 1248,
+            "minutes": 20,
+            "block_id": "603",
+            "route_id": "801",
+            "is_departing": true,
+            "run_id": "801_1_var0"
+        },
+        {
+            "trip_id": "1236",
+            "seconds": 781,
+            "minutes": 13,
+            "block_id": "603",
+            "route_id": "801",
+            "is_departing": false,
+            "run_id": "801_0_var0"
+        },
+        {
+            "trip_id": "1237",
+            "seconds": 1501,
+            "minutes": 25,
+            "block_id": "602",
+            "route_id": "801",
+            "is_departing": false,
+            "run_id": "801_0_var0"
+        },
+        {
+            "trip_id": "1238",
+            "seconds": 644,
+            "minutes": 10,
+            "block_id": "695",
+            "route_id": "806",
+            "is_departing": false,
+            "run_id": "806_0_var0"
+        },
+        {
+            "trip_id": "1239",
+            "seconds": 1322,
+            "minutes": 22,
+            "block_id": "610",
+            "route_id": "806",
+            "is_departing": false,
+            "run_id": "806_0_var0"
+        },
+        {
+            "trip_id": "1240",
+            "seconds": 348,
+            "minutes": 5,
+            "block_id": "694",
+            "route_id": "806",
+            "is_departing": true,
+            "run_id": "806_1_var0"
+        },
+        {
+            "trip_id": "1241",
+            "seconds": 1068,
+            "minutes": 17,
+            "block_id": "695",
+            "route_id": "806",
+            "is_departing": true,
+            "run_id": "806_1_var0"
+        }
+    ]
+}
