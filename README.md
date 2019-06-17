@@ -1,7 +1,5 @@
 # gtfs-realtime-translators
 
-[![Build Status](https://badge.buildkite.com/6183cad4a9166cff7a3f7bb61152820dfcdc3f8f6b489188de.svg?branch=master)](https://buildkite.com/ixnci/gtfs-realtime-translators/builds?branch=master)
-
 `gtfs-realtime-translators` translates custom arrivals formats to GTFS-realtime. It uses the Google [`gtfs-realtime-bindings`](https://github.com/google/gtfs-realtime-bindings/tree/master/python) for Python, supplemented by Intersection extensions.
 
 ## Overview
@@ -13,7 +11,7 @@ Following the [GTFS-realtime spec](https://developers.google.com/transit/gtfs-re
 
 A `FeedMessage` is a list of _entities_, each of which is one of the types above. A `FeedMessage` may have entities of different types.
 
-As of 2019-02-21, only `TripUpdate` is supported.
+As of 2019-06-15, only `TripUpdate` is supported.
 
 ## Installation
 ```
@@ -60,7 +58,7 @@ feed_message = FeedMessage.create(entities=entities)
 ## GTFS-Realtime Bindings
 
 ### Source `gtfs-realtime.proto`
-The GTFS-realtime spec is maintained in the [google/transit](https://github.com/google/transit.git) repository. Since there is not a versioned way to programmatically include this in our projects, we must clone it as a manual dependency.
+The GTFS-realtime spec is maintained in the [google/transit](https://github.com/google/transit.git) repository. Currently, since there is no versioned way to programmatically include this in our projects, we must clone it as a manual dependency.
 ```
 git clone https://github.com/google/transit.git ../google-transit
 cp ../google-transit/gtfs-realtime/proto/gtfs-realtime.proto gtfs_realtime_translators/bindings/
