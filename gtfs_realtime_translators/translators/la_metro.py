@@ -18,7 +18,7 @@ class LaMetroGtfsRealtimeTranslator:
         """
         try:
             return trip_id.split('_')[0]
-        except:
+        except Exception:
             return trip_id
 
     @classmethod

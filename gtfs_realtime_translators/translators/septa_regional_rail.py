@@ -1,5 +1,4 @@
 import re
-import math
 import copy
 
 import pendulum
@@ -34,7 +33,7 @@ class SeptaRegionalRailTranslator:
         root_key = next(iter([*data]), None)
 
         if root_key is None:
-            raise 'unexpected format'
+            raise ValueError('root_key: unexpected format')
         
         arrivals_body = data[root_key]
         northbound = [ direction_list['Northbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Northbound' ][0]
