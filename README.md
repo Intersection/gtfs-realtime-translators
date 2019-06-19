@@ -88,5 +88,5 @@ from google.transit import gtfs_realtime_pb2 as gtfs__realtime__pb2
 ```
 pip install -r requirements.txt
 pip install -e .
-py.test
+pytest
 ```
