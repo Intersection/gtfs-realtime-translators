@@ -1,5 +1,7 @@
 # gtfs-realtime-translators
 
+[![Build Status](https://travis-ci.org/Intersection/gtfs-realtime-translators.svg?branch=master)](https://travis-ci.org/Intersection/gtfs-realtime-translators)
+
 `gtfs-realtime-translators` translates custom arrivals formats to GTFS-realtime. It uses the Google [`gtfs-realtime-bindings`](https://github.com/google/gtfs-realtime-bindings/tree/master/python) for Python, supplemented by Intersection extensions.
 
 ## Overview
