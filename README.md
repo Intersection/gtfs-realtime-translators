@@ -1,6 +1,6 @@
 # gtfs-realtime-translators
 
-[![Build Status](https://travis-ci.org/Intersection/gtfs-realtime-translators.svg?branch=master)](https://travis-ci.org/Intersection/gtfs-realtime-translators)
+[![Build Status](https://travis-ci.org/Intersection/gtfs-realtime-translators.svg?branch=master)](https://travis-ci.org/Intersection/gtfs-realtime-translators) [![Total alerts](https://img.shields.io/lgtm/alerts/g/Intersection/gtfs-realtime-translators.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Intersection/gtfs-realtime-translators/alerts/) [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Intersection/gtfs-realtime-translators.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Intersection/gtfs-realtime-translators/context:python)
 
 `gtfs-realtime-translators` translates custom arrivals formats to GTFS-realtime. It uses the Google [`gtfs-realtime-bindings`](https://github.com/google/gtfs-realtime-bindings/tree/master/python) for Python, supplemented by Intersection extensions.
 
