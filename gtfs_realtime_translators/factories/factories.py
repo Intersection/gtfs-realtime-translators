@@ -35,6 +35,7 @@ class TripUpdate:
         track = kwargs.get('track', None)
         scheduled_arrival = kwargs.get('scheduled_arrival_time', None)
         scheduled_departure = kwargs.get('scheduled_departure_time', None)
+        stop_name = kwargs.get('stop_name', None)
 
         trip_descriptor = gtfs_realtime.TripDescriptor(trip_id=trip_id,
                                                        route_id=route_id)
@@ -49,6 +50,8 @@ class TripUpdate:
             stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].scheduled_arrival.time = scheduled_arrival
         if scheduled_departure:
             stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].scheduled_departure.time = scheduled_departure
+        if stop_name:
+            stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].stop_name = stop_name
 
         trip_update = gtfs_realtime.TripUpdate(trip=trip_descriptor,
                                                stop_time_update=[stop_time_update])

@@ -1,7 +1,7 @@
 import warnings
 
 from gtfs_realtime_translators.translators import LaMetroGtfsRealtimeTranslator, \
-        SeptaRegionalRailTranslator
+        SeptaRegionalRailTranslator, MtaSubwayGtfsRealtimeTranslator
 
 class TranslatorKeyWarning(Warning):
     pass
@@ -10,6 +10,7 @@ class TranslatorRegistry:
     TRANSLATORS = {
         'la-metro': LaMetroGtfsRealtimeTranslator,
         'septa-regional-rail': SeptaRegionalRailTranslator,
+        'mta-subway': MtaSubwayGtfsRealtimeTranslator
     }
 
     @classmethod

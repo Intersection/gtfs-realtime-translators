@@ -10,6 +10,7 @@ message IntersectionStopTimeUpdate {
   optional string track = 1;
   optional transit_realtime.TripUpdate.StopTimeEvent scheduled_arrival = 2;
   optional transit_realtime.TripUpdate.StopTimeEvent scheduled_departure = 3;
+  optional string stop_name = 4;
 }
 
 extend transit_realtime.TripUpdate {
