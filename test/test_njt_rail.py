@@ -1,24 +1,20 @@
-import pendulum
 import pytest
 
 from gtfs_realtime_translators.factories import FeedMessage
-from gtfs_realtime_translators.translators import NjtRailTranslator
+from gtfs_realtime_translators.translators import NjtRailGtfsRealtimeTranslator
+from gtfs_realtime_translators.bindings import intersection_pb2 as intersection_gtfs_realtime
 
 
 @pytest.fixture
 def njt_rail():
-    with open('test/fixtures/njt_rail_departure_vision.xml') as f:
+    with open('test/fixtures/njt_rail.xml') as f:
         raw = f.read()
     return raw
 
 
 def test_njt_data(njt_rail):
-    with pendulum.test(pendulum.datetime(2019, 10, 1, 1, 0, 0, tz='America/New_York')):
-        translator = NjtRailTranslator(njt_rail, station_id='NP') #  https://usermanual.wiki/Document/NJTRANSIT20REAL20Time20Data20Interface20Instructions2020Ver2025.785373145.pdf
+    translator = NjtRailGtfsRealtimeTranslator(njt_rail, station_id='NP')
     message = translator.feed_message
-
-    # test that trip update is created with
-    # entity_id, departure_time, stop_id as station_id, route_id, scheduled_departure_time, track, headsign
 
     entity = message.entity[0]
     trip_update = entity.trip_update
@@ -27,11 +23,20 @@ def test_njt_data(njt_rail):
     assert message.header.gtfs_realtime_version == FeedMessage.VERSION
     assert entity.id == '1'
 
-    assert trip_update.trip.trip_id is None
+    assert trip_update.trip.trip_id == ''
+    assert trip_update.trip.route_id == 'Amtrak'
 
-    assert stop_time_update.stop_id == 'NP' # station_id from above
-    assert stop_time_update.departure_time == 123456789
-    assert stop_time_update.scheduled_departure_time == 123456789
+    assert stop_time_update.stop_id == 'NP'
+    assert stop_time_update.departure.time == 1570044525
+    assert stop_time_update.arrival.time == 1570044525
 
-    feed_bytes == translator.serialize()
-    assert type(feed_bytes) == bytes
+    intersection_trip_update = trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update]
+    assert intersection_trip_update.headsign == 'Boston'
+
+    intersection_stop_time_update = stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update]
+    assert intersection_stop_time_update.track == '2'
+    assert intersection_stop_time_update.scheduled_arrival.time == 1570042920
+    assert intersection_stop_time_update.scheduled_departure.time == 1570042920
+
+    # feed_bytes == translator.serialize()
+    # assert type(feed_bytes) == bytes

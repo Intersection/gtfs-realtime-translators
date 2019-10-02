@@ -1,0 +1,2000 @@
+<?xml version="1.0" encoding="utf-8"?>
+<STATION>
+    <STATION_2CHAR>NP</STATION_2CHAR>
+    <STATIONNAME>Newark Penn</STATIONNAME>
+    <BANNERMSGS />
+    <ITEMS>
+        <ITEM>
+            <ITEM_INDEX>0</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:02:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>Boston</DESTINATION>
+            <TRACK>2</TRACK>
+            <LINE>REGIONAL</LINE>
+            <TRAIN_ID>A176</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS>All Aboard</STATUS>
+            <SEC_LATE>1605</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:27:25 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <GPSLATITUDE>40.7301</GPSLATITUDE>
+            <GPSLONGITUDE>-74.1688</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:27:23 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>Business Class and Quiet Car is in the rear of the train</INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Washington</NAME>
+                    <TIME>02-Oct-2019 12:02:00 PM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Carrollton</NAME>
+                    <TIME>02-Oct-2019 12:13:00 PM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>BWI Airport</NAME>
+                    <TIME>02-Oct-2019 12:29:00 PM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Baltimore</NAME>
+                    <TIME>02-Oct-2019 12:45:00 PM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Wilmington</NAME>
+                    <TIME>02-Oct-2019 01:35:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 01:55:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 02:51:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>ALL ABOARD</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 03:17:16 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Late</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 03:28:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>Late</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New York</NAME>
+                    <TIME>02-Oct-2019 03:57:09 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>DELAYED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Rochelle</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Stamford</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Bridgeport</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>New Haven</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Old Saybrook</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>New London</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Westerly</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Kingston</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Providence</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Route 128</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Back Bay</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Boston</NAME>
+                    <TIME />
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>1</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:07:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>New York</DESTINATION>
+            <TRACK>2</TRACK>
+            <LINE>KEYSTONE</LINE>
+            <TRAIN_ID>A650</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS>in 7 Min</STATUS>
+            <SEC_LATE>1591</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:27:05 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <GPSLATITUDE>40.6561</GPSLATITUDE>
+            <GPSLONGITUDE>-74.2239</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:27:03 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 02:05:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 02:46:04 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>ALL ABOARD</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 03:33:31 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>Late</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New York</NAME>
+                    <TIME>02-Oct-2019 03:52:31 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>Late</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>2</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:26:15 PM</SCHED_DEP_DATE>
+            <DESTINATION>Trenton &amp;#9992</DESTINATION>
+            <TRACK>4</TRACK>
+            <LINE>Northeast Corridor Line</LINE>
+            <TRAIN_ID>3853</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS>All Aboard</STATUS>
+            <SEC_LATE>67</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:27:00 PM</LAST_MODIFIED>
+            <BACKCOLOR>red</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>black</SHADOWCOLOR>
+            <GPSLATITUDE>40.7354</GPSLATITUDE>
+            <GPSLONGITUDE>-74.1632</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:25:56 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NEC</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 02:41:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>BOARDING</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Secaucus Upper Lvl</NAME>
+                    <TIME>02-Oct-2019 03:17:36 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:25:52 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 03:31:42 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:36:27 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Linden</NAME>
+                    <TIME>02-Oct-2019 03:41:57 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Rahway</NAME>
+                    <TIME>02-Oct-2019 03:45:57 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 03:51:42 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metuchen</NAME>
+                    <TIME>02-Oct-2019 03:56:12 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Edison</NAME>
+                    <TIME>02-Oct-2019 04:01:12 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Brunswick</NAME>
+                    <TIME>02-Oct-2019 04:05:27 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Jersey Avenue</NAME>
+                    <TIME>02-Oct-2019 04:10:12 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Princeton Junction</NAME>
+                    <TIME>02-Oct-2019 04:22:57 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Hamilton</NAME>
+                    <TIME>02-Oct-2019 04:29:42 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 04:42:27 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>3</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:30:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>Boston</DESTINATION>
+            <TRACK>2</TRACK>
+            <LINE>ACELA EXPRESS</LINE>
+            <TRAIN_ID>A2166</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS>20 MINS LATE</STATUS>
+            <SEC_LATE>1499</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:27:15 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <GPSLATITUDE>
+            </GPSLATITUDE>
+            <GPSLONGITUDE>
+            </GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:27:08 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Baltimore</NAME>
+                    <TIME>02-Oct-2019 01:30:00 PM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Wilmington</NAME>
+                    <TIME>02-Oct-2019 02:11:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 02:30:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 03:39:59 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>Late</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 03:54:59 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>20 MINS LATE</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New York</NAME>
+                    <TIME>02-Oct-2019 04:24:59 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>DELAYED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Haven</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Providence</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Route 128</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Back Bay</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Boston</NAME>
+                    <TIME />
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>4</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:38:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>Miami</DESTINATION>
+            <TRACK>3</TRACK>
+            <LINE>SILVER METEOR-R</LINE>
+            <TRAIN_ID>A97</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS>in 9 Min</STATUS>
+            <SEC_LATE>-60</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:27:23 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <GPSLATITUDE>40.7391</GPSLATITUDE>
+            <GPSLONGITUDE>-74.1560</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:27:22 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 03:37:00 PM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 04:18:00 PM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>ON TIME</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 05:31:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Wilmington</NAME>
+                    <TIME>02-Oct-2019 05:18:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Baltimore</NAME>
+                    <TIME>02-Oct-2019 05:57:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Washington</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Alexandria</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Fredericksburg</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Richmond</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Petersburg</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Rocky Mount</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Fayetteville</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Florence</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Kingstree</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Charleston</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Yemassee</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Savannah</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Jesup</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Jacksonville</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Palatka</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Deland</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Winter Park</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Orlando</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Kissimee</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Winter Haven</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Sebring</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>West Palm Beach</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Delray Beach</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Deerfield Beach</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Fort Lauderdale</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Hollywood</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Miami</NAME>
+                    <TIME />
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>5</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:39:30 PM</SCHED_DEP_DATE>
+            <DESTINATION>South Amboy &amp;#9992</DESTINATION>
+            <TRACK>4</TRACK>
+            <LINE>North Jersey Coast Line</LINE>
+            <TRAIN_ID>3509</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS>in 15 Min</STATUS>
+            <SEC_LATE>220</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:26:45 PM</LAST_MODIFIED>
+            <BACKCOLOR>CornflowerBlue</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>black</SHADOWCOLOR>
+            <GPSLATITUDE>40.7544</GPSLATITUDE>
+            <GPSLONGITUDE>-74.0027</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:26:42 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NJCL</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:20:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>BOARDING</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Secaucus Upper Lvl</NAME>
+                    <TIME>02-Oct-2019 03:33:10 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:42:25 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 03:48:10 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>North Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:51:25 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:54:10 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Linden</NAME>
+                    <TIME>02-Oct-2019 03:59:25 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Rahway</NAME>
+                    <TIME>02-Oct-2019 04:03:10 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Avenel</NAME>
+                    <TIME>02-Oct-2019 04:08:25 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Woodbridge</NAME>
+                    <TIME>02-Oct-2019 04:11:25 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Perth Amboy</NAME>
+                    <TIME>02-Oct-2019 04:18:10 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>South Amboy</NAME>
+                    <TIME>02-Oct-2019 04:25:40 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>6</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:48:30 PM</SCHED_DEP_DATE>
+            <DESTINATION>New York</DESTINATION>
+            <TRACK>1</TRACK>
+            <LINE>Northeast Corridor Line</LINE>
+            <TRAIN_ID>3154</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS>CANCELLED</STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 02:51:30 PM</LAST_MODIFIED>
+            <BACKCOLOR>black</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>
+            </SHADOWCOLOR>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NEC</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New Brunswick</NAME>
+                    <TIME>02-Oct-2019 03:01:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Edison</NAME>
+                    <TIME>02-Oct-2019 03:09:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metuchen</NAME>
+                    <TIME>02-Oct-2019 03:14:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 03:18:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Rahway</NAME>
+                    <TIME>02-Oct-2019 03:25:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Linden</NAME>
+                    <TIME>02-Oct-2019 03:29:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:35:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>North Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:38:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 03:42:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:47:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 04:07:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>CANCELLED</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>7</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:49:30 PM</SCHED_DEP_DATE>
+            <DESTINATION>Trenton &amp;#9992</DESTINATION>
+            <TRACK>4</TRACK>
+            <LINE>Northeast Corridor Line</LINE>
+            <TRAIN_ID>3855</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:22:13 PM</LAST_MODIFIED>
+            <BACKCOLOR>red</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>black</SHADOWCOLOR>
+            <GPSLATITUDE>40.7505</GPSLATITUDE>
+            <GPSLONGITUDE>-73.9935</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:22:09 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NEC</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:21:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>BOARDING</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Secaucus Upper Lvl</NAME>
+                    <TIME>02-Oct-2019 03:39:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:47:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 03:54:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Rahway</NAME>
+                    <TIME>02-Oct-2019 04:04:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 04:09:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metuchen</NAME>
+                    <TIME>02-Oct-2019 04:14:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Edison</NAME>
+                    <TIME>02-Oct-2019 04:18:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Brunswick</NAME>
+                    <TIME>02-Oct-2019 04:22:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Jersey Avenue</NAME>
+                    <TIME>02-Oct-2019 04:27:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Princeton Junction</NAME>
+                    <TIME>02-Oct-2019 04:39:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Hamilton</NAME>
+                    <TIME>02-Oct-2019 04:46:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 05:00:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>8</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:53:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>Washington &amp;#9992</DESTINATION>
+            <TRACK>3</TRACK>
+            <LINE>REGIONAL</LINE>
+            <TRAIN_ID>A173</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:18:37 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <GPSLATITUDE>40.7499</GPSLATITUDE>
+            <GPSLONGITUDE>-73.9923</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:18:31 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>Business Class and Quiet Car is in the rear of the train</INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New York</NAME>
+                    <TIME>02-Oct-2019 03:35:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>BOARDING</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 03:53:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 03:58:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 04:13:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 04:55:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Wilmington</NAME>
+                    <TIME>02-Oct-2019 05:27:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Baltimore</NAME>
+                    <TIME>02-Oct-2019 05:25:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>BWI Airport</NAME>
+                    <TIME>02-Oct-2019 05:25:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Carrollton</NAME>
+                    <TIME>02-Oct-2019 05:25:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Washington</NAME>
+                    <TIME>02-Oct-2019 07:07:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>9</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 03:54:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>New York -SEC</DESTINATION>
+            <TRACK>1</TRACK>
+            <LINE>Northeast Corridor Line</LINE>
+            <TRAIN_ID>3954</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS>in 26 Min</STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:25:59 PM</LAST_MODIFIED>
+            <BACKCOLOR>black</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>
+            </SHADOWCOLOR>
+            <GPSLATITUDE>40.4919</GPSLATITUDE>
+            <GPSLONGITUDE>-74.4513</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:24:56 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NEC</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 02:57:46 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>ALL ABOARD</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Hamilton</NAME>
+                    <TIME>02-Oct-2019 03:06:42 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Princeton Junction</NAME>
+                    <TIME>02-Oct-2019 03:13:31 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Brunswick</NAME>
+                    <TIME>02-Oct-2019 03:25:51 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Edison</NAME>
+                    <TIME>02-Oct-2019 03:29:37 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metuchen</NAME>
+                    <TIME>02-Oct-2019 03:31:32 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 03:34:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:44:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>North Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:45:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Rahway</NAME>
+                    <TIME>02-Oct-2019 03:45:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Linden</NAME>
+                    <TIME>02-Oct-2019 03:46:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 03:47:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:52:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Secaucus Upper Lvl</NAME>
+                    <TIME>02-Oct-2019 04:01:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 04:15:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>10</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:01:30 PM</SCHED_DEP_DATE>
+            <DESTINATION>Long Branch-BH</DESTINATION>
+            <TRACK>3</TRACK>
+            <LINE>North Jersey Coast Line</LINE>
+            <TRAIN_ID>3255</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>4355</CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:16:15 PM</LAST_MODIFIED>
+            <BACKCOLOR>CornflowerBlue</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>black</SHADOWCOLOR>
+            <GPSLATITUDE>
+            </GPSLATITUDE>
+            <GPSLONGITUDE>
+            </GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:16:10 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NJCL</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:45:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:59:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Woodbridge</NAME>
+                    <TIME>02-Oct-2019 04:18:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>South Amboy</NAME>
+                    <TIME>02-Oct-2019 04:27:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Aberdeen-Matawan</NAME>
+                    <TIME>02-Oct-2019 04:36:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Hazlet</NAME>
+                    <TIME>02-Oct-2019 04:40:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Middletown NJ</NAME>
+                    <TIME>02-Oct-2019 04:46:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Red Bank</NAME>
+                    <TIME>02-Oct-2019 04:52:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Little Silver</NAME>
+                    <TIME>02-Oct-2019 04:56:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Long Branch</NAME>
+                    <TIME>02-Oct-2019 05:07:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Elberon</NAME>
+                    <TIME>02-Oct-2019 05:18:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Allenhurst</NAME>
+                    <TIME>02-Oct-2019 05:22:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Asbury Park</NAME>
+                    <TIME>02-Oct-2019 05:25:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Bradley Beach</NAME>
+                    <TIME>02-Oct-2019 05:28:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Belmar</NAME>
+                    <TIME>02-Oct-2019 05:32:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Spring Lake</NAME>
+                    <TIME>02-Oct-2019 05:36:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Manasquan</NAME>
+                    <TIME>02-Oct-2019 05:40:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Point Pleasant Beach</NAME>
+                    <TIME>02-Oct-2019 05:48:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Bay Head</NAME>
+                    <TIME>02-Oct-2019 05:53:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>11</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:06:30 PM</SCHED_DEP_DATE>
+            <DESTINATION>New York -SEC</DESTINATION>
+            <TRACK>1</TRACK>
+            <LINE>North Jersey Coast Line</LINE>
+            <TRAIN_ID>3256</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:27:11 PM</LAST_MODIFIED>
+            <BACKCOLOR>black</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>
+            </SHADOWCOLOR>
+            <GPSLATITUDE>40.482</GPSLATITUDE>
+            <GPSLONGITUDE>-74.2789</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:27:07 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NJCL</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Long Branch</NAME>
+                    <TIME>02-Oct-2019 02:51:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Little Silver</NAME>
+                    <TIME>02-Oct-2019 02:57:54 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Red Bank</NAME>
+                    <TIME>02-Oct-2019 03:02:46 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Middletown NJ</NAME>
+                    <TIME>02-Oct-2019 03:09:32 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Hazlet</NAME>
+                    <TIME>02-Oct-2019 03:14:49 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Aberdeen-Matawan</NAME>
+                    <TIME>02-Oct-2019 03:18:40 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>South Amboy</NAME>
+                    <TIME>02-Oct-2019 03:28:28 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Perth Amboy</NAME>
+                    <TIME>02-Oct-2019 03:32:50 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Woodbridge</NAME>
+                    <TIME>02-Oct-2019 03:37:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Rahway</NAME>
+                    <TIME>02-Oct-2019 03:44:03 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Linden</NAME>
+                    <TIME>02-Oct-2019 03:48:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:54:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>North Elizabeth</NAME>
+                    <TIME>02-Oct-2019 03:57:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 04:00:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 04:05:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Secaucus Upper Lvl</NAME>
+                    <TIME>02-Oct-2019 04:13:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 04:27:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>12</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:11:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>Raritan</DESTINATION>
+            <TRACK>5</TRACK>
+            <LINE>Raritan Valley Line</LINE>
+            <TRAIN_ID>5431</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>-60</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:26:31 PM</LAST_MODIFIED>
+            <BACKCOLOR>Orange</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>black</SHADOWCOLOR>
+            <GPSLATITUDE>
+            </GPSLATITUDE>
+            <GPSLONGITUDE>
+            </GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:26:27 PM</GPSTIME>
+            <STATION_POSITION>0</STATION_POSITION>
+            <LINEABBREVIATION>RARV</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 04:01:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Union</NAME>
+                    <TIME>02-Oct-2019 04:19:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Roselle Park</NAME>
+                    <TIME>02-Oct-2019 04:23:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Cranford</NAME>
+                    <TIME>02-Oct-2019 04:28:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Garwood</NAME>
+                    <TIME>02-Oct-2019 04:31:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Westfield</NAME>
+                    <TIME>02-Oct-2019 04:34:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Fanwood</NAME>
+                    <TIME>02-Oct-2019 04:39:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Netherwood</NAME>
+                    <TIME>02-Oct-2019 04:43:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Plainfield</NAME>
+                    <TIME>02-Oct-2019 04:46:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Dunellen</NAME>
+                    <TIME>02-Oct-2019 04:51:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Bound Brook</NAME>
+                    <TIME>02-Oct-2019 04:57:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Bridgewater</NAME>
+                    <TIME>02-Oct-2019 05:00:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Somerville</NAME>
+                    <TIME>02-Oct-2019 05:06:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Raritan</NAME>
+                    <TIME>02-Oct-2019 05:12:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>13</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:12:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>New York</DESTINATION>
+            <TRACK>1</TRACK>
+            <LINE>REGIONAL</LINE>
+            <TRAIN_ID>A184</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:07:59 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New Carrollton</NAME>
+                    <TIME>02-Oct-2019 09:31:00 AM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>BWI Airport</NAME>
+                    <TIME>02-Oct-2019 09:48:00 AM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Baltimore</NAME>
+                    <TIME>02-Oct-2019 10:04:00 AM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Wilmington</NAME>
+                    <TIME>02-Oct-2019 02:37:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 11:15:00 AM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>Delayed</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 03:40:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>10 MINS LATE</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 03:53:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 04:06:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 04:12:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New York</NAME>
+                    <TIME>02-Oct-2019 04:30:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>14</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:14:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>South Amboy &amp;#9992</DESTINATION>
+            <TRACK>4</TRACK>
+            <LINE>North Jersey Coast Line</LINE>
+            <TRAIN_ID>3595</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>01-Oct-2019 04:59:31 PM</LAST_MODIFIED>
+            <BACKCOLOR>CornflowerBlue</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>black</SHADOWCOLOR>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NJCL</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 03:57:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 04:12:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 04:20:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>North Elizabeth</NAME>
+                    <TIME>02-Oct-2019 04:23:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Elizabeth</NAME>
+                    <TIME>02-Oct-2019 04:26:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Linden</NAME>
+                    <TIME>02-Oct-2019 04:32:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Rahway</NAME>
+                    <TIME>02-Oct-2019 04:36:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Avenel</NAME>
+                    <TIME>02-Oct-2019 04:43:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Woodbridge</NAME>
+                    <TIME>02-Oct-2019 04:46:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Perth Amboy</NAME>
+                    <TIME>02-Oct-2019 04:52:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>South Amboy</NAME>
+                    <TIME>02-Oct-2019 05:01:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>15</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:17:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>Washington</DESTINATION>
+            <TRACK>3</TRACK>
+            <LINE>ACELA EXPRESS</LINE>
+            <TRAIN_ID>A2165</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>01-Oct-2019 06:17:27 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>First Class and Quiet Car is in the front of the train</INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>New York</NAME>
+                    <TIME>02-Oct-2019 04:02:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 04:17:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 05:07:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Wilmington</NAME>
+                    <TIME>02-Oct-2019 05:33:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Baltimore</NAME>
+                    <TIME>02-Oct-2019 05:37:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>BWI Airport</NAME>
+                    <TIME>02-Oct-2019 05:37:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Washington</NAME>
+                    <TIME />
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>16</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:20:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>Harrisburg</DESTINATION>
+            <TRACK>3</TRACK>
+            <LINE>KEYSTONE</LINE>
+            <TRAIN_ID>A651</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>01-Oct-2019 05:09:19 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 04:20:00 PM</TIME>
+                    <PICKUP>Pick Up Only</PICKUP>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 04:55:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 05:35:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Ardmore</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Paoli</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Exton</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Downingtown</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Coatesville</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Parkesburg</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Lancaster</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Mount Joy</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Elizabethtown</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Middletown</NAME>
+                    <TIME />
+                </STOP>
+                <STOP>
+                    <NAME>Harrisburg</NAME>
+                    <TIME />
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>17</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:22:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>Washington &amp;#9992</DESTINATION>
+            <TRACK>3</TRACK>
+            <LINE>REGIONAL</LINE>
+            <TRAIN_ID>A127</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:25:34 PM</LAST_MODIFIED>
+            <BACKCOLOR>yellow</BACKCOLOR>
+            <FORECOLOR>black</FORECOLOR>
+            <SHADOWCOLOR>yellow</SHADOWCOLOR>
+            <GPSLATITUDE>40.7506</GPSLATITUDE>
+            <GPSLONGITUDE>-73.9939</GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:25:31 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>AMTK</LINEABBREVIATION>
+            <INLINEMSG>Business Class and Quiet Car is in the rear of the train</INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Newark Penn</NAME>
+                    <TIME>02-Oct-2019 04:22:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 04:28:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 04:38:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 05:02:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Philadelphia</NAME>
+                    <TIME>02-Oct-2019 05:32:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Wilmington</NAME>
+                    <TIME>02-Oct-2019 05:55:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Baltimore</NAME>
+                    <TIME>02-Oct-2019 06:02:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>BWI Airport</NAME>
+                    <TIME>02-Oct-2019 06:02:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Carrollton</NAME>
+                    <TIME>02-Oct-2019 06:02:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Washington</NAME>
+                    <TIME>02-Oct-2019 07:30:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>
+                    </STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+        <ITEM>
+            <ITEM_INDEX>18</ITEM_INDEX>
+            <SCHED_DEP_DATE>02-Oct-2019 04:27:00 PM</SCHED_DEP_DATE>
+            <DESTINATION>New York -SEC</DESTINATION>
+            <TRACK>1</TRACK>
+            <LINE>Northeast Corridor Line</LINE>
+            <TRAIN_ID>3856</TRAIN_ID>
+            <CONNECTING_TRAIN_ID>
+            </CONNECTING_TRAIN_ID>
+            <STATUS> </STATUS>
+            <SEC_LATE>0</SEC_LATE>
+            <LAST_MODIFIED>02-Oct-2019 03:24:51 PM</LAST_MODIFIED>
+            <BACKCOLOR>black</BACKCOLOR>
+            <FORECOLOR>white</FORECOLOR>
+            <SHADOWCOLOR>
+            </SHADOWCOLOR>
+            <GPSLATITUDE>
+            </GPSLATITUDE>
+            <GPSLONGITUDE>
+            </GPSLONGITUDE>
+            <GPSTIME>02-Oct-2019 03:24:47 PM</GPSTIME>
+            <STATION_POSITION>1</STATION_POSITION>
+            <LINEABBREVIATION>NEC</LINEABBREVIATION>
+            <INLINEMSG>
+            </INLINEMSG>
+            <STOPS>
+                <STOP>
+                    <NAME>Trenton</NAME>
+                    <TIME>02-Oct-2019 03:06:00 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>ALL ABOARD</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Hamilton</NAME>
+                    <TIME>02-Oct-2019 03:18:43 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Princeton Junction</NAME>
+                    <TIME>02-Oct-2019 03:25:15 PM</TIME>
+                    <DEPARTED>YES</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New Brunswick</NAME>
+                    <TIME>02-Oct-2019 03:40:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Edison</NAME>
+                    <TIME>02-Oct-2019 03:47:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metuchen</NAME>
+                    <TIME>02-Oct-2019 03:52:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Metropark</NAME>
+                    <TIME>02-Oct-2019 03:57:30 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Rahway</NAME>
+                    <TIME>02-Oct-2019 04:03:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Linden</NAME>
+                    <TIME>02-Oct-2019 04:07:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Elizabeth</NAME>
+                    <TIME>02-Oct-2019 04:14:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>North Elizabeth</NAME>
+                    <TIME>02-Oct-2019 04:17:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Airport</NAME>
+                    <TIME>02-Oct-2019 04:20:15 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Newark Penn Station</NAME>
+                    <TIME>02-Oct-2019 04:25:45 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>Secaucus Upper Lvl</NAME>
+                    <TIME>02-Oct-2019 04:34:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+                <STOP>
+                    <NAME>New York Penn Station</NAME>
+                    <TIME>02-Oct-2019 04:49:00 PM</TIME>
+                    <DEPARTED>NO</DEPARTED>
+                    <STOP_STATUS>OnTime</STOP_STATUS>
+                </STOP>
+            </STOPS>
+        </ITEM>
+    </ITEMS>
+</STATION>
