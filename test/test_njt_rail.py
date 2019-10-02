@@ -32,11 +32,17 @@ def test_njt_data(njt_rail):
 
     intersection_trip_update = trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update]
     assert intersection_trip_update.headsign == 'New York'
+    assert intersection_trip_update.route_short_name == 'NEC'
+    assert intersection_trip_update.route_long_name == 'Northeast Corridor Line'
+    assert intersection_trip_update.route_color == 'black'
+    assert intersection_trip_update.route_text_color == 'white'
+    assert intersection_trip_update.block_id == '3154'
 
     intersection_stop_time_update = stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update]
     assert intersection_stop_time_update.track == '1'
     assert intersection_stop_time_update.scheduled_arrival.time == 1570045710
     assert intersection_stop_time_update.scheduled_departure.time == 1570045710
+    assert intersection_stop_time_update.stop_name == 'Newark Penn'
 
     feed_bytes = translator.serialize()
     assert type(feed_bytes) == bytes
@@ -62,6 +68,11 @@ def test_njt_data_amtrak(njt_rail):
 
     intersection_trip_update = trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update]
     assert intersection_trip_update.headsign == 'Boston'
+    assert intersection_trip_update.route_short_name == 'AMTK'
+    assert intersection_trip_update.route_long_name == 'REGIONAL'
+    assert intersection_trip_update.route_color == 'yellow'
+    assert intersection_trip_update.route_text_color == 'black'
+    assert intersection_trip_update.block_id == 'A176'
 
     intersection_stop_time_update = stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update]
     assert intersection_stop_time_update.track == '2'

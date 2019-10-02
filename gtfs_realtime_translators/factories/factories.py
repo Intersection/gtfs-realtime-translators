@@ -36,6 +36,11 @@ class TripUpdate:
         scheduled_arrival = kwargs.get('scheduled_arrival_time', None)
         scheduled_departure = kwargs.get('scheduled_departure_time', None)
         stop_name = kwargs.get('stop_name', None)
+        route_short_name = kwargs.get('route_short_name', None)
+        route_long_name = kwargs.get('route_long_name', None)
+        route_color = kwargs.get('route_color', None)
+        route_text_color = kwargs.get('route_text_color', None)
+        block_id = kwargs.get('block_id', None)
 
         trip_descriptor = gtfs_realtime.TripDescriptor(trip_id=trip_id,
                                                        route_id=route_id)
@@ -58,6 +63,16 @@ class TripUpdate:
 
         if headsign:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].headsign = headsign
+        if route_short_name:
+            trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].route_short_name = route_short_name
+        if route_long_name:
+            trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].route_long_name = route_long_name
+        if route_color:
+            trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].route_color = route_color
+        if route_text_color:
+            trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].route_text_color = route_text_color
+        if block_id:
+            trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].block_id = block_id
 
         return Entity.create(entity_id,
                              trip_update=trip_update)

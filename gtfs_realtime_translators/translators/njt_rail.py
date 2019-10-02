@@ -25,31 +25,45 @@ class NjtRailGtfsRealtimeTranslator:
         station_data_item = data['STATION']['ITEMS'].values()
         for value in station_data_item:
             for idx, item_entry in enumerate(value):
-                scheduled_datetime = cls.__to_unix_time(item_entry['SCHED_DEP_DATE'])
-                scheduled_departure_time = int(scheduled_datetime.timestamp())
-                departure_time = int(scheduled_datetime.add(seconds=int(item_entry['SEC_LATE'])).timestamp())
+
                 route_id = None
+
+                # Intersection Extensions
                 headsign = item_entry['DESTINATION']
+                route_short_name = item_entry['LINEABBREVIATION']
+                route_long_name = item_entry['LINE']
+                route_color = item_entry['BACKCOLOR']
+                route_text_color = item_entry['FORECOLOR']
+                block_id = item_entry['TRAIN_ID']
                 track = item_entry['TRACK']
+                stop_name = data['STATION']['STATIONNAME']
+                scheduled_datetime = cls.__to_unix_time(item_entry['SCHED_DEP_DATE'])
+                departure_time = int(scheduled_datetime.add(seconds=int(item_entry['SEC_LATE'])).timestamp())
+                scheduled_departure_time = int(scheduled_datetime.timestamp())
 
                 for stop in item_entry['STOPS'].values():
                     origin_and_destination = [stop[i] for i in (0, -1)]
+
                     route_id = cls.__get_route_id(line=item_entry['LINE'],
                                                   line_abbreviation=item_entry['LINEABBREVIATION'],
                                                   origin=origin_and_destination[0],
                                                   destination=origin_and_destination[1])
 
-                print('---------------------------')
                 trip_update = TripUpdate.create(entity_id=str(idx + 1),
                                                 departure_time=departure_time,
                                                 scheduled_departure_time=scheduled_departure_time,
                                                 arrival_time=departure_time,
                                                 scheduled_arrival_time=scheduled_departure_time,
                                                 route_id=route_id,
+                                                route_short_name=route_short_name,
+                                                route_long_name=route_long_name,
+                                                route_color=route_color,
+                                                route_text_color=route_text_color,
                                                 stop_id=station_id,
+                                                stop_name=stop_name,
                                                 headsign=headsign,
-                                                track=track)
-                print(trip_update)
+                                                track=track,
+                                                block_id=block_id)
                 trip_updates.append(trip_update)
 
         return trip_updates
@@ -75,6 +89,7 @@ class NjtRailGtfsRealtimeTranslator:
         def get_route_id_by_origin_or_destination(line_key, line_name, origin, destination):
             origin_name = origin['NAME'].replace(' ', '_').lower()
             destination_name = destination['NAME'].replace(' ', '_').lower()
+
             if line_key == 'montclair-boonton_line':
                 hoboken = 'hoboken'
                 origins_and_destinations = {'denville', 'dover', 'mount_olive', 'lake_hopatcong', 'hackettstown'}
