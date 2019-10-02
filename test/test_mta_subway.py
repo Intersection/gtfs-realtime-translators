@@ -4,6 +4,7 @@ import pytest
 import pendulum
 
 from gtfs_realtime_translators.translators import MtaSubwayGtfsRealtimeTranslator
+from gtfs_realtime_translators.bindings import intersection_pb2 as intersection_gtfs_realtime
 from gtfs_realtime_translators.factories import FeedMessage
 
 @pytest.fixture
@@ -30,6 +31,8 @@ def test_mta_subway_data(mta_subway):
     assert stop_time_update.arrival.time == 1569492935
     assert stop_time_update.departure.time == 1569492935
     assert stop_time_update.stop_id == '101N'
+
+    assert stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].stop_name == 'Van Cortlandt Park - 242 St'
 
     feed_bytes = translator.serialize()
     assert type(feed_bytes) == bytes

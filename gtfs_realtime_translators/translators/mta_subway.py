@@ -12,8 +12,8 @@ class MtaSubwayGtfsRealtimeTranslator:
             for group in stop["groups"]:
                 for idx, arrival in enumerate(group["times"]):
                     route_id = group['route']['id']
-                    stop_id = stop['stop']['id']
-                    entities.append(self.__make_trip_update(idx, route_id, arrival))
+                    stop_name = stop['stop']['name']
+                    entities.append(self.__make_trip_update(idx, route_id, stop_name, arrival))
 
         self.feed_message = FeedMessage.create(entities=entities)
 
@@ -34,13 +34,14 @@ class MtaSubwayGtfsRealtimeTranslator:
         return int(pendulum.from_timestamp(timestamp).subtract(hours=4).timestamp())
 
     @classmethod
-    def __make_trip_update(cls, _id, route_id, arrival):
+    def __make_trip_update(cls, _id, route_id, stop_name, arrival):
         entity_id = str(_id + 1)
         arrival_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeArrival'])
         departure_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeDeparture'])
         trip_id = arrival['tripId']
         route_id = route_id
         stop_id = cls.get_stop_id(arrival['stopId'])
+        print(stop_name)
 
         ##### Intersection Extensions
         headsign = arrival['tripHeadsign']
@@ -52,6 +53,7 @@ class MtaSubwayGtfsRealtimeTranslator:
                                 trip_id=trip_id,
                                 route_id=route_id,
                                 stop_id=stop_id,
+                                stop_name=stop_name,
                                 headsign=headsign,
                                 scheduled_arrival_time=scheduled_arrival_time,
                                 scheduled_departure_time=scheduled_departure_time)
