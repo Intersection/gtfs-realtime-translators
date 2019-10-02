@@ -1,5 +1,3 @@
-import math
-
 import pendulum
 
 from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
@@ -39,9 +37,7 @@ class MtaSubwayGtfsRealtimeTranslator:
         arrival_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeArrival'])
         departure_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeDeparture'])
         trip_id = arrival['tripId']
-        route_id = route_id
         stop_id = cls.get_stop_id(arrival['stopId'])
-        print(stop_name)
 
         ##### Intersection Extensions
         headsign = arrival['tripHeadsign']
