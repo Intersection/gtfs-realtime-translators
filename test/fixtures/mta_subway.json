@@ -1,4 +1,4 @@
-{
+[{
     "stop": {
         "id": "MTASBWY:101",
         "name": "Van Cortlandt Park - 242 St",
@@ -238,4 +238,4 @@
             "stopHeadsign": true
         }
     ]
-}
+}]

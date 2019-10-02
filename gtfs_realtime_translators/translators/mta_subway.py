@@ -8,11 +8,12 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 class MtaSubwayGtfsRealtimeTranslator:
     def __init__(self, data):
         entities = []
-        for group in data["groups"]:
-            for idx, arrival in enumerate(group["times"]):
-                route_id = group['route']['id']
-                stop_id = data['stop']['id']
-                entities.append(self.__make_trip_update(idx, route_id, arrival))
+        for stop in data:
+            for group in stop["groups"]:
+                for idx, arrival in enumerate(group["times"]):
+                    route_id = group['route']['id']
+                    stop_id = stop['stop']['id']
+                    entities.append(self.__make_trip_update(idx, route_id, arrival))
 
         self.feed_message = FeedMessage.create(entities=entities)
 
@@ -30,7 +31,7 @@ class MtaSubwayGtfsRealtimeTranslator:
 
     @classmethod
     def to_gmt_timestamp(cls, timestamp):
-        return pendulum.from_timestamp(timestamp).subtract(hours=4).timestamp()
+        return int(pendulum.from_timestamp(timestamp).subtract(hours=4).timestamp())
 
     @classmethod
     def __make_trip_update(cls, _id, route_id, arrival):
@@ -39,7 +40,6 @@ class MtaSubwayGtfsRealtimeTranslator:
         departure_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeDeparture'])
         trip_id = arrival['tripId']
         route_id = route_id
-        # take off MTASBY of stop_id
         stop_id = cls.get_stop_id(arrival['stopId'])
 
         ##### Intersection Extensions
