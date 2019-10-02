@@ -12,7 +12,7 @@ class TranslatorRegistry:
     TRANSLATORS = {
         'la-metro': LaMetroGtfsRealtimeTranslator,
         'septa-regional-rail': SeptaRegionalRailTranslator,
-        'mta-subway': MtaSubwayGtfsRealtimeTranslator
+        'mta-subway': MtaSubwayGtfsRealtimeTranslator,
         'njt-rail': NjtRailGtfsRealtimeTranslator,
     }
 
