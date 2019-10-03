@@ -12,7 +12,7 @@
         {
             "trip_id": "1235",
             "seconds": 1248,
-            "minutes": 20,
+            "minutes": 20.0,
             "block_id": "603",
             "route_id": "801",
             "is_departing": true,
