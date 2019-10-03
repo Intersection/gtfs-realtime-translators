@@ -83,7 +83,17 @@ class NjtRailGtfsRealtimeTranslator:
         return trip_updates
 
     @classmethod
-    def __get_route_id(cls, **metadata):
+    def __get_route_id(cls, **data):
+        """
+        This function resolves route_ids for NJT. The logic of determining a route_id based
+        on origin or destination is necessary to discern multiple routes that are mapped to the same line.
+
+        For instance, the North Jersey Coastline line operates two different routes. All trains with an
+        origin or destination of New York Penn Station should resolve to route_id 10 and the others route_id 11
+
+        :param data: keyword args containing data needed to perform the route logic
+        :return: route_id
+        """
         route_id_lookup = {
             'atlantic_city_ine': '1',
             'montclair-boonton_line': None,
@@ -95,7 +105,7 @@ class NjtRailGtfsRealtimeTranslator:
             'north_jersey_coast_line': None,
         }
 
-        key = 'amtrak' if metadata['line_abbreviation'] == 'AMTK' else metadata['line'].replace(' ', '_').lower()
+        key = 'amtrak' if data['line_abbreviation'] == 'AMTK' else data['line'].replace(' ', '_').lower()
         route_id = route_id_lookup.get(key, None)
         if route_id is not None:
             return route_id
@@ -123,7 +133,7 @@ class NjtRailGtfsRealtimeTranslator:
                 return word
             return None
 
-        return get_route_id_by_origin_or_destination(key, metadata['line'], metadata['origin'], metadata['destination'])
+        return get_route_id_by_origin_or_destination(key, data['line'], data['origin'], data['destination'])
 
     def serialize(self):
         return self.feed_message.SerializeToString()
