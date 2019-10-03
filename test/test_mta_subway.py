@@ -10,7 +10,7 @@ from gtfs_realtime_translators.factories import FeedMessage
 @pytest.fixture
 def mta_subway():
     with open('test/fixtures/mta_subway.json') as f:
-        raw = json.load(f)
+        raw = f.read()
 
     return raw
 
