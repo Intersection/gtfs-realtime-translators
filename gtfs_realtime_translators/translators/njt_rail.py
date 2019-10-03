@@ -15,25 +15,23 @@ class NjtRailGtfsRealtimeTranslator:
         2) The documentation notes that their realtime data may not always accurately map to their GTFS data
 
     :param data: XML formatted realtime feed
-    :param station_id: a two-character station code. This should map to the station from the feed
 
     https://usermanual.wiki/Document/NJTRANSIT20REAL20Time20Data20Interface20Instructions2020Ver2025.785373145.pdf
     """
 
-    def __init__(self, data, station_id=None):
+    def __init__(self, data):
         station_data = xmltodict.parse(data)
 
-        entities = self.__make_trip_updates(station_id, station_data)
+        entities = self.__make_trip_updates(station_data)
         self.feed_message = FeedMessage.create(entities=entities)
 
     @classmethod
     def __to_unix_time(cls, time):
-        datetime = pendulum.from_format(time, 'DD-MMM-YYYY HH:mm:ss A', tz='America/New_York')
-        datetime.in_tz('UTC')
+        datetime = pendulum.from_format(time, 'DD-MMM-YYYY HH:mm:ss A', tz='America/New_York').in_tz('UTC')
         return datetime
 
     @classmethod
-    def __make_trip_updates(cls, station_id, data):
+    def __make_trip_updates(cls, data):
         trip_updates = []
 
         station_data_item = data['STATION']['ITEMS'].values()
@@ -44,11 +42,12 @@ class NjtRailGtfsRealtimeTranslator:
                 # Intersection Extensions
                 headsign = item_entry['DESTINATION']
                 route_short_name = item_entry['LINEABBREVIATION']
-                route_long_name = item_entry['LINE']
+                route_long_name = cls.__get_route_long_name(item_entry)
                 route_color = item_entry['BACKCOLOR']
                 route_text_color = item_entry['FORECOLOR']
                 block_id = item_entry['TRAIN_ID']
                 track = item_entry['TRACK']
+                stop_id = data['STATION']['STATION_2CHAR']
                 stop_name = data['STATION']['STATIONNAME']
                 scheduled_datetime = cls.__to_unix_time(item_entry['SCHED_DEP_DATE'])
                 departure_time = int(scheduled_datetime.add(seconds=int(item_entry['SEC_LATE'])).timestamp())
@@ -72,7 +71,7 @@ class NjtRailGtfsRealtimeTranslator:
                                                 route_long_name=route_long_name,
                                                 route_color=route_color,
                                                 route_text_color=route_text_color,
-                                                stop_id=station_id,
+                                                stop_id=stop_id,
                                                 stop_name=stop_name,
                                                 headsign=headsign,
                                                 track=track,
@@ -129,11 +128,16 @@ class NjtRailGtfsRealtimeTranslator:
                     return '10'
                 return '11'
             if line_key == 'amtrak':
-                word = f'Amtrak {line_name}'.title()
-                return word
+                return line_name
             return None
 
         return get_route_id_by_origin_or_destination(key, data['line'], data['origin'], data['destination'])
+
+    @classmethod
+    def __get_route_long_name(cls, data):
+        if data['LINEABBREVIATION'] == 'AMTK':
+            return f"Amtrak {data['LINE']}".title()
+        return data['LINE']
 
     def serialize(self):
         return self.feed_message.SerializeToString()
