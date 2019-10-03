@@ -95,7 +95,7 @@ class NjtRailGtfsRealtimeTranslator:
         :return: route_id
         """
         route_id_lookup = {
-            'atlantic_city_ine': '1',
+            'atlantic_city_line': '1',
             'montclair-boonton_line': None,
             'main_line': '5',
             'bergen_county_line': '6',
