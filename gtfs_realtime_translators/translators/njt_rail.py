@@ -5,6 +5,20 @@ import xmltodict
 
 
 class NjtRailGtfsRealtimeTranslator:
+    """
+    This translator accepts data from NJT's proprietary Train Control system. It produces
+    trip updates similar to GTFS realtime format but with some additional context in the absence of some
+    required and conditionally required GTFS-RT fields.
+
+    The motivation to produce this format is due to the following:
+        1) The APIs do not provide a trip_id
+        2) The documentation notes that their realtime data may not always accurately map to their GTFS data
+
+    :param data: XML formatted realtime feed
+    :param station_id: a two-character station code. This should map to the station from the feed
+
+    https://usermanual.wiki/Document/NJTRANSIT20REAL20Time20Data20Interface20Instructions2020Ver2025.785373145.pdf
+    """
 
     def __init__(self, data, station_id=None):
         station_data = xmltodict.parse(data)
