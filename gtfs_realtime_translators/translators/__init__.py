@@ -1,3 +1,4 @@
 from .la_metro import LaMetroGtfsRealtimeTranslator
 from .septa_regional_rail import SeptaRegionalRailTranslator
 from .mta_subway import MtaSubwayGtfsRealtimeTranslator
+from .njt_rail import NjtRailGtfsRealtimeTranslator

@@ -4,6 +4,12 @@ import "gtfs-realtime.proto";
 
 message IntersectionTripUpdate {
   optional string headsign = 1;
+  optional string route_short_name = 2;
+  optional string route_long_name = 3;
+  optional string route_color = 4;
+  optional string route_text_color = 5;
+  optional string block_id = 6;
+  optional string agency_timezone = 7;
 }
 
 message IntersectionStopTimeUpdate {

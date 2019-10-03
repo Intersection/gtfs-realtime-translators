@@ -1,3 +1,5 @@
+import json
+
 import pendulum
 
 from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
@@ -5,8 +7,10 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 class MtaSubwayGtfsRealtimeTranslator:
     def __init__(self, data):
+        json_data = json.loads(data)
+
         entities = []
-        for stop in data:
+        for stop in json_data:
             for group in stop["groups"]:
                 for idx, arrival in enumerate(group["times"]):
                     route_id = self.parse_id(group['route']['id'])

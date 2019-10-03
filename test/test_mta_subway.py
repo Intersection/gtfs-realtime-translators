@@ -1,5 +1,3 @@
-import json
-
 import pytest
 import pendulum
 
@@ -7,12 +5,14 @@ from gtfs_realtime_translators.translators import MtaSubwayGtfsRealtimeTranslato
 from gtfs_realtime_translators.bindings import intersection_pb2 as intersection_gtfs_realtime
 from gtfs_realtime_translators.factories import FeedMessage
 
+
 @pytest.fixture
 def mta_subway():
     with open('test/fixtures/mta_subway.json') as f:
-        raw = json.load(f)
+        raw = f.read()
 
     return raw
+
 
 def test_mta_subway_data(mta_subway):
     with pendulum.test(pendulum.datetime(2019,2,20,17,0,0)):

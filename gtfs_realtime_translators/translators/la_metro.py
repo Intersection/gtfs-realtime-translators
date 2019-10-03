@@ -1,3 +1,4 @@
+import json
 import math
 
 import pendulum
@@ -7,7 +8,9 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 class LaMetroGtfsRealtimeTranslator:
     def __init__(self, data, stop_id=None):
-        entities = [ self.__make_trip_update(idx, stop_id, arrival) for idx, arrival in enumerate(data['items']) ]
+        json_data = json.loads(data)
+
+        entities = [ self.__make_trip_update(idx, stop_id, arrival) for idx, arrival in enumerate(json_data['items']) ]
         self.feed_message = FeedMessage.create(entities=entities)
 
     @classmethod

@@ -1,16 +1,19 @@
 import warnings
 
 from gtfs_realtime_translators.translators import LaMetroGtfsRealtimeTranslator, \
-        SeptaRegionalRailTranslator, MtaSubwayGtfsRealtimeTranslator
+        SeptaRegionalRailTranslator, MtaSubwayGtfsRealtimeTranslator, NjtRailGtfsRealtimeTranslator
+
 
 class TranslatorKeyWarning(Warning):
     pass
+
 
 class TranslatorRegistry:
     TRANSLATORS = {
         'la-metro': LaMetroGtfsRealtimeTranslator,
         'septa-regional-rail': SeptaRegionalRailTranslator,
-        'mta-subway': MtaSubwayGtfsRealtimeTranslator
+        'mta-subway': MtaSubwayGtfsRealtimeTranslator,
+        'njt-rail': NjtRailGtfsRealtimeTranslator,
     }
 
     @classmethod

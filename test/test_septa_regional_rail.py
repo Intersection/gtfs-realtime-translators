@@ -1,5 +1,3 @@
-import json
-
 import pytest
 import pendulum
 
@@ -11,7 +9,7 @@ from gtfs_realtime_translators.bindings import intersection_pb2 as intersection_
 @pytest.fixture
 def septa_regional_rail():
     with open('test/fixtures/septa_regional_rail.json') as f:
-        raw = json.load(f)
+        raw = f.read()
 
     return raw
 
