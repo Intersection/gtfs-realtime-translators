@@ -9,6 +9,7 @@ message IntersectionTripUpdate {
   optional string route_color = 4;
   optional string route_text_color = 5;
   optional string block_id = 6;
+  optional string agency_timezone = 7;
 }
 
 message IntersectionStopTimeUpdate {

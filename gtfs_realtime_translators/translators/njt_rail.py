@@ -25,7 +25,6 @@ class NjtRailGtfsRealtimeTranslator:
         station_data_item = data['STATION']['ITEMS'].values()
         for value in station_data_item:
             for idx, item_entry in enumerate(value):
-
                 route_id = None
 
                 # Intersection Extensions
@@ -63,7 +62,8 @@ class NjtRailGtfsRealtimeTranslator:
                                                 stop_name=stop_name,
                                                 headsign=headsign,
                                                 track=track,
-                                                block_id=block_id)
+                                                block_id=block_id,
+                                                agency_timezone='America/New_York')
                 trip_updates.append(trip_update)
 
         return trip_updates

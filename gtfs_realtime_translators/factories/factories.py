@@ -41,6 +41,7 @@ class TripUpdate:
         route_color = kwargs.get('route_color', None)
         route_text_color = kwargs.get('route_text_color', None)
         block_id = kwargs.get('block_id', None)
+        agency_timezone = kwargs.get('agency_timezone', None)
 
         trip_descriptor = gtfs_realtime.TripDescriptor(trip_id=trip_id,
                                                        route_id=route_id)
@@ -73,6 +74,8 @@ class TripUpdate:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].route_text_color = route_text_color
         if block_id:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].block_id = block_id
+        if agency_timezone:
+            trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].agency_timezone = agency_timezone
 
         return Entity.create(entity_id,
                              trip_update=trip_update)

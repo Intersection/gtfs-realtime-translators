@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto2',
   serialized_options=None,
-  serialized_pb=_b('\n\x12intersection.proto\x1a\x13gtfs-realtime.proto\"\x9e\x01\n\x16IntersectionTripUpdate\x12\x10\n\x08headsign\x18\x01 \x01(\t\x12\x18\n\x10route_short_name\x18\x02 \x01(\t\x12\x17\n\x0froute_long_name\x18\x03 \x01(\t\x12\x13\n\x0broute_color\x18\x04 \x01(\t\x12\x18\n\x10route_text_color\x18\x05 \x01(\t\x12\x10\n\x08\x62lock_id\x18\x06 \x01(\t\"\xce\x01\n\x1aIntersectionStopTimeUpdate\x12\r\n\x05track\x18\x01 \x01(\t\x12\x45\n\x11scheduled_arrival\x18\x02 \x01(\x0b\x32*.transit_realtime.TripUpdate.StopTimeEvent\x12G\n\x13scheduled_departure\x18\x03 \x01(\x0b\x32*.transit_realtime.TripUpdate.StopTimeEvent\x12\x11\n\tstop_name\x18\x04 \x01(\t:X\n\x18intersection_trip_update\x12\x1c.transit_realtime.TripUpdate\x18\xc3\x0f \x01(\x0b\x32\x17.IntersectionTripUpdate:p\n\x1dintersection_stop_time_update\x12+.transit_realtime.TripUpdate.StopTimeUpdate\x18\xc3\x0f \x01(\x0b\x32\x1b.IntersectionStopTimeUpdate')
+  serialized_pb=_b('\n\x12intersection.proto\x1a\x13gtfs-realtime.proto\"\xb7\x01\n\x16IntersectionTripUpdate\x12\x10\n\x08headsign\x18\x01 \x01(\t\x12\x18\n\x10route_short_name\x18\x02 \x01(\t\x12\x17\n\x0froute_long_name\x18\x03 \x01(\t\x12\x13\n\x0broute_color\x18\x04 \x01(\t\x12\x18\n\x10route_text_color\x18\x05 \x01(\t\x12\x10\n\x08\x62lock_id\x18\x06 \x01(\t\x12\x17\n\x0f\x61gency_timezone\x18\x07 \x01(\t\"\xce\x01\n\x1aIntersectionStopTimeUpdate\x12\r\n\x05track\x18\x01 \x01(\t\x12\x45\n\x11scheduled_arrival\x18\x02 \x01(\x0b\x32*.transit_realtime.TripUpdate.StopTimeEvent\x12G\n\x13scheduled_departure\x18\x03 \x01(\x0b\x32*.transit_realtime.TripUpdate.StopTimeEvent\x12\x11\n\tstop_name\x18\x04 \x01(\t:X\n\x18intersection_trip_update\x12\x1c.transit_realtime.TripUpdate\x18\xc3\x0f \x01(\x0b\x32\x17.IntersectionTripUpdate:p\n\x1dintersection_stop_time_update\x12+.transit_realtime.TripUpdate.StopTimeUpdate\x18\xc3\x0f \x01(\x0b\x32\x1b.IntersectionStopTimeUpdate')
   ,
   dependencies=[gtfs__realtime__pb2.DESCRIPTOR,])
 
@@ -92,6 +92,13 @@ _INTERSECTIONTRIPUPDATE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='agency_timezone', full_name='IntersectionTripUpdate.agency_timezone', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -105,7 +112,7 @@ _INTERSECTIONTRIPUPDATE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=44,
-  serialized_end=202,
+  serialized_end=227,
 )
 
 
@@ -156,8 +163,8 @@ _INTERSECTIONSTOPTIMEUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=205,
-  serialized_end=411,
+  serialized_start=230,
+  serialized_end=436,
 )
 
 _INTERSECTIONSTOPTIMEUPDATE.fields_by_name['scheduled_arrival'].message_type = gtfs__realtime__pb2._TRIPUPDATE_STOPTIMEEVENT
