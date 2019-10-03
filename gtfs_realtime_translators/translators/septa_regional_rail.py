@@ -1,3 +1,4 @@
+import json
 import re
 import copy
 
@@ -26,16 +27,17 @@ class SeptaRegionalRailTranslator:
     }
 
     def __init__(self, data, **kwargs):
+        json_data = json.loads(data)
         stop_id = kwargs['stop_id']
         filter_seconds = kwargs.get('filter_seconds', 10800) # default 10800s => 3hrs
         latest_valid_time = self.calculate_time_at(seconds=filter_seconds)
 
-        root_key = next(iter([*data]), None)
+        root_key = next(iter([*json_data]), None)
 
         if root_key is None:
             raise ValueError('root_key: unexpected format')
         
-        arrivals_body = data[root_key]
+        arrivals_body = json_data[root_key]
         northbound = [ direction_list['Northbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Northbound' ][0]
         southbound = [ direction_list['Southbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Southbound' ][0]
         arrivals = northbound + southbound
