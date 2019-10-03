@@ -31,6 +31,8 @@ def test_mta_subway_data(mta_subway):
     assert stop_time_update.arrival.time == 1569492935
     assert stop_time_update.departure.time == 1569492935
     assert stop_time_update.stop_id == '101N'
+    assert entity.trip_update.trip.route_id == '1'
+    assert entity.trip_update.trip.trip_id == '2351'
 
     assert stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].stop_name == 'Van Cortlandt Park - 242 St'
 
