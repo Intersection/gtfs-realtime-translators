@@ -9,23 +9,22 @@ class MtaSubwayGtfsRealtimeTranslator:
         for stop in data:
             for group in stop["groups"]:
                 for idx, arrival in enumerate(group["times"]):
-                    route_id = group['route']['id']
+                    route_id = self.parse_id(group['route']['id'])
                     stop_name = stop['stop']['name']
                     entities.append(self.__make_trip_update(idx, route_id, stop_name, arrival))
 
         self.feed_message = FeedMessage.create(entities=entities)
 
     @classmethod
-    def get_stop_id(cls, stop_id):
+    def parse_id(cls, value):
         """
-        Stop IDs from MTA Subway  come in the form MTASBY:<stop id>.
-        We must parse the stop_id only.
+        Some values from the MTA Subway feed come in the form MTASBWY:<id>.
+        We must parse the id only.
         """
         try:
-            return stop_id.split(':')[1]
+            return value.split(':')[1]
         except Exception:
-            return stop_id
-
+            return value
 
     @classmethod
     def to_gmt_timestamp(cls, timestamp):
@@ -36,8 +35,8 @@ class MtaSubwayGtfsRealtimeTranslator:
         entity_id = str(_id + 1)
         arrival_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeArrival'])
         departure_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeDeparture'])
-        trip_id = arrival['tripId']
-        stop_id = cls.get_stop_id(arrival['stopId'])
+        trip_id = cls.parse_id(arrival['tripId'])
+        stop_id = cls.parse_id(arrival['stopId'])
 
         ##### Intersection Extensions
         headsign = arrival['tripHeadsign']
