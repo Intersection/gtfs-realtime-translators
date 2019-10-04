@@ -7,11 +7,16 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 
 class LaMetroGtfsRealtimeTranslator:
-    def __init__(self, data, stop_id=None):
-        json_data = json.loads(data)
+    def __init__(self, stop_id=None):
+        if stop_id is None:
+            raise ValueError('stop_id is required.')
 
-        entities = [ self.__make_trip_update(idx, stop_id, arrival) for idx, arrival in enumerate(json_data['items']) ]
-        self.feed_message = FeedMessage.create(entities=entities)
+        self.stop_id = stop_id
+
+    def __call__(self, data):
+        json_data = json.loads(data)
+        entities = [ self.__make_trip_update(idx, self.stop_id, arrival) for idx, arrival in enumerate(json_data['items']) ]
+        return FeedMessage.create(entities=entities)
 
     @classmethod
     def calculate_trip_id(cls, trip_id):
@@ -35,7 +40,3 @@ class LaMetroGtfsRealtimeTranslator:
                                  arrival_time=arrival_time,
                                  trip_id=trip_id,
                                  stop_id=stop_id)
-
-
-    def serialize(self):
-        return self.feed_message.SerializeToString()

@@ -16,8 +16,8 @@ def septa_regional_rail():
 
 def test_septa_regional_rail(septa_regional_rail):
     with pendulum.test(pendulum.datetime(2019,4,26,15,0,0, tz='America/New_York')):
-        translator = SeptaRegionalRailTranslator(septa_regional_rail, stop_id='90004', filter_seconds=7200)
-    message = translator.feed_message
+        translator = SeptaRegionalRailTranslator(stop_id='90004', filter_seconds=7200)
+        message = translator(septa_regional_rail)
 
     assert len(message.entity) == 57
 
@@ -37,14 +37,11 @@ def test_septa_regional_rail(septa_regional_rail):
     assert stop_time_update.stop_id == '90004'
     assert stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].track == '2'
 
-    feed_bytes = translator.serialize()
-    assert type(feed_bytes) == bytes
-
 
 def test_septa_regional_rail_with_delay(septa_regional_rail):
     with pendulum.test(pendulum.datetime(2019,4,26,15,0,0, tz='America/New_York')):
-        translator = SeptaRegionalRailTranslator(septa_regional_rail, stop_id='90004', filter_seconds=7200)
-    message = translator.feed_message
+        translator = SeptaRegionalRailTranslator(stop_id='90004', filter_seconds=7200)
+        message = translator(septa_regional_rail)
 
     entity = message.entity[2]
     trip_update = entity.trip_update

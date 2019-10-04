@@ -18,12 +18,10 @@ class NjtRailGtfsRealtimeTranslator:
 
     https://usermanual.wiki/Document/NJTRANSIT20REAL20Time20Data20Interface20Instructions2020Ver2025.785373145.pdf
     """
-
-    def __init__(self, data):
+    def __call__(self, data):
         station_data = xmltodict.parse(data)
-
         entities = self.__make_trip_updates(station_data)
-        self.feed_message = FeedMessage.create(entities=entities)
+        return FeedMessage.create(entities=entities)
 
     @classmethod
     def __to_unix_time(cls, time):
@@ -138,6 +136,3 @@ class NjtRailGtfsRealtimeTranslator:
         if data['LINEABBREVIATION'] == 'AMTK':
             return f"Amtrak {data['LINE']}".title()
         return data['LINE']
-
-    def serialize(self):
-        return self.feed_message.SerializeToString()

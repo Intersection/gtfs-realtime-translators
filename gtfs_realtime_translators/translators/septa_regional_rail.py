@@ -26,12 +26,16 @@ class SeptaRegionalRailTranslator:
         'West Trenton': 'WTR',
     }
 
-    def __init__(self, data, **kwargs):
-        json_data = json.loads(data)
-        stop_id = kwargs['stop_id']
-        filter_seconds = kwargs.get('filter_seconds', 10800) # default 10800s => 3hrs
-        latest_valid_time = self.calculate_time_at(seconds=filter_seconds)
+    def __init__(self, **kwargs):
+        self.stop_id = kwargs.get('stop_id')
+        if self.stop_id is None:
+            raise ValueError('stop_id is required.')
 
+        filter_seconds = kwargs.get('filter_seconds', 10800) # default 10800s => 3hrs
+        self.latest_valid_time = self.calculate_time_at(seconds=filter_seconds)
+
+    def __call__(self, data):
+        json_data = json.loads(data)
         root_key = next(iter([*json_data]), None)
 
         if root_key is None:
@@ -43,10 +47,10 @@ class SeptaRegionalRailTranslator:
         arrivals = northbound + southbound
 
         transformed_arrivals = [ self.transform_arrival(arrival) for arrival in arrivals ]
-        filtered_arrivals = [ arrival for arrival in transformed_arrivals if arrival['sched_time'] <= latest_valid_time ]
+        filtered_arrivals = [ arrival for arrival in transformed_arrivals if arrival['sched_time'] <= self.latest_valid_time ]
 
-        entities = [ self.__make_trip_update(idx, stop_id, arrival) for idx, arrival in enumerate(filtered_arrivals) ]
-        self.feed_message = FeedMessage.create(entities=entities)
+        entities = [ self.__make_trip_update(idx, self.stop_id, arrival) for idx, arrival in enumerate(filtered_arrivals) ]
+        return FeedMessage.create(entities=entities)
 
     @classmethod
     def calculate_time_at(cls, **kwargs):
@@ -95,6 +99,3 @@ class SeptaRegionalRailTranslator:
                                  scheduled_departure_time=arrival['depart_time'],
                                  track=arrival['track'],
                                  headsign=arrival['destination'])
-
-    def serialize(self):
-        return self.feed_message.SerializeToString()
