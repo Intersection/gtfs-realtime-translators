@@ -52,6 +52,7 @@ def test_la_data_with_floats(la_metro_rail):
     assert stop_time_update.departure.time == 1550683200
     assert stop_time_update.stop_id == '80122'
 
+
 def test_la_trip_id_parsing():
     assert LaMetroGtfsRealtimeTranslator.calculate_trip_id('48109430_20190404') == '48109430'
     assert LaMetroGtfsRealtimeTranslator.calculate_trip_id('48109430_Mo') == '48109430'

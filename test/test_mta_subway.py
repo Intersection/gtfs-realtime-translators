@@ -15,10 +15,9 @@ def mta_subway():
 
 
 def test_mta_subway_data(mta_subway):
+    translator = MtaSubwayGtfsRealtimeTranslator(mta_subway)
     with pendulum.test(pendulum.datetime(2019,2,20,17,0,0)):
-        translator = MtaSubwayGtfsRealtimeTranslator(mta_subway)
-
-    message = translator.feed_message
+        message = translator()
 
     entity = message.entity[0]
     trip_update = entity.trip_update
@@ -35,6 +34,3 @@ def test_mta_subway_data(mta_subway):
     assert entity.trip_update.trip.trip_id == '2351'
 
     assert stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].stop_name == 'Van Cortlandt Park - 242 St'
-
-    feed_bytes = translator.serialize()
-    assert type(feed_bytes) == bytes

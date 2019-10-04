@@ -7,17 +7,18 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 class MtaSubwayGtfsRealtimeTranslator:
     def __init__(self, data):
-        json_data = json.loads(data)
+        self.json_data = json.loads(data)
 
+    def __call__(self):
         entities = []
-        for stop in json_data:
+        for stop in self.json_data:
             for group in stop["groups"]:
                 for idx, arrival in enumerate(group["times"]):
                     route_id = self.parse_id(group['route']['id'])
                     stop_name = stop['stop']['name']
                     entities.append(self.__make_trip_update(idx, route_id, stop_name, arrival))
 
-        self.feed_message = FeedMessage.create(entities=entities)
+        return FeedMessage.create(entities=entities)
 
     @classmethod
     def parse_id(cls, value):
@@ -56,7 +57,3 @@ class MtaSubwayGtfsRealtimeTranslator:
                                 headsign=headsign,
                                 scheduled_arrival_time=scheduled_arrival_time,
                                 scheduled_departure_time=scheduled_departure_time)
-
-
-    def serialize(self):
-        return self.feed_message.SerializeToString()
