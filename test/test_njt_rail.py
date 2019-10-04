@@ -14,7 +14,7 @@ def njt_rail():
 
 def test_njt_data(njt_rail):
     translator = NjtRailGtfsRealtimeTranslator(njt_rail)
-    message = translator.feed_message
+    message = translator()
 
     entity = message.entity[6]
     trip_update = entity.trip_update
@@ -45,13 +45,10 @@ def test_njt_data(njt_rail):
     assert intersection_stop_time_update.scheduled_departure.time == 1570045710
     assert intersection_stop_time_update.stop_name == 'Newark Penn'
 
-    feed_bytes = translator.serialize()
-    assert type(feed_bytes) == bytes
-
 
 def test_njt_data_amtrak(njt_rail):
     translator = NjtRailGtfsRealtimeTranslator(njt_rail)
-    message = translator.feed_message
+    message = translator()
 
     entity = message.entity[0]
     trip_update = entity.trip_update
@@ -80,7 +77,3 @@ def test_njt_data_amtrak(njt_rail):
     assert intersection_stop_time_update.track == '2'
     assert intersection_stop_time_update.scheduled_arrival.time == 1570042920
     assert intersection_stop_time_update.scheduled_departure.time == 1570042920
-
-    feed_bytes = translator.serialize()
-    assert type(feed_bytes) == bytes
-
