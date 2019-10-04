@@ -14,9 +14,9 @@ def la_metro_rail():
 
 
 def test_la_data(la_metro_rail):
-    translator = LaMetroGtfsRealtimeTranslator(la_metro_rail, stop_id='80122')
+    translator = LaMetroGtfsRealtimeTranslator(stop_id='80122')
     with pendulum.test(pendulum.datetime(2019,2,20,17,0,0)):
-        message = translator()
+        message = translator(la_metro_rail)
 
     entity = message.entity[0]
     trip_update = entity.trip_update
@@ -34,9 +34,9 @@ def test_la_data(la_metro_rail):
 
 
 def test_la_data_with_floats(la_metro_rail):
-    translator = LaMetroGtfsRealtimeTranslator(la_metro_rail, stop_id='80122')
+    translator = LaMetroGtfsRealtimeTranslator(stop_id='80122')
     with pendulum.test(pendulum.datetime(2019,2,20,17,0,0)):
-        message = translator()
+        message = translator(la_metro_rail)
 
     entity = message.entity[1]
     trip_update = entity.trip_update

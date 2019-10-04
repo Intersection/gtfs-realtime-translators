@@ -13,8 +13,8 @@ def njt_rail():
 
 
 def test_njt_data(njt_rail):
-    translator = NjtRailGtfsRealtimeTranslator(njt_rail)
-    message = translator()
+    translator = NjtRailGtfsRealtimeTranslator()
+    message = translator(njt_rail)
 
     entity = message.entity[6]
     trip_update = entity.trip_update
@@ -47,8 +47,8 @@ def test_njt_data(njt_rail):
 
 
 def test_njt_data_amtrak(njt_rail):
-    translator = NjtRailGtfsRealtimeTranslator(njt_rail)
-    message = translator()
+    translator = NjtRailGtfsRealtimeTranslator()
+    message = translator(njt_rail)
 
     entity = message.entity[0]
     trip_update = entity.trip_update

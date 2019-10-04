@@ -26,8 +26,7 @@ class SeptaRegionalRailTranslator:
         'West Trenton': 'WTR',
     }
 
-    def __init__(self, data, **kwargs):
-        self.json_data = json.loads(data)
+    def __init__(self, **kwargs):
         self.stop_id = kwargs.get('stop_id')
         if self.stop_id is None:
             raise ValueError('stop_id is required.')
@@ -35,13 +34,14 @@ class SeptaRegionalRailTranslator:
         filter_seconds = kwargs.get('filter_seconds', 10800) # default 10800s => 3hrs
         self.latest_valid_time = self.calculate_time_at(seconds=filter_seconds)
 
-    def __call__(self):
-        root_key = next(iter([*self.json_data]), None)
+    def __call__(self, data):
+        json_data = json.loads(data)
+        root_key = next(iter([*json_data]), None)
 
         if root_key is None:
             raise ValueError('root_key: unexpected format')
         
-        arrivals_body = self.json_data[root_key]
+        arrivals_body = json_data[root_key]
         northbound = [ direction_list['Northbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Northbound' ][0]
         southbound = [ direction_list['Southbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Southbound' ][0]
         arrivals = northbound + southbound

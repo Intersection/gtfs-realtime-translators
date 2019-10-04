@@ -6,12 +6,10 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 
 class MtaSubwayGtfsRealtimeTranslator:
-    def __init__(self, data):
-        self.json_data = json.loads(data)
-
-    def __call__(self):
+    def __call__(self, data):
+        json_data = json.loads(data)
         entities = []
-        for stop in self.json_data:
+        for stop in json_data:
             for group in stop["groups"]:
                 for idx, arrival in enumerate(group["times"]):
                     route_id = self.parse_id(group['route']['id'])

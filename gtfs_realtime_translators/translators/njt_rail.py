@@ -18,12 +18,9 @@ class NjtRailGtfsRealtimeTranslator:
 
     https://usermanual.wiki/Document/NJTRANSIT20REAL20Time20Data20Interface20Instructions2020Ver2025.785373145.pdf
     """
-
-    def __init__(self, data):
-        self.station_data = xmltodict.parse(data)
-
-    def __call__(self):
-        entities = self.__make_trip_updates(self.station_data)
+    def __call__(self, data):
+        station_data = xmltodict.parse(data)
+        entities = self.__make_trip_updates(station_data)
         return FeedMessage.create(entities=entities)
 
     @classmethod
