@@ -99,6 +99,3 @@ class SeptaRegionalRailTranslator:
                                  scheduled_departure_time=arrival['depart_time'],
                                  track=arrival['track'],
                                  headsign=arrival['destination'])
-
-    def serialize(self):
-        return self.feed_message.SerializeToString()

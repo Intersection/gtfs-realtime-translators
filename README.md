@@ -36,8 +36,11 @@ translator = translator_klass(input_data, **kwargs)
 from gtfs_realtime_translators.translators import LaMetroGtfsRealtimeTranslator
 
 translator = LaMetroGtfsRealtimeTranslator(la_metro_rail_input_data, stop_id='80122')
-feed_message = translator.feed_message
-feed_bytes = translator.serialize()
+feed_message = translator()
+```
+At this point, `feed_message` is a standard protocol buffer object and adheres to the normal [Python Protocol Buffer interface](https://developers.google.com/protocol-buffers/docs/pythontutorial).
+```
+feed_bytes = feed_message.SerializeToString()
 ```
 
 ### Factories
