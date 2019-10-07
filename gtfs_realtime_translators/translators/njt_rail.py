@@ -39,7 +39,7 @@ class NjtRailGtfsRealtimeTranslator:
 
                 # Intersection Extensions
                 headsign = item_entry['DESTINATION']
-                route_short_name = item_entry['LINEABBREVIATION']
+                route_short_name = cls.__get_route_short_name(item_entry)
                 route_long_name = cls.__get_route_long_name(item_entry)
                 route_color = item_entry['BACKCOLOR']
                 route_text_color = item_entry['FORECOLOR']
@@ -108,7 +108,11 @@ class NjtRailGtfsRealtimeTranslator:
             'meadowlands_rail_line': '17',
         }
 
-        key = 'amtrak' if data['line_abbreviation'] == 'AMTK' else data['line'].replace(' ', '_').lower()
+        amtrak_route_id = 'AMTK'
+        if data['line_abbreviation'] == amtrak_route_id:
+            return amtrak_route_id
+
+        key = data['line'].replace(' ', '_').lower()
         route_id = route_id_lookup.get(key, None)
         if route_id is not None:
             return route_id
@@ -142,3 +146,9 @@ class NjtRailGtfsRealtimeTranslator:
         if data['LINEABBREVIATION'] == 'AMTK':
             return f"Amtrak {data['LINE']}".title()
         return data['LINE']
+
+    @classmethod
+    def __get_route_short_name(cls, data):
+        if data['LINEABBREVIATION'] == 'AMTK':
+            return data['LINE']
+        return data['LINEABBREVIATION']
