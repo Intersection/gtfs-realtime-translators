@@ -38,7 +38,7 @@ def test_njt_data(njt_rail):
     assert intersection_trip_update.route_text_color == 'white'
     assert intersection_trip_update.block_id == '3154'
     assert intersection_trip_update.agency_timezone == 'America/New_York'
-    assert intersection_trip_update.custom_status == 'CANCELLED'
+    assert intersection_trip_update.custom_status == ''
 
     intersection_stop_time_update = stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update]
     assert intersection_stop_time_update.track == '1'

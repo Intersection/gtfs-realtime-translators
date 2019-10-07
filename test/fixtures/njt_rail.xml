@@ -659,7 +659,7 @@
             <TRAIN_ID>3154</TRAIN_ID>
             <CONNECTING_TRAIN_ID>
             </CONNECTING_TRAIN_ID>
-            <STATUS>CANCELLED</STATUS>
+            <STATUS> </STATUS>
             <SEC_LATE>0</SEC_LATE>
             <LAST_MODIFIED>02-Oct-2019 02:51:30 PM</LAST_MODIFIED>
             <BACKCOLOR>black</BACKCOLOR>

@@ -102,6 +102,10 @@ class NjtRailGtfsRealtimeTranslator:
             'gladstone_branch': '8',
             'northeast_corridor_line': '9',
             'north_jersey_coast_line': None,
+            'pascack_valley_line': '13',
+            'princeton_shuttle': '14',
+            'raritan_valley_line': '15',
+            'meadowlands_rail_line': '17',
         }
 
         key = 'amtrak' if data['line_abbreviation'] == 'AMTK' else data['line'].replace(' ', '_').lower()
