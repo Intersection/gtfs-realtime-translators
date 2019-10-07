@@ -143,10 +143,10 @@ class NjtRailGtfsRealtimeTranslator:
 
     @classmethod
     def __get_route_long_name(cls, data):
-        amtrak_prefix = 'Amtrak'
+        amtrak_prefix = 'AMTRAK'
         abbreviation = data['LINEABBREVIATION']
         if abbreviation == 'AMTK':
-            return amtrak_prefix if data['LINE'] == amtrak_prefix else f"Amtrak {data['LINE']}".title()
+            return amtrak_prefix.title() if data['LINE'] == amtrak_prefix else f"Amtrak {data['LINE']}".title()
         return data['LINE']
 
     @classmethod
