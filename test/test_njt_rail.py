@@ -38,6 +38,7 @@ def test_njt_data(njt_rail):
     assert intersection_trip_update.route_text_color == 'white'
     assert intersection_trip_update.block_id == '3154'
     assert intersection_trip_update.agency_timezone == 'America/New_York'
+    assert intersection_trip_update.custom_status == 'CANCELLED'
 
     intersection_stop_time_update = stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update]
     assert intersection_stop_time_update.track == '1'
@@ -72,6 +73,7 @@ def test_njt_data_amtrak(njt_rail):
     assert intersection_trip_update.route_text_color == 'black'
     assert intersection_trip_update.block_id == 'A176'
     assert intersection_trip_update.agency_timezone == 'America/New_York'
+    assert intersection_trip_update.custom_status == 'All Aboard'
 
     intersection_stop_time_update = stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update]
     assert intersection_stop_time_update.track == '2'

@@ -50,6 +50,7 @@ class NjtRailGtfsRealtimeTranslator:
                 scheduled_datetime = cls.__to_unix_time(item_entry['SCHED_DEP_DATE'])
                 departure_time = int(scheduled_datetime.add(seconds=int(item_entry['SEC_LATE'])).timestamp())
                 scheduled_departure_time = int(scheduled_datetime.timestamp())
+                custom_status = item_entry['STATUS']
 
                 for stop in item_entry['STOPS'].values():
                     origin_and_destination = [stop[i] for i in (0, -1)]
@@ -74,7 +75,8 @@ class NjtRailGtfsRealtimeTranslator:
                                                 headsign=headsign,
                                                 track=track,
                                                 block_id=block_id,
-                                                agency_timezone='America/New_York')
+                                                agency_timezone='America/New_York',
+                                                custom_status=custom_status)
                 trip_updates.append(trip_update)
 
         return trip_updates
