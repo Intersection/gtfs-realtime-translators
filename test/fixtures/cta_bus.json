@@ -1,0 +1,42 @@
+{
+	"bustime-response": {
+		"prd": [
+			{
+				"tmstmp": "20191008 10:34",
+				"typ": "A",
+				"stpnm": "Sheridan & Arthur (Red Line)",
+				"stpid": "1203",
+				"vid": "4379",
+				"dstp": 2603,
+				"rt": "147",
+				"rtdd": "147",
+				"rtdir": "Northbound",
+				"des": "Howard Station",
+				"prdtm": "20191008 10:38",
+				"tablockid": "147 -501",
+				"tatripid": "1063847",
+				"dly": false,
+				"prdctdn": "3",
+				"zone": ""
+			},
+			{
+				"tmstmp": "20191008 10:26",
+				"typ": "D",
+				"stpnm": "Sheridan & Arthur (Red Line)",
+				"stpid": "1203",
+				"vid": "1396",
+				"dstp": 13893,
+				"rt": "155",
+				"rtdd": "155",
+				"rtdir": "Eastbound",
+				"des": "Morse Red Line",
+				"prdtm": "20191008 10:45",
+				"tablockid": "155 -502",
+				"tatripid": "1005547",
+				"dly": false,
+				"prdctdn": "10",
+				"zone": ""
+			}
+		]
+	}
+}

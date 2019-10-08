@@ -1,0 +1,51 @@
+{
+    "ctatt": {
+        "tmst": "2019-10-07T14:29:33",
+        "errCd": "0",
+        "errNm": null,
+        "eta": [
+            {
+                "staId": "41300",
+                "stpId": "30251",
+                "staNm": "Loyola",
+                "stpDe": "Service toward Howard",
+                "rn": "806",
+                "rt": "Red",
+                "destSt": "30173",
+                "destNm": "Howard",
+                "trDr": "1",
+                "prdt": "2019-10-07T14:29:02",
+                "arrT": "2019-10-07T14:30:02",
+                "isApp": "1",
+                "isSch": "0",
+                "isDly": "0",
+                "isFlt": "0",
+                "flags": null,
+                "lat": "41.99673",
+                "lon": "-87.65923",
+                "heading": "357"
+            },
+            {
+                "staId": "41300",
+                "stpId": "30251",
+                "staNm": "Loyola",
+                "stpDe": "Service toward Howard",
+                "rn": "824",
+                "rt": "Red",
+                "destSt": "30173",
+                "destNm": "Howard",
+                "trDr": "1",
+                "prdt": "2019-10-07T14:28:56",
+                "arrT": "2019-10-07T14:32:56",
+                "isApp": "0",
+                "isSch": "1",
+                "isDly": "0",
+                "isFlt": "0",
+                "flags": null,
+                "lat": "41.9835",
+                "lon": "-87.65884",
+                "heading": "358"
+            }
+        ]
+    }
+}
