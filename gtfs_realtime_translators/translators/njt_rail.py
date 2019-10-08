@@ -3,6 +3,8 @@ import pendulum
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 import xmltodict
 
+_AGENCY_TIMEZONE = 'America/New_York'
+
 
 class NjtRailGtfsRealtimeTranslator:
     """
@@ -35,7 +37,6 @@ class NjtRailGtfsRealtimeTranslator:
         station_data_item = data['STATION']['ITEMS'].values()
         for value in station_data_item:
             for idx, item_entry in enumerate(value):
-                route_id = None
 
                 # Intersection Extensions
                 headsign = item_entry['DESTINATION']
@@ -52,13 +53,11 @@ class NjtRailGtfsRealtimeTranslator:
                 scheduled_departure_time = int(scheduled_datetime.timestamp())
                 custom_status = item_entry['STATUS']
 
+                origin_and_destination = None
                 for stop in item_entry['STOPS'].values():
                     origin_and_destination = [stop[i] for i in (0, -1)]
 
-                    route_id = cls.__get_route_id(line=item_entry['LINE'],
-                                                  line_abbreviation=item_entry['LINEABBREVIATION'],
-                                                  origin=origin_and_destination[0],
-                                                  destination=origin_and_destination[1])
+                route_id = cls.__get_route_id(item_entry, origin_and_destination)
 
                 trip_update = TripUpdate.create(entity_id=str(idx + 1),
                                                 departure_time=departure_time,
@@ -75,14 +74,14 @@ class NjtRailGtfsRealtimeTranslator:
                                                 headsign=headsign,
                                                 track=track,
                                                 block_id=block_id,
-                                                agency_timezone='America/New_York',
+                                                agency_timezone=_AGENCY_TIMEZONE,
                                                 custom_status=custom_status)
                 trip_updates.append(trip_update)
 
         return trip_updates
 
     @classmethod
-    def __get_route_id(cls, **data):
+    def __get_route_id(cls, data, origin_and_destination):
         """
         This function resolves route_ids for NJT. The logic of determining a route_id based
         on origin or destination is necessary to discern multiple routes that are mapped to the same line.
@@ -109,15 +108,18 @@ class NjtRailGtfsRealtimeTranslator:
         }
 
         amtrak_route_id = 'AMTK'
-        if data['line_abbreviation'] == amtrak_route_id:
+        if data['LINEABBREVIATION'] == amtrak_route_id:
             return amtrak_route_id
 
-        key = data['line'].replace(' ', '_').lower()
+        key = data['LINE'].replace(' ', '_').lower()
         route_id = route_id_lookup.get(key, None)
         if route_id is not None:
             return route_id
 
-        def get_route_id_by_origin_or_destination(line_key, line_name, origin, destination):
+        def get_route_id_by_origin_or_destination(line_key, origin, destination):
+            if origin is None or destination is None:
+                return None
+
             origin_name = origin['NAME'].replace(' ', '_').lower()
             destination_name = destination['NAME'].replace(' ', '_').lower()
 
@@ -135,11 +137,9 @@ class NjtRailGtfsRealtimeTranslator:
                 if origin_name in origins_and_destinations or destination_name in origins_and_destinations:
                     return '10'
                 return '11'
-            if line_key == 'amtrak':
-                return line_name
             return None
 
-        return get_route_id_by_origin_or_destination(key, data['line'], data['origin'], data['destination'])
+        return get_route_id_by_origin_or_destination(key, origin_and_destination[0], origin_and_destination[1])
 
     @classmethod
     def __get_route_long_name(cls, data):
