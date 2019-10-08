@@ -13,7 +13,7 @@ with io.open(f'{PACKAGE_ROOT}/__version__.py', 'r', encoding='utf-8') as f:
 
 requirements = [
     'gtfs-realtime-bindings==0.0.5',
-    'pendulum==2.0.4',
+    'pendulum==2.0.5',
     'xmltodict==0.12.0',
 ]
 
