@@ -88,7 +88,7 @@ class NjtRailGtfsRealtimeTranslator:
 
         The algorithm is as follows:
         1) Try to get the route_id based on the line name (or line abbreviation for Amtrak), otherwise...
-        2) Try to get the route_id based on the origin and destination, otherwise return
+        2) Try to get the route_id based on the origin and destination, otherwise return None
 
         For #2, this logic is necessary to discern multiple routes that are mapped to the same line. For instance, the
         North Jersey Coast Line operates two different routes. All trains with an origin or destination
@@ -151,9 +151,7 @@ class NjtRailGtfsRealtimeTranslator:
 
         key = data['LINE'].replace(' ', '_').lower()
         route_id = route_id_lookup.get(key, None)
-        if route_id is not None:
-            return route_id
-        return None
+        return route_id if route_id else None
 
     @classmethod
     def __get_route_long_name(cls, data):
