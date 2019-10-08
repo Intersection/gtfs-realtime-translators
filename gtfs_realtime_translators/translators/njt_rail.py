@@ -139,6 +139,8 @@ class NjtRailGtfsRealtimeTranslator:
                 return '11'
             return None
 
+        if origin_and_destination is None:
+            return None
         return get_route_id_by_origin_or_destination(key, origin_and_destination[0], origin_and_destination[1])
 
     @classmethod
