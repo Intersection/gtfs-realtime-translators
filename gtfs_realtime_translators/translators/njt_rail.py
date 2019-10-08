@@ -83,24 +83,61 @@ class NjtRailGtfsRealtimeTranslator:
     @classmethod
     def __get_route_id(cls, data, origin_and_destination):
         """
-        This function resolves route_ids for NJT. The logic of determining a route_id based
-        on origin or destination is necessary to discern multiple routes that are mapped to the same line.
+        This function resolves route_ids for NJT.
 
-        For instance, the North Jersey Coastline line operates two different routes. All trains with an
-        origin or destination of New York Penn Station should resolve to route_id 10 and the others route_id 11
+        The algorithm is as follows:
+        1) Try to get the route_id based on the line name (or line abbreviation for Amtrak), otherwise...
+        2) Try to get the route_id based on the origin and destination, otherwise return
+
+        For #2, this logic is necessary to discern multiple routes that are mapped to the same line. For instance, the
+        North Jersey Coast Line operates two different routes. All trains with an origin or destination
+        of New York Penn Station should resolve to route_id 10 and the others route_id 11
 
         :param data: keyword args containing data needed to perform the route logic
+        :param origin_and_destination: an array containing the origin at index 0 and destination at index 1
         :return: route_id
         """
+
+        route_id = cls.__get_route_id_by_line_data(data)
+        if route_id:
+            return route_id
+        if origin_and_destination:
+            return cls.__get_route_id_by_origin_or_destination(data, origin_and_destination)
+        return None
+
+    @classmethod
+    def __get_route_id_by_origin_or_destination(cls, data, origin_and_destination):
+        origin = origin_and_destination[0]
+        destination = origin_and_destination[1]
+        origin_name = origin['NAME'].replace(' ', '_').lower()
+        destination_name = destination['NAME'].replace(' ', '_').lower()
+
+        key = data['LINE'].replace(' ', '_').lower()
+        if key == 'montclair-boonton_line':
+            hoboken = 'hoboken'
+            origins_and_destinations = {'denville', 'dover', 'mount_olive', 'lake_hopatcong', 'hackettstown'}
+            if origin_name == hoboken and destination_name in origins_and_destinations:
+                return '2'
+            if origin_name in origins_and_destinations and destination_name == hoboken:
+                return '2'
+            return '3'
+
+        if key == 'north_jersey_coast_line':
+            origins_and_destinations = {'new_york_penn_station'}
+            if origin_name in origins_and_destinations or destination_name in origins_and_destinations:
+                return '10'
+            return '11'
+        return None
+
+    @classmethod
+    def __get_route_id_by_line_data(cls, data):
         route_id_lookup = {
             'atlantic_city_line': '1',
-            'montclair-boonton_line': None,
             'main_line': '5',
             'bergen_county_line': '6',
             'morristown_line': '7',
             'gladstone_branch': '8',
             'northeast_corridor_line': '9',
-            'north_jersey_coast_line': None,
             'pascack_valley_line': '13',
             'princeton_shuttle': '14',
             'raritan_valley_line': '15',
@@ -115,33 +152,7 @@ class NjtRailGtfsRealtimeTranslator:
         route_id = route_id_lookup.get(key, None)
         if route_id is not None:
             return route_id
-
-        def get_route_id_by_origin_or_destination(line_key, origin, destination):
-            if origin is None or destination is None:
-                return None
-
-            origin_name = origin['NAME'].replace(' ', '_').lower()
-            destination_name = destination['NAME'].replace(' ', '_').lower()
-
-            if line_key == 'montclair-boonton_line':
-                hoboken = 'hoboken'
-                origins_and_destinations = {'denville', 'dover', 'mount_olive', 'lake_hopatcong', 'hackettstown'}
-                if origin_name == hoboken and destination_name in origins_and_destinations:
-                    return '2'
-                if origin_name in origins_and_destinations and destination_name == hoboken:
-                    return '2'
-                return '3'
-
-            if line_key == 'north_jersey_coast_line':
-                origins_and_destinations = {'new_york_penn_station'}
-                if origin_name in origins_and_destinations or destination_name in origins_and_destinations:
-                    return '10'
-                return '11'
-            return None
-
-        if origin_and_destination is None:
-            return None
-        return get_route_id_by_origin_or_destination(key, origin_and_destination[0], origin_and_destination[1])
+        return None
 
     @classmethod
     def __get_route_long_name(cls, data):
