@@ -3,8 +3,6 @@ import pendulum
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 import xmltodict
 
-_AGENCY_TIMEZONE = 'America/New_York'
-
 
 class NjtRailGtfsRealtimeTranslator:
     """
@@ -20,6 +18,9 @@ class NjtRailGtfsRealtimeTranslator:
 
     https://usermanual.wiki/Document/NJTRANSIT20REAL20Time20Data20Interface20Instructions2020Ver2025.785373145.pdf
     """
+
+    TIMEZONE = 'America/New_York'
+
     def __call__(self, data):
         station_data = xmltodict.parse(data)
         entities = self.__make_trip_updates(station_data)
@@ -27,7 +28,7 @@ class NjtRailGtfsRealtimeTranslator:
 
     @classmethod
     def __to_unix_time(cls, time):
-        datetime = pendulum.from_format(time, 'DD-MMM-YYYY HH:mm:ss A', tz='America/New_York').in_tz('UTC')
+        datetime = pendulum.from_format(time, 'DD-MMM-YYYY HH:mm:ss A', tz=cls.TIMEZONE).in_tz('UTC')
         return datetime
 
     @classmethod
@@ -74,7 +75,7 @@ class NjtRailGtfsRealtimeTranslator:
                                                 headsign=headsign,
                                                 track=track,
                                                 block_id=block_id,
-                                                agency_timezone=_AGENCY_TIMEZONE,
+                                                agency_timezone=cls.TIMEZONE,
                                                 custom_status=custom_status)
                 trip_updates.append(trip_update)
 
