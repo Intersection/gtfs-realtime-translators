@@ -27,8 +27,8 @@ def test_mta_subway_data(mta_subway):
 
     assert entity.id == '1'
 
-    assert stop_time_update.arrival.time == 1569492935
-    assert stop_time_update.departure.time == 1569492935
+    assert stop_time_update.arrival.time == 1569521735
+    assert stop_time_update.departure.time == 1569521735
     assert stop_time_update.stop_id == '101N'
     assert entity.trip_update.trip.route_id == '1'
     assert entity.trip_update.trip.trip_id == '2351'
