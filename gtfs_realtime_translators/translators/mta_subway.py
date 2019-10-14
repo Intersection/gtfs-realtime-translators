@@ -31,7 +31,7 @@ class MtaSubwayGtfsRealtimeTranslator:
 
     @classmethod
     def to_gmt_timestamp(cls, timestamp):
-        return int(pendulum.from_timestamp(timestamp).subtract(hours=4).timestamp())
+        return int(pendulum.from_timestamp(timestamp).add(hours=4).timestamp())
 
     @classmethod
     def __make_trip_update(cls, _id, route_id, stop_name, arrival):
