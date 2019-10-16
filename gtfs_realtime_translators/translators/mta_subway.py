@@ -1,7 +1,5 @@
 import json
 
-import pendulum
-
 from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 
@@ -30,21 +28,17 @@ class MtaSubwayGtfsRealtimeTranslator:
             return value
 
     @classmethod
-    def to_gmt_timestamp(cls, timestamp):
-        return int(pendulum.from_timestamp(timestamp).subtract(hours=4).timestamp())
-
-    @classmethod
     def __make_trip_update(cls, _id, route_id, stop_name, arrival):
         entity_id = str(_id + 1)
-        arrival_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeArrival'])
-        departure_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['realtimeDeparture'])
+        arrival_time = arrival['serviceDay'] + arrival['realtimeArrival']
+        departure_time = arrival['serviceDay'] + arrival['realtimeDeparture']
         trip_id = cls.parse_id(arrival['tripId'])
         stop_id = cls.parse_id(arrival['stopId'])
 
         ##### Intersection Extensions
         headsign = arrival['tripHeadsign']
-        scheduled_arrival_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['scheduledArrival'])
-        scheduled_departure_time = cls.to_gmt_timestamp(arrival['serviceDay'] + arrival['scheduledDeparture'])
+        scheduled_arrival_time = arrival['serviceDay'] + arrival['scheduledArrival']
+        scheduled_departure_time = arrival['serviceDay'] + arrival['scheduledDeparture']
         return TripUpdate.create(entity_id=entity_id,
                                 arrival_time=arrival_time,
                                 departure_time=departure_time,
