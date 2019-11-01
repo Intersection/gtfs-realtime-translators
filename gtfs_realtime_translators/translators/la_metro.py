@@ -35,8 +35,10 @@ class LaMetroGtfsRealtimeTranslator:
         now = int(pendulum.now().timestamp())
         arrival_time = now + math.floor(arrival['seconds'] / 60) * 60
         trip_id = cls.calculate_trip_id(arrival['trip_id'])
+        route_id = arrival.get('route_id','')
 
         return TripUpdate.create(entity_id=entity_id,
                                  arrival_time=arrival_time,
                                  trip_id=trip_id,
+                                 route_id=route_id,
                                  stop_id=stop_id)

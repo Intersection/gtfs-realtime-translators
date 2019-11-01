@@ -27,6 +27,7 @@ def test_la_data(la_metro_rail):
     assert entity.id == '1'
 
     assert trip_update.trip.trip_id == '1234'
+    assert trip_update.trip.route_id == '801'
 
     assert stop_time_update.arrival.time == 1550682480
     assert stop_time_update.departure.time == 1550682480
@@ -47,6 +48,7 @@ def test_la_data_with_floats(la_metro_rail):
     assert entity.id == '2'
 
     assert trip_update.trip.trip_id == '1235'
+    assert trip_update.trip.route_id == '801'
 
     assert stop_time_update.arrival.time == 1550683200
     assert stop_time_update.departure.time == 1550683200
