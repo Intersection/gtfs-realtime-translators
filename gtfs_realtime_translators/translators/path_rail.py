@@ -1,6 +1,6 @@
 import json
 
-from gtfs_realtime_translators.factories import FeedMessage
+from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 
 
 class PathGtfsRealtimeTranslator:
@@ -21,10 +21,12 @@ class PathGtfsRealtimeTranslator:
     def __call__(self, data):
         json_data = json.loads(data)
         entities = self.__make_trip_updates(json_data)
+        print(entities)
         return FeedMessage.create(entities=entities)
 
     @classmethod
     def __make_trip_updates(cls, data):
+        trip_updates = []
         route_id_lookup = {'#D93A30': '862',
                            '#4D92FB,#FF9900': '1024',
                            '#FF9900': '861'}
@@ -50,7 +52,7 @@ class PathGtfsRealtimeTranslator:
         arrivals = data['results']
         for arrival in arrivals:
             arrival_updates = arrival['messages']
-            for update in arrival_updates:
+            for idx, update in enumerate(arrival_updates):
                 try:
                     route_id = route_id_lookup[update['lineColor']]
                     # print(route_id)
@@ -63,10 +65,24 @@ class PathGtfsRealtimeTranslator:
                     key = route_id + '_' + destination + '_' + station
                     # print(key)
                     stop_id = stop_id_lookup[key]
-                    print(stop_id)
+                    print(f'STOP_ID: {stop_id}')
+                    arrival_time = update['secondsToArrival']
+                    print(f'ARRIVAL_TIME: {arrival_time}')
+                    custom_status = update['arrivalTimeMessage']
+                    print(f'CUSTOM_STATUS: {custom_status}')
+                    headsign = update['headSign']
+                    print(f'HEADSIGN: {headsign}')
+
+                    trip_update = TripUpdate.create(entity_id=str(idx + 1),
+                                                    departure_time=arrival_time,
+                                                    arrival_time=arrival_time,
+                                                    route_id=route_id,
+                                                    stop_id=stop_id,
+                                                    headsign=headsign,
+                                                    custom_status=custom_status)
+                    trip_updates.append(trip_update)
+                    # print(trip_update)
                 except KeyError:
                     pass
-
-        trip_updates = []
 
         return trip_updates

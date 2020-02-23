@@ -41,8 +41,8 @@
       "target": "EXP",
       "messages": [
         {
-          "secondsToArrival": 0,
-          "arrivalTimeMessage": "0 min",
+          "secondsToArrival": 123,
+          "arrivalTimeMessage": "2 min",
           "lineColor": "#D93A30",
           "headSign": "Exchange Place",
           "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
