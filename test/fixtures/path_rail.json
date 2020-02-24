@@ -1,6 +1,48 @@
 {
   "results": [
     {
+      "consideredStation": "33S",
+      "label": "ToNJ",
+      "target": "JSQ",
+      "messages": [
+        {
+          "secondsToArrival": 132,
+          "arrivalTimeMessage": "2 min",
+          "lineColor": "#FF9900",
+          "headSign": "Journal Square",
+          "lastUpdated": "2020-02-21T15:04:47.529288-05:00"
+        },
+        {
+          "secondsToArrival": 732,
+          "arrivalTimeMessage": "12 min",
+          "lineColor": "#FF9900",
+          "headSign": "Journal Square",
+          "lastUpdated": "2020-02-21T15:04:47.529288-05:00"
+        }
+      ]
+    },
+    {
+      "consideredStation": "HOB",
+      "label": "ToNY",
+      "target": "WTC",
+      "messages": [
+        {
+          "secondsToArrival": 248,
+          "arrivalTimeMessage": "4 min",
+          "lineColor": "#65C100",
+          "headSign": "World Trade Center",
+          "lastUpdated": "2020-02-21T15:04:52.397063-05:00"
+        },
+        {
+          "secondsToArrival": 968,
+          "arrivalTimeMessage": "16 min",
+          "lineColor": "#65C100",
+          "headSign": "World Trade Center",
+          "lastUpdated": "2020-02-21T15:04:52.397063-05:00"
+        }
+      ]
+    },
+    {
       "consideredStation": "GRV",
       "label": "ToNJ",
       "target": "JSQ",
@@ -17,27 +59,6 @@
     {
       "consideredStation": "GRV",
       "label": "ToNY",
-      "target": "33S",
-      "messages": [
-        {
-          "secondsToArrival": 258,
-          "arrivalTimeMessage": "4 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 858,
-          "arrivalTimeMessage": "14 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "GRV",
-      "label": "ToNY",
       "target": "EXP",
       "messages": [
         {
@@ -45,279 +66,6 @@
           "arrivalTimeMessage": "2 min",
           "lineColor": "#D93A30",
           "headSign": "Exchange Place",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "NWK",
-      "label": "ToNY",
-      "target": "EXP",
-      "messages": [
-        {
-          "secondsToArrival": 816,
-          "arrivalTimeMessage": "14 min",
-          "lineColor": "#D93A30",
-          "headSign": "Exchange Place",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 2016,
-          "arrivalTimeMessage": "34 min",
-          "lineColor": "#D93A30",
-          "headSign": "Exchange Place",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "JSQ",
-      "label": "ToNJ",
-      "target": "NWK",
-      "messages": [
-        {
-          "secondsToArrival": 67,
-          "arrivalTimeMessage": "1 min",
-          "lineColor": "#D93A30",
-          "headSign": "Newark",
-          "lastUpdated": "2020-02-22T15:46:19.622791-05:00"
-        },
-        {
-          "secondsToArrival": 1121,
-          "arrivalTimeMessage": "19 min",
-          "lineColor": "#D93A30",
-          "headSign": "Newark",
-          "lastUpdated": "2020-02-22T15:46:19.622791-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "JSQ",
-      "label": "ToNY",
-      "target": "EXP",
-      "messages": [
-        {
-          "secondsToArrival": 274,
-          "arrivalTimeMessage": "5 min",
-          "lineColor": "#D93A30",
-          "headSign": "Exchange Place",
-          "lastUpdated": "2020-02-22T15:45:59.562598-05:00"
-        },
-        {
-          "secondsToArrival": 1391,
-          "arrivalTimeMessage": "23 min",
-          "lineColor": "#D93A30",
-          "headSign": "Exchange Place",
-          "lastUpdated": "2020-02-22T15:45:59.562598-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "JSQ",
-      "label": "ToNY",
-      "target": "33S",
-      "messages": [
-        {
-          "secondsToArrival": 60,
-          "arrivalTimeMessage": "1 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:45:59.562598-05:00"
-        },
-        {
-          "secondsToArrival": 660,
-          "arrivalTimeMessage": "11 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:45:59.562598-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "HOB",
-      "label": "ToNJ",
-      "target": "JSQ",
-      "messages": [
-        {
-          "secondsToArrival": 189,
-          "arrivalTimeMessage": "3 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 798,
-          "arrivalTimeMessage": "13 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "HOB",
-      "label": "ToNY",
-      "target": "33S",
-      "messages": [
-        {
-          "secondsToArrival": 333,
-          "arrivalTimeMessage": "6 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        },
-        {
-          "secondsToArrival": 905,
-          "arrivalTimeMessage": "15 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "33S",
-      "label": "ToNJ",
-      "target": "JSQ",
-      "messages": [
-        {
-          "secondsToArrival": 156,
-          "arrivalTimeMessage": "3 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 756,
-          "arrivalTimeMessage": "13 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "EXP",
-      "label": "ToNJ",
-      "target": "NWK",
-      "messages": [
-        {
-          "secondsToArrival": 760,
-          "arrivalTimeMessage": "13 min",
-          "lineColor": "#D93A30",
-          "headSign": "Newark",
-          "lastUpdated": "2020-02-22T15:46:19.622791-05:00"
-        },
-        {
-          "secondsToArrival": 1960,
-          "arrivalTimeMessage": "33 min",
-          "lineColor": "#D93A30",
-          "headSign": "Newark",
-          "lastUpdated": "2020-02-22T15:46:19.622791-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "09S",
-      "label": "ToNJ",
-      "target": "JSQ",
-      "messages": [
-        {
-          "secondsToArrival": 38,
-          "arrivalTimeMessage": "1 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 429,
-          "arrivalTimeMessage": "7 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "09S",
-      "label": "ToNY",
-      "target": "33S",
-      "messages": [
-        {
-          "secondsToArrival": 427,
-          "arrivalTimeMessage": "7 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 884,
-          "arrivalTimeMessage": "15 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "23S",
-      "label": "ToNJ",
-      "target": "JSQ",
-      "messages": [
-        {
-          "secondsToArrival": 254,
-          "arrivalTimeMessage": "4 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        },
-        {
-          "secondsToArrival": 854,
-          "arrivalTimeMessage": "14 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "23S",
-      "label": "ToNY",
-      "target": "33S",
-      "messages": [
-        {
-          "secondsToArrival": 608,
-          "arrivalTimeMessage": "10 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 1065,
-          "arrivalTimeMessage": "18 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "HAR",
-      "label": "ToNJ",
-      "target": "NWK",
-      "messages": [
-        {
-          "secondsToArrival": 517,
-          "arrivalTimeMessage": "9 min",
-          "lineColor": "#D93A30",
-          "headSign": "Newark",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 1571,
-          "arrivalTimeMessage": "26 min",
-          "lineColor": "#D93A30",
-          "headSign": "Newark",
           "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
         }
       ]
@@ -365,27 +113,6 @@
       ]
     },
     {
-      "consideredStation": "NEW",
-      "label": "ToNY",
-      "target": "33S",
-      "messages": [
-        {
-          "secondsToArrival": 459,
-          "arrivalTimeMessage": "8 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        },
-        {
-          "secondsToArrival": 1059,
-          "arrivalTimeMessage": "18 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        }
-      ]
-    },
-    {
       "consideredStation": "CHR",
       "label": "ToNJ",
       "target": "JSQ",
@@ -407,65 +134,16 @@
       ]
     },
     {
-      "consideredStation": "CHR",
-      "label": "ToNY",
-      "target": "33S",
-      "messages": [
-        {
-          "secondsToArrival": 339,
-          "arrivalTimeMessage": "6 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        },
-        {
-          "secondsToArrival": 796,
-          "arrivalTimeMessage": "13 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "14S",
+      "consideredStation": "09S",
       "label": "ToNJ",
-      "target": "JSQ",
+      "target": "HOB",
       "messages": [
         {
-          "secondsToArrival": 342,
-          "arrivalTimeMessage": "6 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        },
-        {
-          "secondsToArrival": 942,
-          "arrivalTimeMessage": "16 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "Journal Square via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:14.589598-05:00"
-        }
-      ]
-    },
-    {
-      "consideredStation": "14S",
-      "label": "ToNY",
-      "target": "33S",
-      "messages": [
-        {
-          "secondsToArrival": 522,
-          "arrivalTimeMessage": "9 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
-        },
-        {
-          "secondsToArrival": 979,
-          "arrivalTimeMessage": "16 min",
-          "lineColor": "#4D92FB,#FF9900",
-          "headSign": "33rd Street via Hoboken",
-          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
+          "secondsToArrival": 88,
+          "arrivalTimeMessage": "2 min",
+          "lineColor": "#4D92FB",
+          "headSign": "Hoboken",
+          "lastUpdated": "2020-02-21T15:04:47.529288-05:00"
         }
       ]
     }
