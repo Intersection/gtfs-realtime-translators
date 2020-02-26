@@ -120,7 +120,6 @@ class PathGtfsRealtimeTranslator:
                     key = route_id + '_' + destination + '_' + station
                     stop_id = cls.STOP_ID_LOOKUP[key]
                     arrival_time = now + math.floor(update['secondsToArrival'] / 60) * 60
-                    custom_status = update['arrivalTimeMessage']
                     headsign = update['headSign']
 
                     trip_update = TripUpdate.create(entity_id=str(idx + 1),
@@ -128,8 +127,7 @@ class PathGtfsRealtimeTranslator:
                                                     arrival_time=arrival_time,
                                                     route_id=route_id,
                                                     stop_id=stop_id,
-                                                    headsign=headsign,
-                                                    custom_status=custom_status)
+                                                    headsign=headsign)
                     trip_updates.append(trip_update)
                 except KeyError:
                     pass

@@ -29,6 +29,3 @@ def test_path_data(path_rail):
     assert stop_time_update.stop_id == '781741'
     assert stop_time_update.departure.time == 1582372920
     assert stop_time_update.arrival.time == 1582372920
-
-    intersection_trip_update = trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update]
-    assert intersection_trip_update.custom_status == '2 min'
