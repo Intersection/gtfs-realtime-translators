@@ -90,9 +90,12 @@ class PathGtfsRealtimeTranslator:
         '1024_JSQ_33S': '781741'
     }
 
-    # TODO document algorithm here
     """
-         
+       Since PATH GTFS data have stops that are, in most cases, unique to a route, direction, service date, and/or 
+       destination, a mapping is created to ensure we return the appropriate stop_id for a station's arrival updates.
+       
+       Keys are based off the line color (a hex value - that can be mapped to a GTFS route_id), the destination, and the 
+       current station for which the request has been made.
     """
 
     def __call__(self, data):
