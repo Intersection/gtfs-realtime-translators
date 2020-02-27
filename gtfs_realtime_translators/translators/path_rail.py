@@ -1,5 +1,7 @@
 import json
 import math
+import sys
+import warnings
 
 import pendulum
 
@@ -130,6 +132,6 @@ class PathGtfsRealtimeTranslator:
                                                     headsign=headsign)
                     trip_updates.append(trip_update)
                 except KeyError:
-                    pass
+                    warnings.warn(f'Could not generate trip_update for update [{update}] in arrival [{arrival}]')
 
         return trip_updates
