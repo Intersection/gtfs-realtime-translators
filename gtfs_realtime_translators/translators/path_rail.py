@@ -8,6 +8,10 @@ import pendulum
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 
 
+class PathGtfsRealtimeTranslatorWarning(Warning):
+    pass
+
+
 class PathGtfsRealtimeTranslator:
     TIMEZONE = 'America/New_York'
 
@@ -132,6 +136,7 @@ class PathGtfsRealtimeTranslator:
                                                     headsign=headsign)
                     trip_updates.append(trip_update)
                 except KeyError:
-                    warnings.warn(f'Could not generate trip_update for update [{update}] in arrival [{arrival}]')
+                    warnings.warn(f'Could not generate trip_update for update [{update}] in arrival [{arrival}]',
+                                  PathGtfsRealtimeTranslatorWarning)
 
         return trip_updates
