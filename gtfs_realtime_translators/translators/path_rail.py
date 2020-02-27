@@ -1,6 +1,5 @@
 import json
 import math
-import sys
 import warnings
 
 import pendulum

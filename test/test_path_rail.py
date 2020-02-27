@@ -3,7 +3,6 @@ import pytest
 
 from gtfs_realtime_translators.factories import FeedMessage
 from gtfs_realtime_translators.translators.path_rail import PathGtfsRealtimeTranslator
-from gtfs_realtime_translators.bindings import intersection_pb2 as intersection_gtfs_realtime
 
 
 @pytest.fixture
