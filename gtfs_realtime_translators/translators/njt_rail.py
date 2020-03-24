@@ -137,6 +137,7 @@ class NjtRailGtfsRealtimeTranslator:
             'main_line': '5',
             'bergen_county_line': '6',
             'morristown_line': '7',
+            'morris_&_essex_line': '7',
             'gladstone_branch': '8',
             'northeast_corridor_line': '9',
             'pascack_valley_line': '13',
