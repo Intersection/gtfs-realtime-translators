@@ -20,7 +20,6 @@ class VtaGtfsRealtimeTranslator:
             trip_updates = self.__make_trip_updates(data, self.stop_id)
             entities.extend(trip_updates)
         
-        print(FeedMessage.create(entities=entities))
         return FeedMessage.create(entities=entities)
 
     @classmethod
@@ -44,7 +43,7 @@ class VtaGtfsRealtimeTranslator:
                 now = int(pendulum.now().timestamp())
                 arrival_or_departure_time = now + math.floor(arrival.get("sec") / 60) * 60
                 trip_id = arrival.get('tripId')
-                
+
                 trip_update = TripUpdate.create(entity_id=entity_id,
                                                 arrival_time=arrival_or_departure_time,
                                                 departure_time=arrival_or_departure_time,
