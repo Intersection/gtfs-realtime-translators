@@ -1,0 +1,57 @@
+{
+    "success": true,
+    "route": "/real-time/vta/predictions GET",
+    "data": {
+      "agencyKey": "vta",
+      "predictionsData": [
+        {
+          "routeShortName": "Orange Line",
+          "routeName": "Orange Line - Mountain View - Alum Rock",
+          "routeId": "Ornge",
+          "stopId": "5236",
+          "stopName": "Milpitas Station",
+          "stopCode": 65236,
+          "destinations": [
+            {
+              "directionId": "0",
+              "headsign": "Alum Rock",
+              "predictions": [
+                {
+                  "time": 1600886400,
+                  "sec": 86,
+                  "min": 1,
+                  "departure": true,
+                  "tripId": "2960461",
+                  "vehicleId": "937"
+                },
+                {
+                  "time": 1600887600,
+                  "sec": 1286,
+                  "min": 21,
+                  "departure": true,
+                  "tripId": "2960460",
+                  "vehicleId": "919"
+                },
+                {
+                  "time": 1600888800,
+                  "sec": 2486,
+                  "min": 41,
+                  "departure": true,
+                  "tripId": "2960459",
+                  "vehicleId": "987"
+                },
+                {
+                  "time": 1600890000,
+                  "sec": 3686,
+                  "min": 61,
+                  "departure": true,
+                  "tripId": "2960458",
+                  "vehicleId": "979"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
