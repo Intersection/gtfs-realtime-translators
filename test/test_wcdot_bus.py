@@ -22,6 +22,15 @@ def test_wcdot_data(wcdot_bus):
     assert trip_update.trip.trip_id == '988612'
     assert stop_time_update.arrival.delay == -60
     assert stop_time_update.departure.delay == -60
+    assert trip_update.trip.route_id == "0066"
+    assert entity.id == "130"
+
+def test_invalid_stop_id(wcdot_bus):
+    translator = WcdotGtfsRealTimeTranslator(stop_id='99999')
+    message = translator(wcdot_bus)
+    entity = message.entity
+    assert len(entity) == 0
+    
 
 
 
