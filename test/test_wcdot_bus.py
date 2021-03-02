@@ -19,7 +19,7 @@ def test_wcdot_data(wcdot_bus):
     entity = message.entity[0]
     trip_update = entity.trip_update
     stop_time_update = trip_update.stop_time_update[0]
-    assert trip_update.trip.trip_id == '984756'
+    assert trip_update.trip.trip_id == '988612'
     assert stop_time_update.arrival.delay == -60
     assert stop_time_update.departure.delay == -60
 

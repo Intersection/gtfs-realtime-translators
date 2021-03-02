@@ -13,15 +13,18 @@ class TripUpdate:
 
     @staticmethod
     def __get_stop_time_events(arrival_time, departure_time, arrival_delay, departure_delay):
-        arrival = gtfs_realtime.TripUpdate.StopTimeEvent(time=arrival_time)
-        if departure_time is None:
-            departure = arrival
-        else:
-            departure = gtfs_realtime.TripUpdate.StopTimeEvent(time=departure_time)
+        if arrival_time:
+            arrival = gtfs_realtime.TripUpdate.StopTimeEvent(time=arrival_time)
+            if departure_time is None:
+                departure = arrival
+            else:
+                departure = gtfs_realtime.TripUpdate.StopTimeEvent(time=departure_time)
         if arrival_delay:
             arrival = gtfs_realtime.TripUpdate.StopTimeEvent(delay=arrival_delay)
-        if departure_delay:
-            departure = gtfs_realtime.TripUpdate.StopTimeEvent(delay=arrival_delay)
+            if departure_delay is None:
+                departure = arrival
+            else:
+                departure = gtfs_realtime.TripUpdate.StopTimeEvent(delay=arrival_delay)
         return arrival, departure
 
 
