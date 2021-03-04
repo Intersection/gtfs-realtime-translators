@@ -11,8 +11,6 @@ def wcdot_bus():
 
     return raw
 
-
-
 def test_wcdot_data(wcdot_bus):
     translator = WcdotGtfsRealTimeTranslator(stop_id='5142')
     message = translator(wcdot_bus)
@@ -24,13 +22,13 @@ def test_wcdot_data(wcdot_bus):
     assert stop_time_update.departure.delay == -60
     assert trip_update.trip.route_id == "0066"
     assert entity.id == "130"
+    assert stop_time_update.stop_id == "5142"
 
 def test_invalid_stop_id(wcdot_bus):
     translator = WcdotGtfsRealTimeTranslator(stop_id='99999')
     message = translator(wcdot_bus)
     entity = message.entity
     assert len(entity) == 0
-    
 
 
 
