@@ -10,6 +10,7 @@ class Entity:
 
 
 class TripUpdate:
+    
     @staticmethod
     def set_departure_time(arrival_delay,departure_delay,departure_time,arrival):
         departure = gtfs_realtime.TripUpdate.StopTimeEvent(time=departure_time)
