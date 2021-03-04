@@ -10,22 +10,23 @@ class Entity:
 
 
 class TripUpdate:
+    @staticmethod
+    def set_departure_time(arrival_delay,departure_delay,departure_time,arrival):
+        departure = gtfs_realtime.TripUpdate.StopTimeEvent(time=departure_time)
+        has_arrival_delay_and_departure_delay_is_none = arrival_delay is not None and departure_delay is None
+        if (departure_time is None or has_arrival_delay_and_departure_delay_is_none):
+            return arrival
+        if(departure_delay is not None):
+            return gtfs_realtime.TripUpdate.StopTimeEvent(delay=departure_delay)
+        return departure
 
     @staticmethod
     def __get_stop_time_events(arrival_time, departure_time, arrival_delay, departure_delay):
         arrival = gtfs_realtime.TripUpdate.StopTimeEvent(time=arrival_time)
-        if departure_time is None:
-            departure = arrival
-        else:
-            departure = gtfs_realtime.TripUpdate.StopTimeEvent(time=departure_time)
         if arrival_delay is not None:
             arrival = gtfs_realtime.TripUpdate.StopTimeEvent(delay=arrival_delay)
-            if departure_delay is None:
-                departure = arrival
-            else:
-                departure = gtfs_realtime.TripUpdate.StopTimeEvent(delay=arrival_delay)
+        departure = TripUpdate.set_departure_time(arrival_delay,departure_delay,departure_time,arrival)
         return arrival, departure
-
 
     @staticmethod
     def create(*args, **kwargs):
