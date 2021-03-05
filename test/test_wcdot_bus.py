@@ -29,9 +29,3 @@ def test_invalid_stop_id(wcdot_bus):
     message = translator(wcdot_bus)
     entity = message.entity
     assert len(entity) == 0
-
-
-
-
-
-
