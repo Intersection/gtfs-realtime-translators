@@ -10,9 +10,9 @@ class Entity:
 
 
 class TripUpdate:
-
+    
     @staticmethod
-    def __get_stop_time_events(arrival_time, departure_time=None):
+    def __set_stop_time_events(arrival_time, departure_time):
         arrival = gtfs_realtime.TripUpdate.StopTimeEvent(time=arrival_time)
         if departure_time is None:
             departure = arrival
@@ -22,13 +22,29 @@ class TripUpdate:
         return arrival, departure
 
     @staticmethod
+    def __set_delay_stop_time_events(arrival_delay, departure_delay):
+        arrival = gtfs_realtime.TripUpdate.StopTimeEvent(delay=arrival_delay)
+        if departure_delay is None:
+            departure = arrival
+        else:
+            departure = gtfs_realtime.TripUpdate.StopTimeEvent(delay=departure_delay)
+        return arrival, departure
+
+    @staticmethod
     def create(*args, **kwargs):
         entity_id = kwargs['entity_id']
-        arrival_time = kwargs['arrival_time']
-        departure_time = kwargs.get('departure_time', None)
         trip_id = kwargs.get('trip_id', None)
         route_id = kwargs.get('route_id', None)
         stop_id = kwargs['stop_id']
+
+        if 'arrival_delay' in kwargs:
+            arrival_delay = kwargs.get('arrival_delay',None)
+            departure_delay = kwargs.get('departure_delay', None)
+            arrival, departure = TripUpdate.__set_delay_stop_time_events(arrival_delay, departure_delay)
+        else:
+            arrival_time = kwargs.get('arrival_time', None)
+            departure_time = kwargs.get('departure_time', None)
+            arrival, departure = TripUpdate.__set_stop_time_events(arrival_time, departure_time)
 
         # Intersection Extensions
         headsign = kwargs.get('headsign', None)
@@ -46,7 +62,7 @@ class TripUpdate:
 
         trip_descriptor = gtfs_realtime.TripDescriptor(trip_id=trip_id,
                                                        route_id=route_id)
-        arrival, departure = TripUpdate.__get_stop_time_events(arrival_time, departure_time)
+
         stop_time_update = gtfs_realtime.TripUpdate.StopTimeUpdate(arrival=arrival,
                                                                    departure=departure,
                                                                    stop_id=stop_id)
