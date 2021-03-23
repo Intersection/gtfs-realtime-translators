@@ -21,8 +21,7 @@ class WcdotGtfsRealTimeTranslator:
             entity_id = str(idx+1)
             trip_update = entity['trip_update']
             trip = trip_update.get('trip')
-            raw_trip_id = trip.get('trip_id')
-            trip_id = f"100{raw_trip_id}"
+            trip_id = trip.get('trip_id')
             route_id = trip.get('route_id')
             stop_time_update = trip_update.get('stop_time_update')
             for update in stop_time_update:
