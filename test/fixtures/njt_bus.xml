@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NEXTTRIPROWSET>
+  <Trip>
+    <Trip_id>630</Trip_id>
+    <arrival_time>10:39:00</arrival_time>
+    <departure_time>10:39:00</departure_time>
+    <sched_dep_time>5/19/2021 10:37:00 AM</sched_dep_time>
+    <stop_id>43249</stop_id>
+    <stop_sequence>58</stop_sequence>
+    <route>10</route>
+    <header>10 JERSEY CITY JOURNAL SQUARE-Exact Fare</header>
+    <stop_name>JOURNAL SQUARE TRANSPORTATION CENTER</stop_name>
+    <timing_point_id>JONLSQAR</timing_point_id>
+    <stop_lat>40.732048</stop_lat>
+    <stop_lon>-74.062003</stop_lon>
+    <sec_late>60</sec_late>
+  </Trip>
+  <Trip>
+    <Trip_id>28152</Trip_id>
+    <arrival_time>10:37:00</arrival_time>
+    <departure_time>10:37:00</departure_time>
+    <sched_dep_time>5/19/2021 11:00:00 AM</sched_dep_time>
+    <stop_id>43249</stop_id>
+    <stop_sequence>32</stop_sequence>
+    <route>87</route>
+    <header>87 HOBOKEN-PATH VIA JOURNAL SQ-Exact Fare</header>
+    <stop_name>JOURNAL SQUARE TRANSPORTATION CENTER</stop_name>
+    <timing_point_id>HUDSTERM</timing_point_id>
+    <stop_lat>40.732048</stop_lat>
+    <stop_lon>-74.062003</stop_lon>
+    <sec_late>-240</sec_late>
+  </Trip>
+</NEXTTRIPROWSET>
