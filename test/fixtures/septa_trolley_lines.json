@@ -1,0 +1,70 @@
+{
+  "data": {
+    "agencyKey": "septa",
+    "predictionsData": [
+      {
+        "destinations": [
+          {
+            "directionId": "0",
+            "headsign": "13th-Market",
+            "predictions": [
+              {
+                "min": 31,
+                "scheduleBased": true,
+                "sec": 1882,
+                "time": 1623837186,
+                "tripId": "609813",
+                "vehicleId": "block_8104_schedBasedVehicle"
+              }
+            ]
+          }
+        ],
+        "routeId": "11",
+        "routeName": "11 - 13th-Market to Darby Trans Cntr",
+        "routeShortName": "11",
+        "stopCode": 20646,
+        "stopId": "20646",
+        "stopName": "19th St Trolley Station"
+      },
+      {
+        "destinations": [
+          {
+            "directionId": "0",
+            "headsign": "13th-Market",
+            "predictions": [
+              {
+                "min": 11,
+                "sec": 669,
+                "time": 1623835973,
+                "tripId": "610887",
+                "vehicleId": "9039"
+              },
+              {
+                "min": 24,
+                "sec": 1458,
+                "time": 1623836763,
+                "tripId": "610888",
+                "vehicleId": "9048"
+              },
+              {
+                "min": 39,
+                "sec": 2395,
+                "time": 1623837699,
+                "tripId": "610889",
+                "vehicleId": "9068"
+              }
+            ]
+          }
+        ],
+        "routeId": "13",
+        "routeName": "13 - 13th-Market to Yeadon-Darby",
+        "routeShortName": "13",
+        "stopCode": 20646,
+        "stopId": "20646",
+        "stopName": "19th St Trolley Station"
+      }
+    ]
+  },
+  "route": "/real-time/septa/predictions GET",
+  "success": true
+}

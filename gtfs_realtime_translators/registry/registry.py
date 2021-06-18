@@ -3,7 +3,7 @@ import warnings
 from gtfs_realtime_translators.translators import LaMetroGtfsRealtimeTranslator, \
     SeptaRegionalRailTranslator, MtaSubwayGtfsRealtimeTranslator, NjtRailGtfsRealtimeTranslator, \
     CtaSubwayGtfsRealtimeTranslator, CtaBusGtfsRealtimeTranslator, PathGtfsRealtimeTranslator, \
-    VtaGtfsRealtimeTranslator, WcdotGtfsRealTimeTranslator
+    VtaGtfsRealtimeTranslator, WcdotGtfsRealTimeTranslator, SeptaTrolleyLineTranslator
 
 
 class TranslatorKeyWarning(Warning):
@@ -14,6 +14,7 @@ class TranslatorRegistry:
     TRANSLATORS = {
         'la-metro': LaMetroGtfsRealtimeTranslator,
         'septa-regional-rail': SeptaRegionalRailTranslator,
+        'septa-trolley-lines': SeptaTrolleyLineTranslator,
         'cta-subway': CtaSubwayGtfsRealtimeTranslator,
         'cta-bus': CtaBusGtfsRealtimeTranslator,
         'mta-subway': MtaSubwayGtfsRealtimeTranslator,
