@@ -7,17 +7,16 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 
 class SeptaTrolleyLineTranslator:
-    def __init__(self, stop_id=None):
-        if stop_id is None:
-            raise ValueError('stop_id is required.')
-
-        self.stop_id = stop_id
 
     def __call__(self, data):
         json_data = json.loads(data)
         entities = []
         for data in json_data["data"]["predictionsData"]:
-            trip_updates = self.__make_trip_updates(data, self.stop_id)
+            stop_id = data.get("stopId", None)
+            if stop_id is None:
+                raise ValueError('stop_id is required.')
+
+            trip_updates = self.__make_trip_updates(data, stop_id)
             entities.extend(trip_updates)
         
         return FeedMessage.create(entities=entities)
