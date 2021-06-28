@@ -110,3 +110,10 @@ class FeedMessage:
         message = gtfs_realtime.FeedMessage(header=header,
                                             entity=entities)
         return message
+
+
+class RequiredFieldValidator:
+    @staticmethod
+    def validate(fieldName, fieldValue):
+        if fieldValue is None:
+                raise ValueError('{} is required.'.format(fieldName))

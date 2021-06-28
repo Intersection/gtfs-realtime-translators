@@ -1,7 +1,7 @@
 import pytest
 import pendulum
 
-from gtfs_realtime_translators.translators import SeptaTrolleyLineTranslator
+from gtfs_realtime_translators.translators import SwiftlyGtfsRealtimeTranslator
 from gtfs_realtime_translators.factories import FeedMessage
 from gtfs_realtime_translators.bindings import intersection_pb2 as intersection_gtfs_realtime
 
@@ -15,7 +15,7 @@ def septa_trolley_lines():
 
 
 def test_septa_trolley_data(septa_trolley_lines):
-    translator = SeptaTrolleyLineTranslator()
+    translator = SwiftlyGtfsRealtimeTranslator()
     with pendulum.test(pendulum.datetime(2021,6,16,12,0,0)):
         message = translator(septa_trolley_lines)
 

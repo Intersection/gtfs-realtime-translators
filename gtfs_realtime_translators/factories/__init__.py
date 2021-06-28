@@ -1,1 +1,1 @@
-from .factories import FeedMessage, TripUpdate
+from .factories import FeedMessage, TripUpdate, RequiredFieldValidator
