@@ -31,6 +31,7 @@ setup(
         f'{PACKAGE_ROOT}.factories',
         f'{PACKAGE_ROOT}.registry',
         f'{PACKAGE_ROOT}.bindings',
+        f'{PACKAGE_ROOT}.validators',
     ],
     license='MIT license',
     install_requires=requirements,
