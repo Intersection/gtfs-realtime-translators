@@ -5,5 +5,5 @@ from .njt_rail import NjtRailGtfsRealtimeTranslator
 from .cta_subway import CtaSubwayGtfsRealtimeTranslator
 from .cta_bus import CtaBusGtfsRealtimeTranslator
 from .path_rail import PathGtfsRealtimeTranslator
-from .vta import VtaGtfsRealtimeTranslator
+from .swiftly import SwiftlyGtfsRealtimeTranslator
 from .wcdot_bus import WcdotGtfsRealTimeTranslator

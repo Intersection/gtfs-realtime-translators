@@ -4,20 +4,24 @@ import math
 import pendulum
 
 from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
+from gtfs_realtime_translators.validators import RequiredFieldValidator
 
 
-class VtaGtfsRealtimeTranslator:
+class SwiftlyGtfsRealtimeTranslator:
+    # stop_id is not required in constructor as it is being sent as a part of feed but
+    # vta feeds are already configured with stop_id in all environment so remove it when
+    # get a chance to clean up the feed
     def __init__(self, stop_id=None):
-        if stop_id is None:
-            raise ValueError('stop_id is required.')
-
+        RequiredFieldValidator.validate_field_value('stop_id', stop_id)
         self.stop_id = stop_id
 
     def __call__(self, data):
         json_data = json.loads(data)
         entities = []
         for data in json_data["data"]["predictionsData"]:
-            trip_updates = self.__make_trip_updates(data, self.stop_id)
+            stop_id = data.get("stopId", None)
+            RequiredFieldValidator.validate_field_value('stop_id', stop_id)
+            trip_updates = self.__make_trip_updates(data, stop_id)
             entities.extend(trip_updates)
         
         return FeedMessage.create(entities=entities)
