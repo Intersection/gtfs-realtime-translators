@@ -59,12 +59,12 @@ class NjtBusGtfsRealtimeTranslator:
                         if track is None:
                             track = stop['scheduled_lane_gate']
 
-                        arrival_delay = stop['sec_late']
-
                         scheduleddeparturedate = stop['scheduleddeparturedate']
                         scheduleddeparturetime = stop['scheduleddeparturetime']
                         scheduled_datetime = cls.__to_unix_time("{} {}".format(scheduleddeparturedate.title(), scheduleddeparturetime))
                         scheduled_departure_time = int(scheduled_datetime.timestamp())
+
+                        arrival_time = int(scheduled_datetime.add(seconds=int(stop['sec_late'])).timestamp())
 
                         trip_update = TripUpdate.create(entity_id=str(idx + 1),
                                                         route_id=route_id,
@@ -73,6 +73,8 @@ class NjtBusGtfsRealtimeTranslator:
                                                         headsign=headsign,
                                                         stop_name = stop_name,
                                                         track = track,
+                                                        arrival_time = arrival_time,
+                                                        departure_time = arrival_time,
                                                         scheduled_departure_time = scheduled_departure_time,
                                                         scheduled_arrival_time = scheduled_departure_time,
                                                         agency_timezone=cls.TIMEZONE)
