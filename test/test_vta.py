@@ -1,7 +1,7 @@
 import pytest
 import pendulum
 
-from gtfs_realtime_translators.translators import VtaGtfsRealtimeTranslator
+from gtfs_realtime_translators.translators import SwiftlyGtfsRealtimeTranslator
 from gtfs_realtime_translators.factories import FeedMessage
 from gtfs_realtime_translators.bindings import intersection_pb2 as intersection_gtfs_realtime
 
@@ -15,7 +15,7 @@ def vta_rail():
 
 
 def test_vta_data(vta_rail):
-    translator = VtaGtfsRealtimeTranslator(stop_id='5236')
+    translator = SwiftlyGtfsRealtimeTranslator(stop_id='5236')
     with pendulum.test(pendulum.datetime(2019,2,20,17,0,0)):
         message = translator(vta_rail)
 

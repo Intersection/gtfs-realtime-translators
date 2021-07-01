@@ -1,11 +1,11 @@
 import json
 from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
+from gtfs_realtime_translators.validators import RequiredFieldValidator
 
 
 class WcdotGtfsRealTimeTranslator:
     def __init__(self, stop_id=None):
-        if stop_id is None:
-            raise ValueError('stop_id is required.')
+        RequiredFieldValidator.validate_field_value('stop_id', stop_id)
         self.stop_id = stop_id
         self.filtered_stops = None
 

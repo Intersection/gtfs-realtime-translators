@@ -5,6 +5,7 @@ import copy
 import pendulum
 
 from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
+from gtfs_realtime_translators.validators import RequiredFieldValidator
 
 
 class SeptaRegionalRailTranslator:
@@ -28,9 +29,7 @@ class SeptaRegionalRailTranslator:
 
     def __init__(self, **kwargs):
         self.stop_id = kwargs.get('stop_id')
-        if self.stop_id is None:
-            raise ValueError('stop_id is required.')
-
+        RequiredFieldValidator.validate_field_value('stop_id', self.stop_id)
         filter_seconds = kwargs.get('filter_seconds', 10800) # default 10800s => 3hrs
         self.latest_valid_time = self.calculate_time_at(seconds=filter_seconds)
 
