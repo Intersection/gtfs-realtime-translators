@@ -64,7 +64,10 @@ class NjtBusGtfsRealtimeTranslator:
                         scheduled_datetime = cls.__to_unix_time("{} {}".format(scheduleddeparturedate.title(), scheduleddeparturetime))
                         scheduled_departure_time = int(scheduled_datetime.timestamp())
 
-                        arrival_time = int(scheduled_datetime.add(seconds=int(stop['sec_late'])).timestamp())
+                        sec_late = 0
+                        if not stop['sec_late']:
+                            sec_late = int(stop['sec_late'])
+                        arrival_time = int(scheduled_datetime.add(seconds=sec_late).timestamp())
 
                         trip_update = TripUpdate.create(entity_id=str(idx + 1),
                                                         route_id=route_id,
