@@ -51,12 +51,12 @@ class NjtBusGtfsRealtimeTranslator:
                             continue
 
                         # Skip Stop if stop_id is not in filtered stops
-                        if filtered_stops.index(stop_id) < 0 :
+                        if stop_id not in filtered_stops:
                             continue
 
                         stop_name = stop['stopname']
                         track = stop['manual_lane_gate']
-                        if track is None:
+                        if not track:
                             track = stop['scheduled_lane_gate']
 
                         scheduleddeparturedate = stop['scheduleddeparturedate']
