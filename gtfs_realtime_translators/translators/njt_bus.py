@@ -65,7 +65,7 @@ class NjtBusGtfsRealtimeTranslator:
                         scheduled_departure_time = int(scheduled_datetime.timestamp())
 
                         sec_late = 0
-                        if not stop['sec_late']:
+                        if stop['sec_late']:
                             sec_late = int(stop['sec_late'])
                         arrival_time = int(scheduled_datetime.add(seconds=sec_late).timestamp())
 
