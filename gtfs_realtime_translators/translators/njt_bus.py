@@ -23,6 +23,16 @@ class NjtBusGtfsRealtimeTranslator:
         return dt
 
     @classmethod
+    def __skip_processing(cls, stop_id, filtered_stops):
+        # Skip Stop if stop_id is not found
+        if stop_id is None:
+            return True
+        # Skip Stop if stop_id is not in filtered stops
+        if stop_id not in filtered_stops:
+            return True
+        return False
+
+    @classmethod
     def __make_trip_updates(cls, data, filtered_stops):
         trip_updates = []
         trips = data['SCHEDULEROWSET'].values()
@@ -46,12 +56,7 @@ class NjtBusGtfsRealtimeTranslator:
                         # Get Stop ID for the given Stop Code From the Mapping
                         stop_id = NJTBusStopCodeIdMappings.get_stop_id(stop_code)
 
-                        # Skip Stop if stop_id is not found
-                        if stop_id is None:
-                            continue
-
-                        # Skip Stop if stop_id is not in filtered stops
-                        if stop_id not in filtered_stops:
+                        if cls.__skip_processing(stop_id, filtered_stops):
                             continue
 
                         stop_name = stop['stopname']
@@ -74,12 +79,12 @@ class NjtBusGtfsRealtimeTranslator:
                                                         trip_id=trip_id,
                                                         stop_id=stop_id,
                                                         headsign=headsign,
-                                                        stop_name = stop_name,
-                                                        track = track,
-                                                        arrival_time = arrival_time,
-                                                        departure_time = arrival_time,
-                                                        scheduled_departure_time = scheduled_departure_time,
-                                                        scheduled_arrival_time = scheduled_departure_time,
+                                                        stop_name=stop_name,
+                                                        track=track,
+                                                        arrival_time=arrival_time,
+                                                        departure_time=arrival_time,
+                                                        scheduled_departure_time=scheduled_departure_time,
+                                                        scheduled_arrival_time=scheduled_departure_time,
                                                         agency_timezone=cls.TIMEZONE)
                         trip_updates.append(trip_update)
 
