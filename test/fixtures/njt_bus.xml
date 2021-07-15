@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<SCHEDULEROWSET>
+  <TRIP>
+    <internal_trip_number>16941280</internal_trip_number>
+    <gtfs_trip_id>22899</gtfs_trip_id>
+    <gtfs_stop_id>2916</gtfs_stop_id>
+    <gtfs_stop_Code>20883</gtfs_stop_Code>
+    <gtfs_route_id>165</gtfs_route_id>
+    <gtfs_service_id>3</gtfs_service_id>
+    <gtfs_file_Date>30-JUN-21</gtfs_file_Date>
+    <route>64J</route>
+    <busheader>Weehawken Via Journal Sq</busheader>
+    <run_id>133</run_id>
+    <trip_block>139HW058</trip_block>
+    <direction>In</direction>
+    <STOP>
+      <scheduleddeparturedate>01-JUL-21</scheduleddeparturedate>
+      <scheduleddeparturetime>8:39 AM</scheduleddeparturetime>
+      <sec_late>-480</sec_late>
+      <manual_lane_gate> </manual_lane_gate>
+      <scheduled_lane_gate>C-1</scheduled_lane_gate>
+      <stopname>Journal Square Transportation Center</stopname>
+      <stopcity>JERSEY CITY-PATH</stopcity>
+      <gtfs_stop_Code>20883</gtfs_stop_Code>
+      <lat>40.732059</lat>
+      <lon>-74.062111</lon>
+      <stop_sequence>59</stop_sequence>
+      <gtfs_dep_time>08:39:00</gtfs_dep_time>
+    </STOP>
+    <STOP>
+      <scheduleddeparturedate>01-JUL-21</scheduleddeparturedate>
+      <scheduleddeparturetime>9:03 AM</scheduleddeparturetime>
+      <sec_late>-480</sec_late>
+      <manual_lane_gate> </manual_lane_gate>
+      <scheduled_lane_gate>..</scheduled_lane_gate>
+      <stopname>Lincoln Harbor</stopname>
+      <stopcity>WEEHAWKEN</stopcity>
+      <gtfs_stop_Code>21831</gtfs_stop_Code>
+      <lat>40.759878</lat>
+      <lon>-74.022280</lon>
+      <stop_sequence>60</stop_sequence>
+      <gtfs_dep_time>09:03:00</gtfs_dep_time>
+    </STOP>
+  </TRIP>
+  <TRIP>
+    <internal_trip_number>17109951</internal_trip_number>
+    <gtfs_trip_id>11276</gtfs_trip_id>
+    <gtfs_stop_id>2916</gtfs_stop_id>
+    <gtfs_stop_Code>20883</gtfs_stop_Code>
+    <gtfs_route_id>72</gtfs_route_id>
+    <gtfs_service_id>3</gtfs_service_id>
+    <gtfs_file_Date>30-JUN-21</gtfs_file_Date>
+    <route>1</route>
+    <busheader>Jersey City Journal Sq Via River Terminal</busheader>
+    <run_id>3</run_id>
+    <trip_block>001HL008</trip_block>
+    <direction>In</direction>
+    <STOP>
+      <scheduleddeparturedate>01-JUL-21</scheduleddeparturedate>
+      <scheduleddeparturetime>8:40 AM</scheduleddeparturetime>
+      <sec_late>-120</sec_late>
+      <manual_lane_gate> </manual_lane_gate>
+      <scheduled_lane_gate>..</scheduled_lane_gate>
+      <stopname>Journal Square Transportation Center</stopname>
+      <stopcity>JERSEY CITY-PATH</stopcity>
+      <gtfs_stop_Code>20883</gtfs_stop_Code>
+      <lat>40.732059</lat>
+      <lon>-74.062111</lon>
+      <stop_sequence>55</stop_sequence>
+      <gtfs_dep_time>08:40:00</gtfs_dep_time>
+    </STOP>
+  </TRIP>
+</SCHEDULEROWSET>
