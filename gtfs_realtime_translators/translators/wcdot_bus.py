@@ -11,8 +11,12 @@ class WcdotGtfsRealTimeTranslator:
 
     def __call__(self,data):
         json_data = json.loads(data)
-        entities = json_data["entity"]
-        trip_updates = self.generate_trip_updates(entities)
+        try:
+            entities = json_data["entity"]
+            trip_updates = self.generate_trip_updates(entities)
+        except Exception:
+            trip_updates = []
+
         return FeedMessage.create(entities=trip_updates)
 
     def generate_trip_updates(self, entities):

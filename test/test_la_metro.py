@@ -12,6 +12,13 @@ def la_metro_rail():
 
     return raw
 
+@pytest.fixture
+def la_metro_rail_empty():
+    with open('test/fixtures/la_metro_rail_empty.json') as f:
+        raw = f.read()
+
+    return raw
+
 
 def test_la_data(la_metro_rail):
     translator = LaMetroGtfsRealtimeTranslator(stop_id='80122')
@@ -61,3 +68,14 @@ def test_la_trip_id_parsing():
     assert LaMetroGtfsRealtimeTranslator.calculate_trip_id('48109430') == '48109430'
     assert LaMetroGtfsRealtimeTranslator.calculate_trip_id('') == ''
     assert LaMetroGtfsRealtimeTranslator.calculate_trip_id(1) == 1
+
+def test_la_data_empty(la_metro_rail_empty):
+    translator = LaMetroGtfsRealtimeTranslator(stop_id='80122')
+    with pendulum.test(pendulum.datetime(2019,2,20,17,0,0)):
+        message = translator(la_metro_rail_empty)
+
+    assert message.header.gtfs_realtime_version == FeedMessage.VERSION
+
+    assert hasattr(message, 'entity') is True
+
+    assert len(message.entity) == 0

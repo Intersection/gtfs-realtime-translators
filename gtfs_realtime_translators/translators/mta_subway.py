@@ -7,12 +7,15 @@ class MtaSubwayGtfsRealtimeTranslator:
     def __call__(self, data):
         json_data = json.loads(data)
         entities = []
-        for stop in json_data:
-            for group in stop["groups"]:
-                for idx, arrival in enumerate(group["times"]):
-                    route_id = self.parse_id(group['route']['id'])
-                    stop_name = stop['stop']['name']
-                    entities.append(self.__make_trip_update(idx, route_id, stop_name, arrival))
+        try:
+            for stop in json_data:
+                for group in stop["groups"]:
+                    for idx, arrival in enumerate(group["times"]):
+                        route_id = self.parse_id(group['route']['id'])
+                        stop_name = stop['stop']['name']
+                        entities.append(self.__make_trip_update(idx, route_id, stop_name, arrival))
+        except Exception:
+            pass
 
         return FeedMessage.create(entities=entities)
 

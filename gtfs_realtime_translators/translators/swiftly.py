@@ -18,11 +18,14 @@ class SwiftlyGtfsRealtimeTranslator:
     def __call__(self, data):
         json_data = json.loads(data)
         entities = []
-        for data in json_data["data"]["predictionsData"]:
-            stop_id = data.get("stopId", None)
-            RequiredFieldValidator.validate_field_value('stop_id', stop_id)
-            trip_updates = self.__make_trip_updates(data, stop_id)
-            entities.extend(trip_updates)
+        try:
+            for data in json_data["data"]["predictionsData"]:
+                stop_id = data.get("stopId", None)
+                RequiredFieldValidator.validate_field_value('stop_id', stop_id)
+                trip_updates = self.__make_trip_updates(data, stop_id)
+                entities.extend(trip_updates)
+        except Exception:
+            pass
         
         return FeedMessage.create(entities=entities)
 

@@ -35,7 +35,11 @@ class NjtRailGtfsRealtimeTranslator:
     def __make_trip_updates(cls, data):
         trip_updates = []
 
-        station_data_item = data['STATION']['ITEMS'].values()
+        try:
+            station_data_item = data['STATION']['ITEMS'].values()
+        except Exception:
+            return trip_updates
+
         for value in station_data_item:
             for idx, item_entry in enumerate(value):
 

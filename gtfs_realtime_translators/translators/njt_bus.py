@@ -13,8 +13,12 @@ class NjtBusGtfsRealtimeTranslator:
             raise ValueError('filtered_stops is required.')
 
     def __call__(self, data):
-        station_data = xmltodict.parse(data)
-        entities = self.__make_trip_updates(station_data, self.filtered_stops)
+        try:
+            station_data = xmltodict.parse(data)
+            entities = self.__make_trip_updates(station_data, self.filtered_stops)
+        except Exception:
+            entities = []
+
         return FeedMessage.create(entities=entities)
 
     @classmethod

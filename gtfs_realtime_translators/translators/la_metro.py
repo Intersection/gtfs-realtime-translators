@@ -14,7 +14,11 @@ class LaMetroGtfsRealtimeTranslator:
 
     def __call__(self, data):
         json_data = json.loads(data)
-        entities = [ self.__make_trip_update(idx, self.stop_id, arrival) for idx, arrival in enumerate(json_data['items']) ]
+        try:
+            entities = [ self.__make_trip_update(idx, self.stop_id, arrival) for idx, arrival in enumerate(json_data['items']) ]
+        except Exception:
+            entities = []
+
         return FeedMessage.create(entities=entities)
 
     @classmethod

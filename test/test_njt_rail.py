@@ -11,6 +11,11 @@ def njt_rail():
         raw = f.read()
     return raw
 
+@pytest.fixture
+def njt_rail_no_data():
+    with open('test/fixtures/njt_rail_no_data.xml') as f:
+        raw = f.read()
+    return raw
 
 def test_njt_data(njt_rail):
     translator = NjtRailGtfsRealtimeTranslator()
@@ -108,3 +113,13 @@ def test_njt_data_amtrak(njt_rail):
     assert intersection_stop_time_update.track == '3'
     assert intersection_stop_time_update.scheduled_arrival.time == 1570047420
     assert intersection_stop_time_update.scheduled_departure.time == 1570047420
+
+def test_njt_data_empty(njt_rail_no_data):
+    translator = NjtRailGtfsRealtimeTranslator()
+    message = translator(njt_rail_no_data)
+
+    assert message.header.gtfs_realtime_version == FeedMessage.VERSION
+
+    assert hasattr(message, 'entity') is True
+
+    assert len(message.entity) == 0

@@ -10,7 +10,11 @@ class CtaSubwayGtfsRealtimeTranslator:
 
     def __call__(self, data):
         json_data = json.loads(data)
-        prediction = json_data['ctatt']['eta']
+        try:
+            prediction = json_data['ctatt']['eta']
+        except Exception:
+            prediction = []
+
         entities = [self.__make_trip_update(idx, arr) for idx, arr in enumerate(prediction)]
 
         return FeedMessage.create(entities=entities)

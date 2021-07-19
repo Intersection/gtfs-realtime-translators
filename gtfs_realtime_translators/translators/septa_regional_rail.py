@@ -39,16 +39,20 @@ class SeptaRegionalRailTranslator:
 
         if root_key is None:
             raise ValueError('root_key: unexpected format')
-        
-        arrivals_body = json_data[root_key]
-        northbound = [ direction_list['Northbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Northbound' ][0]
-        southbound = [ direction_list['Southbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Southbound' ][0]
-        arrivals = northbound + southbound
 
-        transformed_arrivals = [ self.transform_arrival(arrival) for arrival in arrivals ]
-        filtered_arrivals = [ arrival for arrival in transformed_arrivals if arrival['sched_time'] <= self.latest_valid_time ]
+        try:
+            arrivals_body = json_data[root_key]
+            northbound = [ direction_list['Northbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Northbound' ][0]
+            southbound = [ direction_list['Southbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Southbound' ][0]
+            arrivals = northbound + southbound
 
-        entities = [ self.__make_trip_update(idx, self.stop_id, arrival) for idx, arrival in enumerate(filtered_arrivals) ]
+            transformed_arrivals = [ self.transform_arrival(arrival) for arrival in arrivals ]
+            filtered_arrivals = [ arrival for arrival in transformed_arrivals if arrival['sched_time'] <= self.latest_valid_time ]
+
+            entities = [ self.__make_trip_update(idx, self.stop_id, arrival) for idx, arrival in enumerate(filtered_arrivals) ]
+        except Exception:
+            entities = []
+
         return FeedMessage.create(entities=entities)
 
     @classmethod

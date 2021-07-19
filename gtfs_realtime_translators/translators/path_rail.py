@@ -113,7 +113,11 @@ class PathGtfsRealtimeTranslator:
         trip_updates = []
         now = int(pendulum.now().timestamp())
 
-        arrivals = data['results']
+        try:
+            arrivals = data['results']
+        except Exception:
+            return trip_updates
+
         for arrival in arrivals:
             arrival_updates = arrival['messages']
             for idx, update in enumerate(arrival_updates):
