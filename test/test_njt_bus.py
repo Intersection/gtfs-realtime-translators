@@ -23,7 +23,7 @@ def test_njt_data(njt_bus):
 
     assert message.header.gtfs_realtime_version == FeedMessage.VERSION
     assert entity.id == '1'
-    assert trip_update.trip.route_id == '64J'
+    assert trip_update.trip.route_id == '165'
     assert trip_update.trip.trip_id == '22899'
 
     assert stop_time_update.stop_id == '2916'

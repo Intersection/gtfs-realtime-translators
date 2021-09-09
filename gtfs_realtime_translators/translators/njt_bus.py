@@ -42,7 +42,7 @@ class NjtBusGtfsRealtimeTranslator:
                 # Intersection Extensions
                 headsign = item_entry['busheader']
                 trip_id = item_entry['gtfs_trip_id']
-                route_id = item_entry['route']
+                route_id = item_entry['gtfs_route_id']
                 if item_entry.get('STOP', None) is not None:
                     stops = item_entry['STOP']
 
