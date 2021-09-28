@@ -8,3 +8,4 @@ from .cta_bus import CtaBusGtfsRealtimeTranslator
 from .path_rail import PathGtfsRealtimeTranslator
 from .swiftly import SwiftlyGtfsRealtimeTranslator
 from .wcdot_bus import WcdotGtfsRealTimeTranslator
+from .mbta import MbtaGtfsRealtimeTranslator
