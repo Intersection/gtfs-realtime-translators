@@ -3,11 +3,6 @@ import pendulum
 
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 
-
-class PathGtfsRealtimeTranslatorWarning(Warning):
-    pass
-
-
 class PathGtfsRealtimeTranslator:
     TIMEZONE = 'America/New_York'
 
