@@ -1,7 +1,4 @@
 import json
-import math
-import warnings
-
 import pendulum
 
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
