@@ -17,10 +17,9 @@ def test_path_data(path_rail):
     translator = PathGtfsRealtimeTranslator()
     with pendulum.test(pendulum.datetime(2020, 2, 22, 12, 0, 0)):
         message = translator(path_rail)
-
     assert message.header.gtfs_realtime_version == FeedMessage.VERSION
     entity = message.entity[0]
-    assert entity.id == '1'
+    assert entity.id == '15:55_NWK/WTC'
     trip_update = entity.trip_update
     assert trip_update.trip.trip_id == ''
     assert trip_update.trip.route_id == '862'

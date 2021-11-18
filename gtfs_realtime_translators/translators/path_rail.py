@@ -188,9 +188,9 @@ class PathGtfsRealtimeTranslator:
                 continue
             for track in tracks:
                 track_id = track.get('trackId')
-                trains = track.get('trains')
+                trains = track.get('trains',{})
                 for idx,train in enumerate(trains):
-                    if(not train.get('trainId')):
+                    if not train.get('trainId'):
                         continue
                     train_info = train.get('trainId').split('_')
                     service_id = train.get('service')
@@ -198,9 +198,9 @@ class PathGtfsRealtimeTranslator:
                     arrival_time = train.get('depArrTime')
                     scheduled_arrival_time = cls.__to_unix_time(train_info[0])
                     arrival_data = cls.__route_lookup(service_id,station_shortkey,track_id, destination)
-                    if(cls.__should_skip_update(arrival_data)):
+                    if cls.__should_skip_update(arrival_data):
                         continue
-                    trip_update = TripUpdate.create(entity_id=str(idx + 1),
+                    trip_update = TripUpdate.create(entity_id=train.get('trainId').strip(),
                                                     departure_time=arrival_time,
                                                     arrival_time=arrival_time,
                                                     scheduled_arrival_time=scheduled_arrival_time,
