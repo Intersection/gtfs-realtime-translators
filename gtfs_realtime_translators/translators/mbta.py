@@ -1,3 +1,4 @@
+from copy import deepcopy
 import json
 
 import pendulum
@@ -19,7 +20,6 @@ class MbtaGtfsRealtimeTranslator:
     def __to_unix_time(cls, time):
       return pendulum.parse(time).in_tz(cls.TIMEZONE).int_timestamp
 
-
     @classmethod
     def __make_trip_updates(cls, predictions):
       trip_updates = []
@@ -33,9 +33,17 @@ class MbtaGtfsRealtimeTranslator:
         raw_arrival_time = attributes['arrival_time']
         raw_departure_time = attributes['departure_time']
 
-        if raw_arrival_time and raw_departure_time:
-          arrival_time = cls.__to_unix_time(attributes['arrival_time'])
-          departure_time = cls.__to_unix_time(attributes['departure_time'])
+        if cls.should_capture_prediction(raw_arrival_time, raw_departure_time):
+          if raw_arrival_time and raw_departure_time:
+            arrival_time = cls.__to_unix_time(raw_arrival_time)
+            departure_time = cls.__to_unix_time(raw_departure_time)
+          elif raw_arrival_time:
+            arrival_time = cls.__to_unix_time(raw_arrival_time)
+            departure_time = arrival_time
+          elif raw_departure_time:
+            departure_time = cls.__to_unix_time(raw_departure_time)
+            arrival_time = departure_time
+                      
           trip_update = TripUpdate.create(
             entity_id=entity_id,
             route_id=route_id,
@@ -47,3 +55,6 @@ class MbtaGtfsRealtimeTranslator:
           trip_updates.append(trip_update)
       
       return trip_updates
+
+    def should_capture_prediction(raw_arrival_time, raw_departure_time):
+      return raw_arrival_time or raw_departure_time
