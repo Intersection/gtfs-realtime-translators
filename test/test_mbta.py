@@ -35,11 +35,28 @@ def test_mbta_subway_realtime_arrival(mbta_subway):
     assert stop_time_update.arrival.time == 1632770790
     assert stop_time_update.departure.time == 1632770846
 
-def test_mbta_bus_realtime_arrival(mbta_bus):
+def test_mbta_bus_realtime_arrival_departure(mbta_bus):
     translator = MbtaGtfsRealtimeTranslator()
     message = translator(mbta_bus)
 
     entity = message.entity[0]
+    trip_update = entity.trip_update
+    stop_time_update = trip_update.stop_time_update[0]
+
+    assert message.header.gtfs_realtime_version == FeedMessage.VERSION
+
+    assert entity.id == '2'
+    assert entity.trip_update.trip.route_id == '66'
+    assert entity.trip_update.trip.trip_id == '49181421'
+    assert stop_time_update.stop_id == '1357'
+    assert stop_time_update.arrival.time == 1632778733
+    assert stop_time_update.departure.time == 1632778733
+
+def test_mbta_bus_realtime_no_arrival_departure(mbta_bus):
+    translator = MbtaGtfsRealtimeTranslator()
+    message = translator(mbta_bus)
+
+    entity = message.entity[1]
     trip_update = entity.trip_update
     stop_time_update = trip_update.stop_time_update[0]
 
@@ -52,3 +69,19 @@ def test_mbta_bus_realtime_arrival(mbta_bus):
     assert stop_time_update.arrival.time == 1632778733
     assert stop_time_update.departure.time == 1632778733
 
+def test_mbta_bus_realtime_arrival_no_departure(mbta_bus):
+    translator = MbtaGtfsRealtimeTranslator()
+    message = translator(mbta_bus)
+
+    entity = message.entity[2]
+    trip_update = entity.trip_update
+    stop_time_update = trip_update.stop_time_update[0]
+
+    assert message.header.gtfs_realtime_version == FeedMessage.VERSION
+
+    assert entity.id == '4'
+    assert entity.trip_update.trip.route_id == '66'
+    assert entity.trip_update.trip.trip_id == '49181350'
+    assert stop_time_update.stop_id == '1357'
+    assert stop_time_update.arrival.time == 1632779478
+    assert stop_time_update.departure.time == 1632779478
