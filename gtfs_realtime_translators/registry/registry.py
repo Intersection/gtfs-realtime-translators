@@ -12,7 +12,7 @@ class TranslatorKeyWarning(Warning):
 
 class TranslatorRegistry:
     TRANSLATORS = {
-        'la-metro': LaMetroGtfsRealtimeTranslator,
+        'la-metro-old': LaMetroGtfsRealtimeTranslator,
         'septa-regional-rail': SeptaRegionalRailTranslator,
         'septa': SwiftlyGtfsRealtimeTranslator,
         'cta-subway': CtaSubwayGtfsRealtimeTranslator,
@@ -20,8 +20,8 @@ class TranslatorRegistry:
         'mta-subway': MtaSubwayGtfsRealtimeTranslator,
         'njt-rail': NjtRailGtfsRealtimeTranslator,
         'njt-bus': NjtBusGtfsRealtimeTranslator,
-        'path': PathGtfsRealtimeTranslator,
-        'vta': SwiftlyGtfsRealtimeTranslator,
+        'path-old': PathGtfsRealtimeTranslator,
+        'swiftly': SwiftlyGtfsRealtimeTranslator,
         'wcdot-bus': WcdotGtfsRealTimeTranslator,
         'mbta': MbtaGtfsRealtimeTranslator,
     }
