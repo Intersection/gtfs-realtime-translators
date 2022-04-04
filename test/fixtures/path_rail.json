@@ -1,1122 +1,152 @@
 {
-  "messageTimestamp": "2021-11-01T19:51:31.485103",
-  "stations": [
-      {
-          "abbrv": "systemwide",
-          "signinfo": {
-              "location": "stationwide",
-              "overrideText": "",
-              "overrideTextTimestamp": 1635810691,
-              "scrollingText": "",
-              "scrollingTextTimestamp": 1635810691
-          },
-          "tracks": []
-      },
-      {
-          "abbrv": "NWK",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "NWK_Platform_H",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "NWK_Platform_C",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635769891,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "NWK_Platform_B",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635769891,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Track H",
-                  "trains": [
-                      {
-                          "atsTime": 1635796266,
-                          "depArrTime": 1635796500,
-                          "destination": "WTC",
-                          "service": 1,
-                          "tbLocation": "",
-                          "trainId": "15:55_NWK/WTC "
-                      },
-                      {
-                          "atsTime": 1635796266,
-                          "depArrTime": 1635796740,
-                          "destination": "WTC",
-                          "service": 1,
-                          "tbLocation": "",
-                          "trainId": "15:59_NWK/WTC "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track G",
-                  "trains": [
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      },
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "HAR",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "HAR_Track_G",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635805367,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "HAR_Track_H",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635769965,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Track H",
-                  "trains": [
-                      {
-                          "atsTime": 1635796291,
-                          "depArrTime": 1635796334,
-                          "destination": "WTC",
-                          "service": 1,
-                          "tbLocation": "784T_NW_01",
-                          "trainId": "15:50_NWK/WTC "
-                      },
-                      {
-                          "atsTime": 1635796104,
-                          "depArrTime": 1635796589,
-                          "destination": "WTC",
-                          "service": 1,
-                          "tbLocation": "",
-                          "trainId": "15:55_NWK/WTC "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track G",
-                  "trains": [
-                      {
-                          "atsTime": 1635796264,
-                          "depArrTime": 1635796297,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "781T_HR_03",
-                          "trainId": "15:32_WTC/NWK "
-                      },
-                      {
-                          "atsTime": 1635796288,
-                          "depArrTime": 1635796820,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "57T_JS_01",
-                          "trainId": "15:42_WTC/NWK "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "JSQ",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "JSQ_Fare_Zone",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "JSQ_EastBound",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635510222,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "JSQ_WestBound",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Track 1",
-                  "trains": [
-                      {
-                          "atsTime": 1635796268,
-                          "depArrTime": 1635796304,
-                          "destination": "WTC",
-                          "service": 1,
-                          "tbLocation": "728T_JS_04",
-                          "trainId": "15:40_NWK/WTC "
-                      },
-                      {
-                          "atsTime": 1635796290,
-                          "depArrTime": 1635796654,
-                          "destination": "WTC",
-                          "service": 1,
-                          "tbLocation": "758T_HR_02",
-                          "trainId": "15:46_NWK/WTC "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 2",
-                  "trains": [
-                      {
-                          "atsTime": 1635796226,
-                          "depArrTime": 1635796440,
-                          "destination": "33S",
-                          "service": 2,
-                          "tbLocation": "726T_JS_04",
-                          "trainId": "15:54_JSQ/33S "
-                      },
-                      {
-                          "atsTime": 1635796188,
-                          "depArrTime": 1635796740,
-                          "destination": "33S",
-                          "service": 2,
-                          "tbLocation": "",
-                          "trainId": "15:59_JSQ/33S "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 3",
-                  "trains": [
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      },
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 4",
-                  "trains": [
-                      {
-                          "atsTime": 1635796290,
-                          "depArrTime": 1635796334,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "57T_JS_01",
-                          "trainId": "15:42_WTC/NWK "
-                      },
-                      {
-                          "atsTime": 1635796047,
-                          "depArrTime": 1635796936,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "283T_WT_02",
-                          "trainId": "15:52_WTC/NWK "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "GRV",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "GRV_Station",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Tunnel H",
-                  "trains": [
-                      {
-                          "atsTime": 1635796289,
-                          "depArrTime": 1635796390,
-                          "destination": "33S",
-                          "service": 2,
-                          "tbLocation": "371T_JS_03",
-                          "trainId": "15:49_JSQ/33S "
-                      },
-                      {
-                          "atsTime": 1635796276,
-                          "depArrTime": 1635796515,
-                          "destination": "WTC",
-                          "service": 1,
-                          "tbLocation": "728T_JS_04",
-                          "trainId": "15:40_NWK/WTC "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Tunnel G",
-                  "trains": [
-                      {
-                          "atsTime": 1635796286,
-                          "depArrTime": 1635796567,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "501T_HB_01",
-                          "trainId": "15:37_33S/JSQ "
-                      },
-                      {
-                          "atsTime": 1635796122,
-                          "depArrTime": 1635796703,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "283T_WT_02",
-                          "trainId": "15:52_WTC/NWK "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "EXP",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "EXP_Fare_Zone",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "EXP_Track_E",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635757357,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "EXP_Track_F",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635760795,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Tunnel F",
-                  "trains": [
-                      {
-                          "atsTime": 1635796283,
-                          "depArrTime": 1635796349,
-                          "destination": "WTC",
-                          "service": 4,
-                          "tbLocation": "31T_GJ_01",
-                          "trainId": "15:45_HOB/WTC "
-                      },
-                      {
-                          "atsTime": 1635796290,
-                          "depArrTime": 1635796434,
-                          "destination": "WTC",
-                          "service": 1,
-                          "tbLocation": "391T_GJ_01",
-                          "trainId": "15:36_NWK/WTC "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Tunnel E",
-                  "trains": [
-                      {
-                          "atsTime": 1635796290,
-                          "depArrTime": 1635796516,
-                          "destination": "HOB",
-                          "service": 4,
-                          "tbLocation": "277T_WT_02",
-                          "trainId": "15:51_WTC/HOB "
-                      },
-                      {
-                          "atsTime": 1635796290,
-                          "depArrTime": 1635796601,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "283T_WT_02",
-                          "trainId": "15:52_WTC/NWK "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "WTC",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "WTC_Fare_Zone",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "WTC_Platform_A",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "WTC_Platform_B",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "WTC_Platform_C",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "WTC_Platform_D",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Track 1",
-                  "trains": [
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      },
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 2",
-                  "trains": [
-                      {
-                          "atsTime": 1635796290,
-                          "depArrTime": 1635796289,
-                          "destination": "HOB",
-                          "service": 4,
-                          "tbLocation": "277T_WT_02",
-                          "trainId": "15:51_WTC/HOB "
-                      },
-                      {
-                          "atsTime": 1635795578,
-                          "depArrTime": 1635796980,
-                          "destination": "HOB",
-                          "service": 4,
-                          "tbLocation": "",
-                          "trainId": "16:03_WTC/HOB "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 3",
-                  "trains": [
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      },
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 4",
-                  "trains": [
-                      {
-                          "atsTime": 1635796102,
-                          "depArrTime": 1635796620,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "281T_WT_02",
-                          "trainId": "15:57_WTC/NWK "
-                      },
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 5",
-                  "trains": [
-                      {
-                          "atsTime": 1635796047,
-                          "depArrTime": 1635796320,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "283T_WT_02",
-                          "trainId": "15:52_WTC/NWK "
-                      },
-                      {
-                          "atsTime": 1635796102,
-                          "depArrTime": 1635796920,
-                          "destination": "NWK",
-                          "service": 1,
-                          "tbLocation": "",
-                          "trainId": "16:02_WTC/NWK "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "NEW",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "NEW_Fare",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1634943649,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "NEW_Side_Platform",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635511110,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "NEW_Central_Platform",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635462070,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Tunnel E",
-                  "trains": [
-                      {
-                          "atsTime": 1635796289,
-                          "depArrTime": 1635796582,
-                          "destination": "33S",
-                          "service": 2,
-                          "tbLocation": "371T_JS_03",
-                          "trainId": "15:49_JSQ/33S "
-                      },
-                      {
-                          "atsTime": 1635796290,
-                          "depArrTime": 1635796682,
-                          "destination": "HOB",
-                          "service": 4,
-                          "tbLocation": "277T_WT_02",
-                          "trainId": "15:51_WTC/HOB "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Tunnel F",
-                  "trains": [
-                      {
-                          "atsTime": 1635796286,
-                          "depArrTime": 1635796377,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "501T_HB_01",
-                          "trainId": "15:37_33S/JSQ "
-                      },
-                      {
-                          "atsTime": 1635796287,
-                          "depArrTime": 1635796794,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "158T_33_01",
-                          "trainId": "15:47_33S/JSQ "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "HOB",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "HOB_Fare_Zone",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1634994934,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "HOB_Platform_1",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635163241,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "HOB_Platform_2",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1634994934,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "HOB_Platform_3",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1634215916,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Track 1",
-                  "trains": [
-                      {
-                          "atsTime": 1635796113,
-                          "depArrTime": 1635796320,
-                          "destination": "33S",
-                          "service": 3,
-                          "tbLocation": "100T_HB_04",
-                          "trainId": "15:52_HOB/33S "
-                      },
-                      {
-                          "atsTime": 1635795769,
-                          "depArrTime": 1635796920,
-                          "destination": "33S",
-                          "service": 3,
-                          "tbLocation": "",
-                          "trainId": "16:02_HOB/33S "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 2",
-                  "trains": [
-                      {
-                          "atsTime": 1635796202,
-                          "depArrTime": 1635796620,
-                          "destination": "WTC",
-                          "service": 4,
-                          "tbLocation": "96T_HB_01",
-                          "trainId": "15:57_HOB/WTC "
-                      },
-                      {
-                          "atsTime": 1635795993,
-                          "depArrTime": 1635797340,
-                          "destination": "WTC",
-                          "service": 4,
-                          "tbLocation": "",
-                          "trainId": "16:09_HOB/WTC "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 3",
-                  "trains": [
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      },
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "CHR",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "CHR_Station",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635511738,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Tunnel B",
-                  "trains": [
-                      {
-                          "atsTime": 1635796289,
-                          "depArrTime": 1635796462,
-                          "destination": "33S",
-                          "service": 2,
-                          "tbLocation": "121T_HB_03",
-                          "trainId": "15:39_JSQ/33S "
-                      },
-                      {
-                          "atsTime": 1635796253,
-                          "depArrTime": 1635796783,
-                          "destination": "33S",
-                          "service": 3,
-                          "tbLocation": "100T_HB_04",
-                          "trainId": "15:52_HOB/33S "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Tunnel A",
-                  "trains": [
-                      {
-                          "atsTime": 1635796287,
-                          "depArrTime": 1635796377,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "158T_33_01",
-                          "trainId": "15:47_33S/JSQ "
-                      },
-                      {
-                          "atsTime": 1635796108,
-                          "depArrTime": 1635796675,
-                          "destination": "HOB",
-                          "service": 3,
-                          "tbLocation": "195T_33_01",
-                          "trainId": "15:52_33S/HOB "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "09S",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "09S_Station",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635511738,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Tunnel B",
-                  "trains": [
-                      {
-                          "atsTime": 1635796288,
-                          "depArrTime": 1635796322,
-                          "destination": "33S",
-                          "service": 3,
-                          "tbLocation": "147AT_33_02",
-                          "trainId": "15:42_HOB/33S "
-                      },
-                      {
-                          "atsTime": 1635796289,
-                          "depArrTime": 1635796559,
-                          "destination": "33S",
-                          "service": 2,
-                          "tbLocation": "121T_HB_03",
-                          "trainId": "15:39_JSQ/33S "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Tunnel A",
-                  "trains": [
-                      {
-                          "atsTime": 1635796287,
-                          "depArrTime": 1635796295,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "158T_33_01",
-                          "trainId": "15:47_33S/JSQ "
-                      },
-                      {
-                          "atsTime": 1635796107,
-                          "depArrTime": 1635796593,
-                          "destination": "HOB",
-                          "service": 3,
-                          "tbLocation": "195T_33_01",
-                          "trainId": "15:52_33S/HOB "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "14S",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "14S_Track_B",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635511738,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "14S_Track_A",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635511738,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Tunnel B",
-                  "trains": [
-                      {
-                          "atsTime": 1635796288,
-                          "depArrTime": 1635796417,
-                          "destination": "33S",
-                          "service": 3,
-                          "tbLocation": "147AT_33_02",
-                          "trainId": "15:42_HOB/33S "
-                      },
-                      {
-                          "atsTime": 1635796289,
-                          "depArrTime": 1635796654,
-                          "destination": "33S",
-                          "service": 2,
-                          "tbLocation": "121T_HB_03",
-                          "trainId": "15:39_JSQ/33S "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Tunnel A",
-                  "trains": [
-                      {
-                          "atsTime": 1635796224,
-                          "depArrTime": 1635796497,
-                          "destination": "HOB",
-                          "service": 3,
-                          "tbLocation": "195T_33_01",
-                          "trainId": "15:52_33S/HOB "
-                      },
-                      {
-                          "atsTime": 1635796238,
-                          "depArrTime": 1635796797,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "187T_33_04",
-                          "trainId": "15:57_33S/JSQ "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "23S",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "23S_Track_B",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635511738,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "23S_Track_A",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635511738,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Tunnel B",
-                  "trains": [
-                      {
-                          "atsTime": 1635796288,
-                          "depArrTime": 1635796503,
-                          "destination": "33S",
-                          "service": 3,
-                          "tbLocation": "147AT_33_02",
-                          "trainId": "15:42_HOB/33S "
-                      },
-                      {
-                          "atsTime": 1635796289,
-                          "depArrTime": 1635796740,
-                          "destination": "33S",
-                          "service": 2,
-                          "tbLocation": "121T_HB_03",
-                          "trainId": "15:39_JSQ/33S "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Tunnel A",
-                  "trains": [
-                      {
-                          "atsTime": 1635796137,
-                          "depArrTime": 1635796409,
-                          "destination": "HOB",
-                          "service": 3,
-                          "tbLocation": "195T_33_01",
-                          "trainId": "15:52_33S/HOB "
-                      },
-                      {
-                          "atsTime": 1635796238,
-                          "depArrTime": 1635796709,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "187T_33_04",
-                          "trainId": "15:57_33S/JSQ "
-                      }
-                  ]
-              }
-          ]
-      },
-      {
-          "abbrv": "33S",
-          "signinfo": [
-              {
-                  "location": "stationwide",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635810691,
-                  "scrollingText": "",
-                  "scrollingTextTimestamp": 1635810691
-              },
-              {
-                  "location": "33S_Fare_Zone",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1633940464,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "33S_Platform_2",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1633964032,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              },
-              {
-                  "location": "33S_Platform_3",
-                  "overrideText": "",
-                  "overrideTextTimestamp": 1635425311,
-                  "scrollingText": "Masks are still required, even if you are vaccinated. --- Eating, drinking, and smoking not allowed on PATH. --- Motorized bikes/scooters not permitted. --- Non-motorized bikes/scooters: Folded bikes/scooters permitted all times. Non-folding bikes/scooters permitted all times except weekdays 6:30-9:30am and weekdays 3:30-6:30pm. ",
-                  "scrollingTextTimestamp": 1635785820
-              }
-          ],
-          "tracks": [
-              {
-                  "trackId": "Track 1",
-                  "trains": [
-                      {
-                          "atsTime": 1635796238,
-                          "depArrTime": 1635796620,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "187T_33_04",
-                          "trainId": "15:57_33S/JSQ "
-                      },
-                      {
-                          "atsTime": 1635796029,
-                          "depArrTime": 1635797220,
-                          "destination": "JSQ",
-                          "service": 2,
-                          "tbLocation": "",
-                          "trainId": "16:07_33S/JSQ "
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 2",
-                  "trains": [
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      },
-                      {
-                          "atsTime": "",
-                          "depArrTime": "",
-                          "destination": "",
-                          "service": "",
-                          "tbLocation": "",
-                          "trainId": ""
-                      }
-                  ]
-              },
-              {
-                  "trackId": "Track 3",
-                  "trains": [
-                      {
-                          "atsTime": 1635796107,
-                          "depArrTime": 1635796320,
-                          "destination": "HOB",
-                          "service": 3,
-                          "tbLocation": "195T_33_01",
-                          "trainId": "15:52_33S/HOB "
-                      },
-                      {
-                          "atsTime": 1635795737,
-                          "depArrTime": 1635796920,
-                          "destination": "HOB",
-                          "service": 3,
-                          "tbLocation": "",
-                          "trainId": "16:02_33S/HOB "
-                      }
-                  ]
-              }
-          ]
-      }
-  ]
+  "results": [
+    {
+      "consideredStation": "33S",
+      "label": "ToNJ",
+      "target": "JSQ",
+      "messages": [
+        {
+          "secondsToArrival": 132,
+          "arrivalTimeMessage": "2 min",
+          "lineColor": "#FF9900",
+          "headSign": "Journal Square",
+          "lastUpdated": "2020-02-21T15:04:47.529288-05:00"
+        },
+        {
+          "secondsToArrival": 732,
+          "arrivalTimeMessage": "12 min",
+          "lineColor": "#FF9900",
+          "headSign": "Journal Square",
+          "lastUpdated": "2020-02-21T15:04:47.529288-05:00"
+        }
+      ]
+    },
+    {
+      "consideredStation": "HOB",
+      "label": "ToNY",
+      "target": "WTC",
+      "messages": [
+        {
+          "secondsToArrival": 248,
+          "arrivalTimeMessage": "4 min",
+          "lineColor": "#65C100",
+          "headSign": "World Trade Center",
+          "lastUpdated": "2020-02-21T15:04:52.397063-05:00"
+        },
+        {
+          "secondsToArrival": 968,
+          "arrivalTimeMessage": "16 min",
+          "lineColor": "#65C100",
+          "headSign": "World Trade Center",
+          "lastUpdated": "2020-02-21T15:04:52.397063-05:00"
+        }
+      ]
+    },
+    {
+      "consideredStation": "GRV",
+      "label": "ToNJ",
+      "target": "JSQ",
+      "messages": [
+        {
+          "secondsToArrival": 167,
+          "arrivalTimeMessage": "3 min",
+          "lineColor": "#4D92FB,#FF9900",
+          "headSign": "Journal Square via Hoboken",
+          "lastUpdated": "2020-02-22T15:45:59.562598-05:00"
+        }
+      ]
+    },
+    {
+      "consideredStation": "GRV",
+      "label": "ToNY",
+      "target": "EXP",
+      "messages": [
+        {
+          "secondsToArrival": 123,
+          "arrivalTimeMessage": "2 min",
+          "lineColor": "#D93A30",
+          "headSign": "Exchange Place",
+          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
+        }
+      ]
+    },
+    {
+      "consideredStation": "HAR",
+      "label": "ToNY",
+      "target": "EXP",
+      "messages": [
+        {
+          "secondsToArrival": 903,
+          "arrivalTimeMessage": "15 min",
+          "lineColor": "#D93A30",
+          "headSign": "Exchange Place",
+          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
+        },
+        {
+          "secondsToArrival": 2103,
+          "arrivalTimeMessage": "35 min",
+          "lineColor": "#D93A30",
+          "headSign": "Exchange Place",
+          "lastUpdated": "2020-02-22T15:46:24.456122-05:00"
+        }
+      ]
+    },
+    {
+      "consideredStation": "NEW",
+      "label": "ToNJ",
+      "target": "JSQ",
+      "messages": [
+        {
+          "secondsToArrival": 379,
+          "arrivalTimeMessage": "6 min",
+          "lineColor": "#4D92FB,#FF9900",
+          "headSign": "Journal Square via Hoboken",
+          "lastUpdated": "2020-02-22T15:46:19.622791-05:00"
+        },
+        {
+          "secondsToArrival": 988,
+          "arrivalTimeMessage": "17 min",
+          "lineColor": "#4D92FB,#FF9900",
+          "headSign": "Journal Square via Hoboken",
+          "lastUpdated": "2020-02-22T15:46:19.622791-05:00"
+        }
+      ]
+    },
+    {
+      "consideredStation": "CHR",
+      "label": "ToNJ",
+      "target": "JSQ",
+      "messages": [
+        {
+          "secondsToArrival": 124,
+          "arrivalTimeMessage": "Delayed",
+          "lineColor": "#4D92FB,#FF9900",
+          "headSign": "Journal Square via Hoboken",
+          "lastUpdated": "2020-02-22T15:46:19.622791-05:00"
+        },
+        {
+          "secondsToArrival": 515,
+          "arrivalTimeMessage": "9 min",
+          "lineColor": "#4D92FB,#FF9900",
+          "headSign": "Journal Square via Hoboken",
+          "lastUpdated": "2020-02-22T15:46:19.622791-05:00"
+        }
+      ]
+    },
+    {
+      "consideredStation": "09S",
+      "label": "ToNJ",
+      "target": "HOB",
+      "messages": [
+        {
+          "secondsToArrival": 88,
+          "arrivalTimeMessage": "2 min",
+          "lineColor": "#4D92FB",
+          "headSign": "Hoboken",
+          "lastUpdated": "2020-02-21T15:04:47.529288-05:00"
+        }
+      ]
+    }
+  ],
+  "requestTimestamp": "2020-02-22T20:46:26"
 }
