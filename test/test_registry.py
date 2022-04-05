@@ -17,7 +17,6 @@ from gtfs_realtime_translators.registry import TranslatorRegistry, TranslatorKey
 def test_registry_for_valid_key():
     assert TranslatorRegistry.get('la-metro-old') == LaMetroGtfsRealtimeTranslator
     assert TranslatorRegistry.get('septa-regional-rail') == SeptaRegionalRailTranslator
-    assert TranslatorRegistry.get('septa') == SwiftlyGtfsRealtimeTranslator
     assert TranslatorRegistry.get('cta-subway') == CtaSubwayGtfsRealtimeTranslator
     assert TranslatorRegistry.get('cta-bus') == CtaBusGtfsRealtimeTranslator
     assert TranslatorRegistry.get('mta-subway') == MtaSubwayGtfsRealtimeTranslator

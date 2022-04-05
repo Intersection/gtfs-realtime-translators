@@ -15,7 +15,6 @@ class TranslatorRegistry:
     TRANSLATORS = {
         'la-metro-old': LaMetroGtfsRealtimeTranslator,
         'septa-regional-rail': SeptaRegionalRailTranslator,
-        'septa': SwiftlyGtfsRealtimeTranslator,
         'cta-subway': CtaSubwayGtfsRealtimeTranslator,
         'cta-bus': CtaBusGtfsRealtimeTranslator,
         'mta-subway': MtaSubwayGtfsRealtimeTranslator,
