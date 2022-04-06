@@ -39,7 +39,7 @@ class MtaSubwayGtfsRealtimeTranslator:
         headsign = arrival['tripHeadsign']
         scheduled_arrival_time = arrival['serviceDay'] + arrival['scheduledArrival']
         scheduled_departure_time = arrival['serviceDay'] + arrival['scheduledDeparture']
-        track = arrival['track']
+        track = arrival.get('track', '')
 
         return TripUpdate.create(entity_id=entity_id,
                                 arrival_time=arrival_time,
