@@ -62,4 +62,5 @@ class MbtaGtfsRealtimeTranslator:
 
     @staticmethod
     def should_capture_prediction(raw_arrival_time, raw_departure_time):
-        return raw_arrival_time or raw_departure_time
+        should_capture = raw_arrival_time or raw_departure_time
+        return should_capture
