@@ -37,8 +37,8 @@
       },
       {
           "attributes": {
-              "arrival_time": null,
-              "departure_time": null,
+              "arrival_time": "2021-09-27T17:38:53-04:00",
+              "departure_time": "2021-09-27T17:38:53-04:00",
               "direction_id": 0,
               "schedule_relationship": null,
               "status": null,
@@ -75,7 +75,7 @@
       },
       {
           "attributes": {
-              "arrival_time": "2021-09-27T17:38:53-04:00",
+              "arrival_time": null,
               "departure_time": "2021-09-27T17:38:53-04:00",
               "direction_id": 0,
               "schedule_relationship": null,
@@ -114,7 +114,7 @@
       {
           "attributes": {
               "arrival_time": "2021-09-27T17:51:18-04:00",
-              "departure_time": "2021-09-27T17:51:18-04:00",
+              "departure_time": null,
               "direction_id": 0,
               "schedule_relationship": null,
               "status": null,
