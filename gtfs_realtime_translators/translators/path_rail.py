@@ -1,146 +1,106 @@
 import json
+import math
+import warnings
+
 import pendulum
 
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 
+
+class PathGtfsRealtimeTranslatorWarning(Warning):
+    pass
+
+
 class PathGtfsRealtimeTranslator:
     TIMEZONE = 'America/New_York'
 
-    SERVICE_LOOKUP = {
-        '5': {
-             'JSQ':'Journal Square Via Hoboken',
-             '33S':'33rd St Via Hoboken',
-             'HOB': 'Hoboken',
-             'route_id':'1024'
-        },
-        '4':{
-            'WTC': 'World Trade Center',
-            'HOB': 'Hoboken',
-            'route_id':'860'
-        },
-        '3':{
-            '33S': '33rd Street',
-            'HOB': 'Hoboken',
-            'route_id':'859'
-        },
-        '2':{
-            'JSQ': 'Journal Square',
-            '33S': '33rd Street',
-            'route_id':'861'
-        },
-        '1':{
-            'WTC': 'World Trade Center',
-            'NWK': 'Newark',
-            'route_id': '862'
-        }
-    }
-    STOP_ID_LOOKUP = {
-        'GRV':{
-            "stop_name":'Grove Street',
-            "tracks":{
-                "Tunnel H": '781726',
-                "Tunnel G": '781727',
-            }
-        },
-        'WTC':{
-            "stop_name":'World Trade Center',
-            "tracks":{
-                "Track 1": '781763T1',
-                "Track 2": '781763T2',
-                "Track 3": '781763T3',
-                "Track 4": '794724T4',
-                "Track 5": '794724T5',
-            }
-        },
-        'NWK':{
-            "stop_name":'Newark',
-            "tracks":{
-                "Track G":'781719',
-                "Track H": '781718'
-            }
-        },
-        'HAR':{
-            "stop_name":'Harrison',
-            "tracks":{
-                "Track H": '781720',
-                "Track G": '781721',
-            }
-        },
-        'EXP':{
-            "stop_name":'Exchange Place',
-            "tracks":{
-                "Tunnel E": '781731',
-                "Tunnel F":'781730',
-            }
-        },
-        "NEW":{
-            "stop_name":'Newport',
-            "tracks":{
-                "Tunnel E": '781728',
-                "Tunnel F":'781729',
-            }
-        },
-        "CHR":{
-            "stop_name":'Christopher Street',
-            "tracks":{
-                "Tunnel B":'781732',
-                "Tunnel A":'781733'
-            }
-        },
-        "09S":{
-            "stop_name":'9th Street',
-            "tracks":{
-                "Tunnel B":'781734',
-                "Tunnel A":'781735',
-            }
-        },
-        "14S":{
-            "stop_name":'14th Stret',
-            "tracks":{  
-                "Tunnel B": '781736',
-                "Tunnel A": '781737',
-            }
+    ROUTE_ID_LOOKUP = {
+        '#4D92FB': '859',
+        '#65C100': '860',
+        '#FF9900': '861',
+        '#D93A30': '862',
+        '#4D92FB,#FF9900': '1024'}
 
-        },
-        "23S":{
-            "stop_name":'23rd Street',
-            "tracks":{
-                "Tunnel B": '781738',
-                "Tunnel A": '781739',
-            }
-        },
-        "JSQ":{
-            "stop_name":'Christopher Street',
-            "tracks":{
-                "Track 1":'781722',
-                "Track 2":'781723',
-                "Track 3":'781724',
-                "Track 4":'781725',
-            }
-        },
-        "33S":{
-            "stop_name":'33rd Street',
-            "tracks":{
-                "Track 1":'781741T1',
-                "Track 2":'781740',
-                "Track 3":'781741T3',
-            }
-        },
-        "HOB":{
-            "stop_name":'Hoboken',
-            "tracks":{
-                "Track 1":'781717',
-                "Track 2":'781715',
-                "Track 3":'781716'
-            } 
-        }
+    STOP_ID_LOOKUP = {
+        '859_33S_HOB': '781715',
+        '859_33S_CHR': '781732',
+        '859_33S_09S': '781734',
+        '859_33S_14S': '781736',
+        '859_33S_23S': '781738',
+        '859_33S_33S': '781740',
+        '859_HOB_HOB': '781717',
+        '859_HOB_CHR': '781733',
+        '859_HOB_09S': '781735',
+        '859_HOB_14S': '781737',
+        '859_HOB_23S': '781739',
+        '859_HOB_33S': '781741',
+        '860_HOB_HOB': '781715',
+        '860_HOB_NEW': '781728',
+        '860_HOB_EXP': '781731',
+        '860_HOB_WTC': '781763',
+        '860_WTC_HOB': '781716',
+        '860_WTC_NEW': '781729',
+        '860_WTC_EXP': '781730',
+        '860_WTC_WTC': '781763',
+        '861_33S_JSQ': '781723',
+        '861_33S_GRV': '781726',
+        '861_33S_NEW': '781728',
+        '861_33S_CHR': '781732',
+        '861_33S_09S': '781734',
+        '861_33S_14S': '781736',
+        '861_33S_23S': '781738',
+        '861_33S_33S': '781740',
+        '861_JSQ_JSQ': '781724',
+        '861_JSQ_GRV': '781727',
+        '861_JSQ_NEW': '781729',
+        '861_JSQ_CHR': '781733',
+        '861_JSQ_09S': '781735',
+        '861_JSQ_14S': '781737',
+        '861_JSQ_23S': '781739',
+        '861_JSQ_33S': '781741',
+        '862_NWK_NWK': '781719',
+        '862_NWK_HAR': '781721',
+        '862_EXP_HAR': '781721',
+        '862_NWK_JSQ': '781725',
+        '862_EXP_JSQ': '781725',
+        '862_NWK_GRV': '781727',
+        '862_EXP_GRV': '781727',
+        '862_NWK_EXP': '781731',
+        '862_EXP_EXP': '781731',
+        '862_NWK_WTC': '794724',
+        '862_WTC_NWK': '781718',
+        '862_EXP_NWK': '781718',
+        '862_WTC_HAR': '781720',
+        '862_WTC_JSQ': '781722',
+        '862_WTC_GRV': '781726',
+        '862_WTC_EXP': '781730',
+        '862_WTC_WTC': '794724',
+        '1024_33S_HOB': '781715',
+        '1024_33S_JSQ': '781723',
+        '1024_33S_GRV': '781726',
+        '1024_33S_NEW': '781728',
+        '1024_33S_CHR': '781732',
+        '1024_33S_09S': '781734',
+        '1024_33S_14S': '781736',
+        '1024_33S_23S': '781738',
+        '1024_33S_33S': '781740',
+        '1024_JSQ_HOB': '781716',
+        '1024_JSQ_JSQ': '781724',
+        '1024_JSQ_GRV': '781727',
+        '1024_JSQ_NEW': '781729',
+        '1024_JSQ_CHR': '781733',
+        '1024_JSQ_09S': '781735',
+        '1024_JSQ_14S': '781737',
+        '1024_JSQ_23S': '781739',
+        '1024_JSQ_33S': '781741'
     }
 
     """
        Since PATH GTFS data have stops that are, in most cases, unique to a route, direction, service date, and/or 
-       destination, a mapping is created to ensure we return the appropriate stop_id/headsign/route information for a stop and track arrival updates.
+       destination, a mapping is created to ensure we return the appropriate stop_id for a station's arrival updates.
        
-       Keys are based off the "serviceID" field while also using a second lookup to determine the stop_id based on the track for a particular station
+       Keys are based off the line color (a hex value that can be mapped to a GTFS route_id), the destination, and the 
+       current station for which the request has been made.
     """
 
     def __call__(self, data):
@@ -149,67 +109,33 @@ class PathGtfsRealtimeTranslator:
         return FeedMessage.create(entities=entities)
 
     @classmethod
-    def __to_unix_time(cls, time):
-        datetime = int(pendulum.from_format(time, 'HH:mm').in_tz(cls.TIMEZONE).timestamp())
-        return datetime
-
-    @classmethod
-    def __route_lookup(cls,service_id, station_shortkey, track_id, destination):
-        service_mapping = cls.SERVICE_LOOKUP.get(str(service_id))
-        station_mapping = cls.STOP_ID_LOOKUP.get(station_shortkey)
-        route_id = service_mapping.get('route_id')
-        headsign = service_mapping.get(destination)
-        stop_id = station_mapping.get("tracks").get(track_id)
-        stop_name = station_mapping.get("stop_name")
-        return {
-           'route_id': route_id,
-            'stop_id': stop_id,
-            'headsign': headsign,
-            'stop_name': stop_name
-        }
-
-    @classmethod 
-    def __should_skip_update(cls,route_data):
-        should_skip = False
-        for key, value in route_data.items():
-            if value is None:
-                should_skip = True
-                break
-        return should_skip    
-
-    @classmethod
     def __make_trip_updates(cls, data):
         trip_updates = []
-        stations = data['stations']
-        for station in stations:
-            station_shortkey = station['abbrv']
-            tracks = station.get('tracks')
-            if station_shortkey == 'systemwide':
-                continue
-            for track in tracks:
-                track_id = track.get('trackId')
-                trains = track.get('trains',{})
-                for idx,train in enumerate(trains):
-                    if not train.get('trainId'):
-                        continue
-                    train_info = train.get('trainId').split('_')
-                    service_id = train.get('service')
-                    destination = train.get('destination')
-                    arrival_time = train.get('depArrTime')
-                    scheduled_arrival_time = cls.__to_unix_time(train_info[0])
-                    arrival_data = cls.__route_lookup(service_id,station_shortkey,track_id, destination)
-                    if cls.__should_skip_update(arrival_data):
-                        continue
-                    trip_update = TripUpdate.create(entity_id=train.get('trainId').strip(),
+        now = int(pendulum.now().timestamp())
+
+        arrivals = data['results']
+        for arrival in arrivals:
+            arrival_updates = arrival['messages']
+            for idx, update in enumerate(arrival_updates):
+                try:
+                    route_id = cls.ROUTE_ID_LOOKUP[update['lineColor']]
+                    destination = arrival['target']
+                    station = arrival['consideredStation']
+
+                    key = route_id + '_' + destination + '_' + station
+                    stop_id = cls.STOP_ID_LOOKUP[key]
+                    arrival_time = now + math.floor(update['secondsToArrival'] / 60) * 60
+                    headsign = update['headSign']
+
+                    trip_update = TripUpdate.create(entity_id=str(idx + 1),
                                                     departure_time=arrival_time,
                                                     arrival_time=arrival_time,
-                                                    scheduled_arrival_time=scheduled_arrival_time,
-                                                    scheduled_departure_time = scheduled_arrival_time,
-                                                    track=track_id,
-                                                    route_id=arrival_data.get('route_id'),
-                                                    stop_id=arrival_data.get('stop_id'),
-                                                    headsign=arrival_data.get('headsign'),
-                                                    stop_name=arrival_data.get('stop_name'))
+                                                    route_id=route_id,
+                                                    stop_id=stop_id,
+                                                    headsign=headsign)
                     trip_updates.append(trip_update)
+                except KeyError:
+                    warnings.warn(f'Could not generate trip_update for update [{update}] in arrival [{arrival}]',
+                                  PathGtfsRealtimeTranslatorWarning)
 
         return trip_updates
