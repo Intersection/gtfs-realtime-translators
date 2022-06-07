@@ -7,6 +7,8 @@ from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 class PathNewGtfsRealtimeTranslator:
     TIMEZONE = 'America/New_York'
 
+    GREY_TRAIN_SERVICE_NUMBER = 0
+
     SERVICE_LOOKUP = {
         '5': {
             'JSQ': 'Journal Square Via Hoboken',
@@ -180,6 +182,10 @@ class PathNewGtfsRealtimeTranslator:
         return should_skip
 
     @classmethod
+    def __is_grey_train(cls, service_id):
+        return service_id == cls.GREY_TRAIN_SERVICE_NUMBER
+
+    @classmethod
     def __make_trip_updates(cls, data):
         trip_updates = []
         stations = data['stations']
@@ -196,6 +202,8 @@ class PathNewGtfsRealtimeTranslator:
                         continue
                     train_info = train.get('trainId').split('_')
                     service_id = train.get('service')
+                    if cls.__is_grey_train(service_id):
+                        continue
                     destination = train.get('destination')
                     arrival_time = train.get('depArrTime')
                     scheduled_arrival_time = cls.__to_unix_time(train_info[0])
