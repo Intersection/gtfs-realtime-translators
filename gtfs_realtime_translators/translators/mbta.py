@@ -48,19 +48,15 @@ class MbtaGtfsRealtimeTranslator:
 
     @staticmethod
     def set_arrival_and_departure_times(raw_arrival_time, raw_departure_time):
+        departure_time = MbtaGtfsRealtimeTranslator.__to_unix_time(
+            raw_departure_time)
         if raw_arrival_time:
             arrival_time = MbtaGtfsRealtimeTranslator.__to_unix_time(
                 raw_arrival_time)
-        if raw_departure_time:
-            departure_time = MbtaGtfsRealtimeTranslator.__to_unix_time(
-                raw_departure_time)
-        if not raw_arrival_time:
+        else:
             arrival_time = departure_time
-        if not raw_departure_time:
-            departure_time = arrival_time
         return arrival_time, departure_time
 
     @staticmethod
-    def should_capture_prediction(raw_arrival_time, raw_departure_time):
-        should_capture = raw_arrival_time or raw_departure_time
-        return should_capture
+    def should_capture_prediction(raw_departure_time):
+        return raw_departure_time
