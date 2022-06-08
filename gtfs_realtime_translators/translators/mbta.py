@@ -31,8 +31,8 @@ class MbtaGtfsRealtimeTranslator:
             raw_arrival_time = attributes['arrival_time']
             raw_departure_time = attributes['departure_time']
 
-            if cls.should_capture_prediction(raw_arrival_time, raw_departure_time):
-                arrival_time, departure_time = cls.set_arrival_and_departure_times(
+            if cls.__should_capture_prediction(raw_arrival_time, raw_departure_time):
+                arrival_time, departure_time = cls.__set_arrival_and_departure_times(
                     raw_arrival_time, raw_departure_time)
                 trip_update = TripUpdate.create(
                     entity_id=entity_id,
@@ -46,17 +46,17 @@ class MbtaGtfsRealtimeTranslator:
 
         return trip_updates
 
-    @staticmethod
-    def set_arrival_and_departure_times(raw_arrival_time, raw_departure_time):
-        departure_time = MbtaGtfsRealtimeTranslator.__to_unix_time(
+    @classmethod
+    def __set_arrival_and_departure_times(cls, raw_arrival_time, raw_departure_time):
+        departure_time = cls.__to_unix_time(
             raw_departure_time)
         if raw_arrival_time:
-            arrival_time = MbtaGtfsRealtimeTranslator.__to_unix_time(
+            arrival_time = cls.__to_unix_time(
                 raw_arrival_time)
         else:
             arrival_time = departure_time
         return arrival_time, departure_time
 
-    @staticmethod
-    def should_capture_prediction(raw_departure_time):
+    @classmethod
+    def __should_capture_prediction(cls, raw_departure_time):
         return raw_departure_time
