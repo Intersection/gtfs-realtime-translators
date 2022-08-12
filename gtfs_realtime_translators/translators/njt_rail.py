@@ -55,7 +55,7 @@ class NjtRailGtfsRealtimeTranslator:
                 custom_status = item_entry['STATUS']
 
                 origin_and_destination = None
-                stops = item_entry['STOPS'].values()
+                stops = item_entry['STOPS']
                 if stops:
                     for stop in stops.values():
                         origin_and_destination = [stop[i] for i in (0, -1)]
