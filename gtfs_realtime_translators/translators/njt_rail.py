@@ -55,29 +55,31 @@ class NjtRailGtfsRealtimeTranslator:
                 custom_status = item_entry['STATUS']
 
                 origin_and_destination = None
-                for stop in item_entry['STOPS'].values():
-                    origin_and_destination = [stop[i] for i in (0, -1)]
+                stops = item_entry['STOPS'].values()
+                if stops:
+                    for stop in stops.values():
+                        origin_and_destination = [stop[i] for i in (0, -1)]
 
-                route_id = cls.__get_route_id(item_entry, origin_and_destination)
+                    route_id = cls.__get_route_id(item_entry, origin_and_destination)
 
-                trip_update = TripUpdate.create(entity_id=str(idx + 1),
-                                                departure_time=departure_time,
-                                                scheduled_departure_time=scheduled_departure_time,
-                                                arrival_time=departure_time,
-                                                scheduled_arrival_time=scheduled_departure_time,
-                                                route_id=route_id,
-                                                route_short_name=route_short_name,
-                                                route_long_name=route_long_name,
-                                                route_color=route_color,
-                                                route_text_color=route_text_color,
-                                                stop_id=stop_id,
-                                                stop_name=stop_name,
-                                                headsign=headsign,
-                                                track=track,
-                                                block_id=block_id,
-                                                agency_timezone=cls.TIMEZONE,
-                                                custom_status=custom_status)
-                trip_updates.append(trip_update)
+                    trip_update = TripUpdate.create(entity_id=str(idx + 1),
+                                                    departure_time=departure_time,
+                                                    scheduled_departure_time=scheduled_departure_time,
+                                                    arrival_time=departure_time,
+                                                    scheduled_arrival_time=scheduled_departure_time,
+                                                    route_id=route_id,
+                                                    route_short_name=route_short_name,
+                                                    route_long_name=route_long_name,
+                                                    route_color=route_color,
+                                                    route_text_color=route_text_color,
+                                                    stop_id=stop_id,
+                                                    stop_name=stop_name,
+                                                    headsign=headsign,
+                                                    track=track,
+                                                    block_id=block_id,
+                                                    agency_timezone=cls.TIMEZONE,
+                                                    custom_status=custom_status)
+                    trip_updates.append(trip_update)
 
         return trip_updates
 
