@@ -145,7 +145,7 @@ class NjtRailGtfsRealtimeTranslator:
             'pascack_valley_line': '13',
             'princeton_shuttle': '14',
             'raritan_valley_line': '15',
-            'meadowlands_rail_line': '17',
+            'betmgm_meadowlands': '17',
         }
 
         amtrak_route_id = 'AMTK'
