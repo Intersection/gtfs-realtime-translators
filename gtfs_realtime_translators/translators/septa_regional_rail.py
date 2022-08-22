@@ -16,7 +16,7 @@ class SeptaRegionalRailTranslator:
         'Chestnut Hill East': 'CHE',
         'Chestnut Hill West': 'CHW',
         'Lansdale/Doylestown': 'LAN',
-        'Media/Elwyn': 'MED',
+        'Media/Wawa': 'MED',
         'Fox Chase': 'FOX',
         'Manayunk/Norristown': 'NOR',
         'Paoli/Thorndale': 'PAO',
