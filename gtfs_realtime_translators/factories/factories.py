@@ -36,6 +36,7 @@ class TripUpdate:
         trip_id = kwargs.get('trip_id', None)
         route_id = kwargs.get('route_id', None)
         stop_id = kwargs['stop_id']
+        direction_id = kwargs.get('direction_id', None)
 
         if 'arrival_delay' in kwargs:
             arrival_delay = kwargs.get('arrival_delay',None)
@@ -61,7 +62,8 @@ class TripUpdate:
         custom_status = kwargs.get('custom_status', None)
 
         trip_descriptor = gtfs_realtime.TripDescriptor(trip_id=trip_id,
-                                                       route_id=route_id)
+                                                       route_id=route_id,
+                                                       direction_id=direction_id)
 
         stop_time_update = gtfs_realtime.TripUpdate.StopTimeUpdate(arrival=arrival,
                                                                    departure=departure,

@@ -30,6 +30,7 @@ class MbtaGtfsRealtimeTranslator:
             trip_id = relationships['trip']['data']['id']
             raw_arrival_time = attributes['arrival_time']
             raw_departure_time = attributes['departure_time']
+            direction_id = attributes['direction_id']
 
             if cls.__should_capture_prediction(raw_departure_time):
                 arrival_time, departure_time = cls.__set_arrival_and_departure_times(
@@ -40,7 +41,8 @@ class MbtaGtfsRealtimeTranslator:
                     stop_id=stop_id,
                     trip_id=trip_id,
                     arrival_time=arrival_time,
-                    departure_time=departure_time
+                    departure_time=departure_time,
+                    direction_id=direction_id
                 )
                 trip_updates.append(trip_update)
 
