@@ -47,6 +47,8 @@ class MbtaGtfsRealtimeTranslator:
             raw_arrival_time = attributes['arrival_time']
             raw_departure_time = attributes['departure_time']
             direction_id = attributes['direction_id']
+            scheduled_arrival_time = None
+            scheduled_departure_time = None
 
             # route fields
             route_color = static_data['routes'][route_id]['color']
@@ -55,9 +57,12 @@ class MbtaGtfsRealtimeTranslator:
             route_short_name = static_data['routes'][route_id]['short_name']
 
             # scheduled times
-            schedule_id = relationships['schedule']['data']['id']
-            scheduled_arrival_time = static_data['schedules'][schedule_id]['arrival_time']
-            scheduled_departure_time = static_data['schedules'][schedule_id]['departure_time']
+            if relationships['schedule']['data'] is not None:
+                schedule_id = relationships['schedule']['data']['id']
+                scheduled_arrival_time = \
+                    static_data['schedules'][schedule_id]['arrival_time']
+                scheduled_departure_time = \
+                    static_data['schedules'][schedule_id]['departure_time']
 
             stop_name = static_data['stops'][stop_id]['stop_name']
             headsign = static_data['trips'][trip_id]['headsign']
