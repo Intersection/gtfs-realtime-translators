@@ -1,4 +1,5 @@
 import json
+from collections import defaultdict
 
 import pendulum
 
@@ -22,14 +23,14 @@ class MbtaGtfsRealtimeTranslator:
 
     @classmethod
     def __get_static_data(cls, included):
-        static_data = {'routes': {}, 'stops': {}, 'schedule': {}, 'trips': {}}
+        static_data = defaultdict(dict)
         for relationship in included:
             relationship_type = relationship['type']
             static_data_type = StaticDataTypeRegistry.get(relationship_type)
             if static_data_type is not None:
-                static_data[relationship_type][relationship['id']] = \
+                static_data[static_data_type.NAME][relationship['id']] = \
                     static_data_type.create_entry(relationship['attributes'],
-                                                  static_data_type.keys)
+                                                  static_data_type.KEYS)
 
         return static_data
 
@@ -109,19 +110,23 @@ class StaticData:
 
 
 class Route(StaticData):
-    keys = ['color', 'text_color', 'long_name', 'short_name']
+    NAME = 'routes'
+    KEYS = ['color', 'text_color', 'long_name', 'short_name']
 
 
 class Stop(StaticData):
-    keys = ['name']
+    NAME = 'stops'
+    KEYS = ['name']
 
 
 class Schedule(StaticData):
-    keys = ['arrival_time', 'departure_time']
+    NAME = 'schedules'
+    KEYS = ['arrival_time', 'departure_time']
 
 
 class Trip(StaticData):
-    keys = ['headsign']
+    NAME = 'trips'
+    KEYS = ['headsign']
 
 
 class StaticDataTypeRegistry:
