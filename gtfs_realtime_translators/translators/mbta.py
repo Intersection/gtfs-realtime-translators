@@ -11,7 +11,9 @@ class MbtaGtfsRealtimeTranslator:
     def __call__(self, data):
         json_data = json.loads(data)
         predictions = json_data['data']
-        entities = self.__make_trip_updates(predictions)
+        included = json_data['included']
+        static_data = self.__get_static_data(included)
+        entities = self.__make_trip_updates(predictions, static_data)
         return FeedMessage.create(entities=entities)
 
     @classmethod
@@ -19,7 +21,20 @@ class MbtaGtfsRealtimeTranslator:
         return pendulum.parse(time).in_tz(cls.TIMEZONE).int_timestamp
 
     @classmethod
-    def __make_trip_updates(cls, predictions):
+    def __get_static_data(cls, included):
+        static_data = {'routes': {}, 'stops': {}, 'schedule': {}, 'trips': {}}
+        for relationship in included:
+            relationship_type = relationship['type']
+            static_data_type = StaticDataTypeRegistry.get(relationship_type)
+            if static_data_type is not None:
+                static_data[relationship_type][relationship['id']] = \
+                    static_data_type.create_entry(relationship['attributes'],
+                                                  static_data_type.keys)
+
+        return static_data
+
+    @classmethod
+    def __make_trip_updates(cls, predictions, static_data):
         trip_updates = []
         for idx, prediction in enumerate(predictions):
             entity_id = str(idx + 1)
@@ -32,6 +47,20 @@ class MbtaGtfsRealtimeTranslator:
             raw_departure_time = attributes['departure_time']
             direction_id = attributes['direction_id']
 
+            # route fields
+            route_color = static_data['routes'][route_id]['color']
+            route_text_color = static_data['routes'][route_id]['text_color']
+            route_long_name = static_data['routes'][route_id]['long_name']
+            route_short_name = static_data['routes'][route_id]['short_name']
+
+            # scheduled times
+            schedule_id = relationships['schedule']['data']['id']
+            scheduled_arrival_time = static_data['schedules'][schedule_id]['arrival_time']
+            scheduled_departure_time = static_data['schedules'][schedule_id]['departure_time']
+
+            stop_name = static_data['stops'][stop_id]['stop_name']
+            headsign = static_data['trips'][trip_id]['headsign']
+
             if cls.__should_capture_prediction(raw_departure_time):
                 arrival_time, departure_time = cls.__set_arrival_and_departure_times(
                     raw_arrival_time, raw_departure_time)
@@ -42,7 +71,16 @@ class MbtaGtfsRealtimeTranslator:
                     trip_id=trip_id,
                     arrival_time=arrival_time,
                     departure_time=departure_time,
-                    direction_id=direction_id
+                    direction_id=direction_id,
+                    route_color=route_color,
+                    route_text_color=route_text_color,
+                    route_long_name=route_long_name,
+                    route_short_name=route_short_name,
+                    scheduled_arrival_time=scheduled_arrival_time,
+                    scheduled_departure_time=scheduled_departure_time,
+                    stop_name=stop_name,
+                    headsign=headsign,
+                    agency_timezone=cls.TIMEZONE
                 )
                 trip_updates.append(trip_update)
 
@@ -62,3 +100,33 @@ class MbtaGtfsRealtimeTranslator:
     @classmethod
     def __should_capture_prediction(cls, raw_departure_time):
         return raw_departure_time
+
+
+class StaticData:
+
+    def create_entry(self, attributes, keys):
+        return {key: attributes[key] for key in keys}
+
+
+class Route(StaticData):
+    keys = ['color', 'text_color', 'long_name', 'short_name']
+
+
+class Stop(StaticData):
+    keys = ['name']
+
+
+class Schedule(StaticData):
+    keys = ['arrival_time', 'departure_time']
+
+
+class Trip(StaticData):
+    keys = ['headsign']
+
+
+class StaticDataTypeRegistry:
+    TYPES = {'route': Route, 'stop': Stop, 'schedule': Schedule, 'trip': Trip}
+
+    @staticmethod
+    def get(key):
+        return StaticDataTypeRegistry.TYPES.get(key)
