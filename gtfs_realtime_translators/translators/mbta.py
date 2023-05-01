@@ -64,7 +64,7 @@ class MbtaGtfsRealtimeTranslator:
                 scheduled_departure_time = \
                     static_data['schedules'][schedule_id]['departure_time']
 
-            stop_name = static_data['stops'][stop_id]['stop_name']
+            stop_name = static_data['stops'][stop_id]['name']
             headsign = static_data['trips'][trip_id]['headsign']
 
             if cls.__should_capture_prediction(raw_departure_time):
