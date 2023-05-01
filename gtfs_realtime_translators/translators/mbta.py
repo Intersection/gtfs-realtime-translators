@@ -130,7 +130,8 @@ class Trip(StaticData):
 
 
 class StaticDataTypeRegistry:
-    TYPES = {'route': Route, 'stop': Stop, 'schedule': Schedule, 'trip': Trip}
+    TYPES = {'route': Route(), 'stop': Stop(), 'schedule': Schedule(),
+             'trip': Trip()}
 
     @staticmethod
     def get(key):
