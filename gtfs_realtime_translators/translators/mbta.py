@@ -1,4 +1,6 @@
 import json
+import warnings
+
 from collections import defaultdict
 
 import pendulum
@@ -12,8 +14,8 @@ class MbtaGtfsRealtimeTranslator:
     def __call__(self, data):
         json_data = json.loads(data)
         predictions = json_data['data']
-        included = json_data['included']
-        static_data = self.__get_static_data(included)
+        static_relationships = json_data['included']
+        static_data = self.__get_static_data(static_relationships)
         entities = self.__make_trip_updates(predictions, static_data)
         return FeedMessage.create(entities=entities)
 
@@ -22,16 +24,15 @@ class MbtaGtfsRealtimeTranslator:
         return pendulum.parse(time).in_tz(cls.TIMEZONE).int_timestamp
 
     @classmethod
-    def __get_static_data(cls, included):
+    def __get_static_data(cls, static_relationships):
         static_data = defaultdict(dict)
-        for relationship in included:
-            relationship_type = relationship['type']
-            static_data_type = StaticDataTypeRegistry.get(relationship_type)
-            if static_data_type is not None:
-                static_data[static_data_type.NAME][relationship['id']] = \
-                    static_data_type.create_entry(relationship['attributes'],
-                                                  static_data_type.KEYS)
-
+        for entity in static_relationships:
+            entity_type = entity['type']
+            static_data_type = StaticDataTypeRegistry.get(entity_type)
+            static_data[static_data_type.NAME][entity['id']] = \
+                static_data_type.create_entry(entity['id'],
+                                              entity['attributes'],
+                                              static_data_type.FIELDS)
         return static_data
 
     @classmethod
@@ -108,36 +109,103 @@ class MbtaGtfsRealtimeTranslator:
         return raw_departure_time
 
 
-class StaticData:
+class RouteShortNameTranslate:
+    ROUTE_ID_SHORT_NAMES = {
+        'Green-B': 'GL·B',
+        'Green-C': 'GL·C',
+        'Green-D': 'GL·D',
+        'Green-E': 'GL·E',
+        'Blue': 'BL',
+        'Red': 'RL',
+        'Orange': 'OL',
+        'Mattapan': 'M'
+    }
 
-    def create_entry(self, attributes, keys):
-        return {key: attributes[key] for key in keys}
+    def __call__(self, attributes_map, field, entity_id):
+        if entity_id in self.ROUTE_ID_SHORT_NAMES:
+            return self.ROUTE_ID_SHORT_NAMES.get(entity_id)
+        if attributes_map['type'] == '2':
+            return attributes_map[field].replace(' Line', '')
+
+
+class IdentityTranslate:
+
+    def __call__(self, attributes_map, field, entity_id):
+        return attributes_map[field]
+
+
+class StaticData:
+    """
+    Represents a static data `type` from the MBTA API response. Implements
+    the create_entry() interface. Each instance should contain:
+        NAME: the key in the map that we create from the static data in the
+            MBTA API response
+        FIELDS: the list of fields that we want to extract from the MBTA API
+            response
+        FIELD_TRANSLATORS: optional map of fields to their translators
+    """
+    def create_entry(self, entity_id, attributes_map, fields):
+        """
+        Extracts into a map a subset of the fields from the attributes map
+        contained within each entity in the MBTA API response.
+        """
+        entry = {}
+        for field in fields:
+            field_translate = self.get_field_translator(field)
+            if field_translate is not None:
+                value = field_translate(attributes_map,
+                                        field,
+                                        entity_id)
+            else:
+                value = attributes_map[field]
+            entry[field] = value
+        return entry
+
+    def get_field_translator(self, field):
+        if not hasattr(self, 'FIELD_TRANSLATORS'):
+            return IdentityTranslate()
+        return self.FIELD_TRANSLATORS.get(field, IdentityTranslate())
 
 
 class Route(StaticData):
     NAME = 'routes'
-    KEYS = ['color', 'text_color', 'long_name', 'short_name']
+    FIELDS = ['color', 'text_color', 'long_name', 'short_name']
+    FIELD_TRANSLATORS = {
+        'short_name': RouteShortNameTranslate()
+    }
 
 
 class Stop(StaticData):
     NAME = 'stops'
-    KEYS = ['name']
+    FIELDS = ['name']
 
 
 class Schedule(StaticData):
     NAME = 'schedules'
-    KEYS = ['arrival_time', 'departure_time']
+    FIELDS = ['arrival_time', 'departure_time']
 
 
 class Trip(StaticData):
     NAME = 'trips'
-    KEYS = ['headsign']
+    FIELDS = ['headsign']
+
+
+class StaticDataTypeWarning(Warning):
+    pass
 
 
 class StaticDataTypeRegistry:
+    """
+    This a map of the possible values in the `type` field and their
+    corresponding class representations.
+    """
     TYPES = {'route': Route(), 'stop': Stop(), 'schedule': Schedule(),
              'trip': Trip()}
 
-    @staticmethod
-    def get(key):
-        return StaticDataTypeRegistry.TYPES.get(key)
+    @classmethod
+    def get(cls, key):
+        if key in cls.TYPES:
+            return cls.TYPES[key]
+        else:
+            warnings.warn(f'No static data type defined for entity type {key}',
+                          StaticDataTypeWarning)
