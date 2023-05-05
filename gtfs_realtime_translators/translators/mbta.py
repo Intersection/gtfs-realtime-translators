@@ -1,7 +1,6 @@
 import json
 import warnings
 
-from collections import defaultdict
 import pendulum
 
 from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
