@@ -1,308 +1,801 @@
 {
-  "data": [
-      {
-          "attributes": {
-              "arrival_time": null,
-              "departure_time": null,
-              "direction_id": 0,
-              "schedule_relationship": "SKIPPED",
-              "status": null,
-              "stop_sequence": 6
-          },
-          "id": "prediction-49181402-1357-6",
-          "relationships": {
-              "route": {
-                  "data": {
-                      "id": "66",
-                      "type": "route"
-                  }
-              },
-              "stop": {
-                  "data": {
-                      "id": "1357",
-                      "type": "stop"
-                  }
-              },
-              "trip": {
-                  "data": {
-                      "id": "49181402",
-                      "type": "trip"
-                  }
-              },
-              "vehicle": {
-                  "data": null
-              }
-          },
-          "type": "prediction"
-      },
-      {
-          "attributes": {
-              "arrival_time": "2021-09-27T17:38:53-04:00",
-              "departure_time": "2021-09-27T17:38:53-04:00",
-              "direction_id": 0,
-              "schedule_relationship": null,
-              "status": null,
-              "stop_sequence": 6
-          },
-          "id": "prediction-49181421-1357-6",
-          "relationships": {
-              "route": {
-                  "data": {
-                      "id": "66",
-                      "type": "route"
-                  }
-              },
-              "stop": {
-                  "data": {
-                      "id": "1357",
-                      "type": "stop"
-                  }
-              },
-              "trip": {
-                  "data": {
-                      "id": "49181421",
-                      "type": "trip"
-                  }
-              },
-              "vehicle": {
-                  "data": {
-                      "id": "y1799",
-                      "type": "vehicle"
-                  }
-              }
-          },
-          "type": "prediction"
-      },
-      {
-          "attributes": {
-              "arrival_time": null,
-              "departure_time": "2021-09-27T17:38:53-04:00",
-              "direction_id": 0,
-              "schedule_relationship": null,
-              "status": null,
-              "stop_sequence": 6
-          },
-          "id": "prediction-49181349-1357-6",
-          "relationships": {
-              "route": {
-                  "data": {
-                      "id": "66",
-                      "type": "route"
-                  }
-              },
-              "stop": {
-                  "data": {
-                      "id": "1357",
-                      "type": "stop"
-                  }
-              },
-              "trip": {
-                  "data": {
-                      "id": "49181349",
-                      "type": "trip"
-                  }
-              },
-              "vehicle": {
-                  "data": {
-                      "id": "y1885",
-                      "type": "vehicle"
-                  }
-              }
-          },
-          "type": "prediction"
-      },
-      {
-          "attributes": {
-              "arrival_time": "2021-09-27T17:51:18-04:00",
-              "departure_time": null,
-              "direction_id": 0,
-              "schedule_relationship": null,
-              "status": null,
-              "stop_sequence": 6
-          },
-          "id": "prediction-49181350-1357-6",
-          "relationships": {
-              "route": {
-                  "data": {
-                      "id": "66",
-                      "type": "route"
-                  }
-              },
-              "stop": {
-                  "data": {
-                      "id": "1357",
-                      "type": "stop"
-                  }
-              },
-              "trip": {
-                  "data": {
-                      "id": "49181350",
-                      "type": "trip"
-                  }
-              },
-              "vehicle": {
-                  "data": {
-                      "id": "y1838",
-                      "type": "vehicle"
-                  }
-              }
-          },
-          "type": "prediction"
-      },
-      {
-          "attributes": {
-              "arrival_time": "2021-09-27T18:00:15-04:00",
-              "departure_time": "2021-09-27T18:00:15-04:00",
-              "direction_id": 0,
-              "schedule_relationship": null,
-              "status": null,
-              "stop_sequence": 6
-          },
-          "id": "prediction-49181351-1357-6",
-          "relationships": {
-              "route": {
-                  "data": {
-                      "id": "66",
-                      "type": "route"
-                  }
-              },
-              "stop": {
-                  "data": {
-                      "id": "1357",
-                      "type": "stop"
-                  }
-              },
-              "trip": {
-                  "data": {
-                      "id": "49181351",
-                      "type": "trip"
-                  }
-              },
-              "vehicle": {
-                  "data": {
-                      "id": "y1910",
-                      "type": "vehicle"
-                  }
-              }
-          },
-          "type": "prediction"
-      },
-      {
-          "attributes": {
-              "arrival_time": "2021-09-27T18:07:39-04:00",
-              "departure_time": "2021-09-27T18:07:39-04:00",
-              "direction_id": 0,
-              "schedule_relationship": null,
-              "status": null,
-              "stop_sequence": 6
-          },
-          "id": "prediction-49181352-1357-6",
-          "relationships": {
-              "route": {
-                  "data": {
-                      "id": "66",
-                      "type": "route"
-                  }
-              },
-              "stop": {
-                  "data": {
-                      "id": "1357",
-                      "type": "stop"
-                  }
-              },
-              "trip": {
-                  "data": {
-                      "id": "49181352",
-                      "type": "trip"
-                  }
-              },
-              "vehicle": {
-                  "data": {
-                      "id": "y1792",
-                      "type": "vehicle"
-                  }
-              }
-          },
-          "type": "prediction"
-      },
-      {
-          "attributes": {
-              "arrival_time": "2021-09-27T18:18:56-04:00",
-              "departure_time": "2021-09-27T18:18:56-04:00",
-              "direction_id": 0,
-              "schedule_relationship": null,
-              "status": null,
-              "stop_sequence": 6
-          },
-          "id": "prediction-49181353-1357-6",
-          "relationships": {
-              "route": {
-                  "data": {
-                      "id": "66",
-                      "type": "route"
-                  }
-              },
-              "stop": {
-                  "data": {
-                      "id": "1357",
-                      "type": "stop"
-                  }
-              },
-              "trip": {
-                  "data": {
-                      "id": "49181353",
-                      "type": "trip"
-                  }
-              },
-              "vehicle": {
-                  "data": {
-                      "id": "y1729",
-                      "type": "vehicle"
-                  }
-              }
-          },
-          "type": "prediction"
-      },
-      {
-          "attributes": {
-              "arrival_time": "2021-09-27T18:40:03-04:00",
-              "departure_time": "2021-09-27T18:40:03-04:00",
-              "direction_id": 0,
-              "schedule_relationship": null,
-              "status": null,
-              "stop_sequence": 6
-          },
-          "id": "prediction-49181355-1357-6",
-          "relationships": {
-              "route": {
-                  "data": {
-                      "id": "66",
-                      "type": "route"
-                  }
-              },
-              "stop": {
-                  "data": {
-                      "id": "1357",
-                      "type": "stop"
-                  }
-              },
-              "trip": {
-                  "data": {
-                      "id": "49181355",
-                      "type": "trip"
-                  }
-              },
-              "vehicle": {
-                  "data": {
-                      "id": "y1754",
-                      "type": "vehicle"
-                  }
-              }
-          },
-          "type": "prediction"
-      }
-  ],
-  "jsonapi": {
-      "version": "1.0"
-  }
+    "data": [
+        {
+            "attributes": {
+                "arrival_time": "2023-05-03T16:26:20-04:00",
+                "departure_time": "2023-05-03T16:26:20-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 6
+            },
+            "id": "prediction-55800441-1357-6",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "schedule": {
+                    "data": {
+                        "id": "schedule-55800441-1357-6",
+                        "type": "schedule"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "1357",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "55800441",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "y1751",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2023-05-03T16:32:25-04:00",
+                "departure_time": "2023-05-03T16:32:25-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 6
+            },
+            "id": "prediction-55800443-1357-6",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "schedule": {
+                    "data": {
+                        "id": "schedule-55800443-1357-6",
+                        "type": "schedule"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "1357",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "55800443",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "y1793",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2023-05-03T16:40:12-04:00",
+                "departure_time": "2023-05-03T16:40:12-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 6
+            },
+            "id": "prediction-55800446-1357-6",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "schedule": {
+                    "data": {
+                        "id": "schedule-55800446-1357-6",
+                        "type": "schedule"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "1357",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "55800446",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "y1767",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2023-05-03T16:55:40-04:00",
+                "departure_time": "2023-05-03T16:55:40-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 6
+            },
+            "id": "prediction-55800448-1357-6",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "schedule": {
+                    "data": {
+                        "id": "schedule-55800448-1357-6",
+                        "type": "schedule"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "1357",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "55800448",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "y1892",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2023-05-03T16:59:16-04:00",
+                "departure_time": "2023-05-03T16:59:16-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 6
+            },
+            "id": "prediction-55800450-1357-6",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "schedule": {
+                    "data": {
+                        "id": "schedule-55800450-1357-6",
+                        "type": "schedule"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "1357",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "55800450",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "y1801",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2023-05-03T17:09:26-04:00",
+                "departure_time": "2023-05-03T17:09:26-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 6
+            },
+            "id": "prediction-55800452-1357-6",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "schedule": {
+                    "data": {
+                        "id": "schedule-55800452-1357-6",
+                        "type": "schedule"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "1357",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "55800452",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "y1835",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        },
+        {
+            "attributes": {
+                "arrival_time": "2023-05-03T17:19:43-04:00",
+                "departure_time": "2023-05-03T17:19:43-04:00",
+                "direction_id": 0,
+                "schedule_relationship": null,
+                "status": null,
+                "stop_sequence": 6
+            },
+            "id": "prediction-55800454-1357-6",
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "schedule": {
+                    "data": {
+                        "id": "schedule-55800454-1357-6",
+                        "type": "schedule"
+                    }
+                },
+                "stop": {
+                    "data": {
+                        "id": "1357",
+                        "type": "stop"
+                    }
+                },
+                "trip": {
+                    "data": {
+                        "id": "55800454",
+                        "type": "trip"
+                    }
+                },
+                "vehicle": {
+                    "data": {
+                        "id": "y1730",
+                        "type": "vehicle"
+                    }
+                }
+            },
+            "type": "prediction"
+        }
+    ],
+    "included": [
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-239",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800396",
+            "links": {
+                "self": "/trips/55800396"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-230",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800406",
+            "links": {
+                "self": "/trips/55800406"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-239",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800426",
+            "links": {
+                "self": "/trips/55800426"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-246",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800437",
+            "links": {
+                "self": "/trips/55800437"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-231",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800441",
+            "links": {
+                "self": "/trips/55800441"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-232",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800443",
+            "links": {
+                "self": "/trips/55800443"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-235",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800446",
+            "links": {
+                "self": "/trips/55800446"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-224",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800448",
+            "links": {
+                "self": "/trips/55800448"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-229",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800450",
+            "links": {
+                "self": "/trips/55800450"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-236",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800452",
+            "links": {
+                "self": "/trips/55800452"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "bikes_allowed": 1,
+                "block_id": "C66-237",
+                "direction_id": 0,
+                "headsign": "Harvard via Allston",
+                "name": "",
+                "wheelchair_accessible": 1
+            },
+            "id": "55800454",
+            "links": {
+                "self": "/trips/55800454"
+            },
+            "relationships": {
+                "route": {
+                    "data": {
+                        "id": "66",
+                        "type": "route"
+                    }
+                },
+                "route_pattern": {
+                    "data": {
+                        "id": "66-6-0",
+                        "type": "route_pattern"
+                    }
+                },
+                "service": {
+                    "data": {
+                        "id": "SpringWeekday",
+                        "type": "service"
+                    }
+                },
+                "shape": {
+                    "data": {
+                        "id": "660233",
+                        "type": "shape"
+                    }
+                }
+            },
+            "type": "trip"
+        },
+        {
+            "attributes": {
+                "color": "FFC72C",
+                "description": "Key Bus",
+                "direction_destinations": [
+                    "Harvard Square",
+                    "Nubian Station"
+                ],
+                "direction_names": [
+                    "Outbound",
+                    "Inbound"
+                ],
+                "fare_class": "Local Bus",
+                "long_name": "Harvard Square - Nubian Station",
+                "short_name": "66",
+                "sort_order": 50660,
+                "text_color": "000000",
+                "type": 3
+            },
+            "id": "66",
+            "links": {
+                "self": "/routes/66"
+            },
+            "relationships": {
+                "line": {
+                    "data": {
+                        "id": "line-66",
+                        "type": "line"
+                    }
+                }
+            },
+            "type": "route"
+        }
+    ],
+    "jsonapi": {
+        "version": "1.0"
+    }
 }

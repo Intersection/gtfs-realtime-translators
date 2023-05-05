@@ -2,7 +2,6 @@ import json
 import warnings
 
 from collections import defaultdict
-
 import pendulum
 
 from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
@@ -24,18 +23,6 @@ class MbtaGtfsRealtimeTranslator:
         return pendulum.parse(time).in_tz(cls.TIMEZONE).int_timestamp
 
     @classmethod
-    def __get_static_data(cls, static_relationships):
-        static_data = defaultdict(dict)
-        for entity in static_relationships:
-            entity_type = entity['type']
-            static_data_type = StaticDataTypeRegistry.get(entity_type)
-            static_data[static_data_type.NAME][entity['id']] = \
-                static_data_type.create_entry(entity['id'],
-                                              entity['attributes'],
-                                              static_data_type.FIELDS)
-        return static_data
-
-    @classmethod
     def __make_trip_updates(cls, predictions, static_data):
         trip_updates = []
         for idx, prediction in enumerate(predictions):
@@ -48,25 +35,20 @@ class MbtaGtfsRealtimeTranslator:
             raw_arrival_time = attributes['arrival_time']
             raw_departure_time = attributes['departure_time']
             direction_id = attributes['direction_id']
-            scheduled_arrival_time = None
-            scheduled_departure_time = None
 
-            # route fields
             route_color = static_data['routes'][route_id]['color']
             route_text_color = static_data['routes'][route_id]['text_color']
             route_long_name = static_data['routes'][route_id]['long_name']
             route_short_name = static_data['routes'][route_id]['short_name']
 
-            # scheduled times
-            if relationships['schedule']['data'] is not None:
-                schedule_id = relationships['schedule']['data']['id']
-                scheduled_arrival_time = \
-                    static_data['schedules'][schedule_id]['arrival_time']
-                scheduled_departure_time = \
-                    static_data['schedules'][schedule_id]['departure_time']
-
-            stop_name = static_data['stops'][stop_id]['name']
             headsign = static_data['trips'][trip_id]['headsign']
+
+            scheduled_arrival_time, scheduled_departure_time = \
+                cls.__get_scheduled_data(relationships['schedule'].get('data'),
+                                         static_data['schedules'])
+
+            stop_name = cls.__get_stop_data(stop_id,
+                                            static_data['stops'])
 
             if cls.__should_capture_prediction(raw_departure_time):
                 arrival_time, departure_time = cls.__set_arrival_and_departure_times(
@@ -92,6 +74,48 @@ class MbtaGtfsRealtimeTranslator:
                 trip_updates.append(trip_update)
 
         return trip_updates
+
+    @classmethod
+    def __get_static_data(cls, static_relationships):
+        static_data = {}
+        for subclass in StaticData.__subclasses__():
+            static_data[subclass.NAME] = {}
+
+        for entity in static_relationships:
+            entity_type = entity['type']
+            static_data_type = StaticDataTypeRegistry.get(entity_type)
+            static_data[static_data_type.NAME][entity['id']] = \
+                static_data_type.create_entry(entity['id'],
+                                              entity['attributes'],
+                                              static_data_type.FIELDS)
+        return static_data
+
+    @classmethod
+    def __get_scheduled_data(cls, schedule_relationship, static_schedule_data):
+        scheduled_arrival_time, scheduled_departure_time = None, None
+        if schedule_relationship is None:
+            return scheduled_arrival_time, scheduled_departure_time
+
+        schedule_id = schedule_relationship['id']
+        schedule_data = static_schedule_data.get(schedule_id)
+
+        if schedule_data is None:
+            return scheduled_arrival_time, scheduled_departure_time
+
+        if schedule_data['arrival_time'] is not None:
+            scheduled_arrival_time = \
+                cls.__to_unix_time(schedule_data['arrival_time'])
+        if schedule_data['departure_time'] is not None:
+            scheduled_departure_time = \
+                cls.__to_unix_time(schedule_data['departure_time'])
+        return scheduled_arrival_time, scheduled_departure_time
+
+    @classmethod
+    def __get_stop_data(cls, stop_id, static_stop_data):
+        stop_data = static_stop_data.get(stop_id)
+        if stop_data is None:
+            return None
+        return stop_data['name']
 
     @classmethod
     def __set_arrival_and_departure_times(cls, raw_arrival_time, raw_departure_time):
@@ -121,16 +145,17 @@ class RouteShortNameTranslate:
         'Mattapan': 'M'
     }
 
-    def __call__(self, attributes_map, field, entity_id):
+    def __call__(self, entity_id, attributes_map, field):
         if entity_id in self.ROUTE_ID_SHORT_NAMES:
             return self.ROUTE_ID_SHORT_NAMES.get(entity_id)
         if attributes_map['type'] == '2':
             return attributes_map[field].replace(' Line', '')
+        return attributes_map[field]
 
 
 class IdentityTranslate:
 
-    def __call__(self, attributes_map, field, entity_id):
+    def __call__(self, entity_id, attributes_map, field):
         return attributes_map[field]
 
 
@@ -152,13 +177,10 @@ class StaticData:
         entry = {}
         for field in fields:
             field_translate = self.get_field_translator(field)
-            if field_translate is not None:
-                value = field_translate(attributes_map,
-                                        field,
-                                        entity_id)
-            else:
-                value = attributes_map[field]
-            entry[field] = value
+            translated_value = field_translate(entity_id,
+                                               attributes_map,
+                                               field)
+            entry[field] = translated_value
         return entry
 
     def get_field_translator(self, field):
@@ -190,10 +212,6 @@ class Trip(StaticData):
     FIELDS = ['headsign']
 
 
-class StaticDataTypeWarning(Warning):
-    pass
-
-
 class StaticDataTypeRegistry:
     """
     This a map of the possible values in the `type` field and their
@@ -209,3 +227,7 @@ class StaticDataTypeRegistry:
         else:
             warnings.warn(f'No static data type defined for entity type {key}',
                           StaticDataTypeWarning)
+
+
+class StaticDataTypeWarning(Warning):
+    pass
