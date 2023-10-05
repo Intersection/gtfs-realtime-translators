@@ -23,6 +23,8 @@ class WcdotGtfsRealTimeTranslator:
             trip = trip_update.get('trip')
             trip_id = trip.get('trip_id')
             route_id = trip.get('route_id')
+            if route_id:
+                route_id = route_id.lstrip('0')
             stop_time_update = trip_update.get('stop_time_update')
             for update in stop_time_update:
                 stop_id = update.get("stop_id")
