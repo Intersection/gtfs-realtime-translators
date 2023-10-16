@@ -116,36 +116,36 @@ class NjtRailGtfsRealtimeTranslator:
         destination_name = destination['NAME'].replace(' ', '_').lower()
 
         key = data['LINE'].replace(' ', '_').lower()
-        if key == 'montclair-boonton_line':
+        if key == 'montclair-boonton':
             hoboken = 'hoboken'
             origins_and_destinations = {'denville', 'dover', 'mount_olive', 'lake_hopatcong', 'hackettstown'}
             if origin_name == hoboken and destination_name in origins_and_destinations:
-                return '2'
+                return '3'
             if origin_name in origins_and_destinations and destination_name == hoboken:
-                return '2'
-            return '3'
+                return '3'
+            return '4'
 
         if key == 'north_jersey_coast_line':
             origins_and_destinations = {'new_york_penn_station'}
             if origin_name in origins_and_destinations or destination_name in origins_and_destinations:
-                return '10'
-            return '11'
+                return '11'
+            return '12'
         return None
 
     @classmethod
     def __get_route_id_by_line_data(cls, data):
         route_id_lookup = {
             'atlantic_city_line': '1',
-            'main_line': '5',
+            'betmgm_meadowlands': '2',
+            'main_line': '6',
             'bergen_county_line': '6',
-            'morristown_line': '7',
-            'morris_&_essex_line': '7',
-            'gladstone_branch': '8',
-            'northeast_corridor_line': '9',
-            'pascack_valley_line': '13',
-            'princeton_shuttle': '14',
-            'raritan_valley_line': '15',
-            'betmgm_meadowlands': '17',
+            'morristown_line': '8',
+            'morris_&_essex_line': '8',
+            'gladstone_branch': '9',
+            'northeast_corridor_line': '10',
+            'pascack_valley_line': '14',
+            'princeton_branch': '15',
+            'raritan_valley_line': '16',
         }
 
         amtrak_route_id = 'AMTK'
