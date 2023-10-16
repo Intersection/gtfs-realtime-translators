@@ -38,31 +38,31 @@ class NjtRailGtfsRealtimeTranslator:
         station_data_item = data['STATION']['ITEMS'].values()
         for value in station_data_item:
             for idx, item_entry in enumerate(value):
-
-                # Intersection Extensions
-                headsign = item_entry['DESTINATION']
-                route_short_name = cls.__get_route_short_name(item_entry)
-                route_long_name = cls.__get_route_long_name(item_entry)
-                route_color = item_entry['BACKCOLOR']
-                route_text_color = item_entry['FORECOLOR']
-                block_id = item_entry['TRAIN_ID']
-                track = item_entry['TRACK']
-                stop_id = data['STATION']['STATION_2CHAR']
-                stop_name = data['STATION']['STATIONNAME']
-                scheduled_datetime = cls.__to_unix_time(item_entry['SCHED_DEP_DATE'])
-                departure_time = int(scheduled_datetime.add(seconds=int(item_entry['SEC_LATE'])).timestamp())
-                scheduled_departure_time = int(scheduled_datetime.timestamp())
-                custom_status = item_entry['STATUS']
-
                 origin_and_destination = None
                 stops = item_entry['STOPS']
                 if stops:
                     for stop in stops.values():
                         origin_and_destination = [stop[i] for i in (0, -1)]
 
-                    route_id = cls.__get_route_id(item_entry, origin_and_destination)
+                    route_id = cls.__get_route_id(item_entry,
+                                                  origin_and_destination)
+                    if route_id:
+                        # Intersection Extensions
+                        headsign = item_entry['DESTINATION']
+                        route_short_name = cls.__get_route_short_name(item_entry)
+                        route_long_name = cls.__get_route_long_name(item_entry)
+                        route_color = item_entry['BACKCOLOR']
+                        route_text_color = item_entry['FORECOLOR']
+                        block_id = item_entry['TRAIN_ID']
+                        track = item_entry['TRACK']
+                        stop_id = data['STATION']['STATION_2CHAR']
+                        stop_name = data['STATION']['STATIONNAME']
+                        scheduled_datetime = cls.__to_unix_time(item_entry['SCHED_DEP_DATE'])
+                        departure_time = int(scheduled_datetime.add(seconds=int(item_entry['SEC_LATE'])).timestamp())
+                        scheduled_departure_time = int(scheduled_datetime.timestamp())
+                        custom_status = item_entry['STATUS']
 
-                    trip_update = TripUpdate.create(entity_id=str(idx + 1),
+                        trip_update = TripUpdate.create(entity_id=str(idx + 1),
                                                     departure_time=departure_time,
                                                     scheduled_departure_time=scheduled_departure_time,
                                                     arrival_time=departure_time,
@@ -79,7 +79,7 @@ class NjtRailGtfsRealtimeTranslator:
                                                     block_id=block_id,
                                                     agency_timezone=cls.TIMEZONE,
                                                     custom_status=custom_status)
-                    trip_updates.append(trip_update)
+                        trip_updates.append(trip_update)
 
         return trip_updates
 
@@ -116,7 +116,7 @@ class NjtRailGtfsRealtimeTranslator:
         destination_name = destination['NAME'].replace(' ', '_').lower()
 
         key = data['LINE'].replace(' ', '_').lower()
-        if key == 'montclair-boonton':
+        if key == 'montclair-boonton_line':
             hoboken = 'hoboken'
             origins_and_destinations = {'denville', 'dover', 'mount_olive', 'lake_hopatcong', 'hackettstown'}
             if origin_name == hoboken and destination_name in origins_and_destinations:
