@@ -51,8 +51,8 @@ class NjtRailGtfsRealtimeTranslator:
                         headsign = item_entry['DESTINATION']
                         route_short_name = cls.__get_route_short_name(item_entry)
                         route_long_name = cls.__get_route_long_name(item_entry)
-                        route_color = item_entry['BACKCOLOR']
-                        route_text_color = item_entry['FORECOLOR']
+                        route_color = cls.__get_route_color(item_entry, route_id)
+                        route_text_color = cls.__get_route_text_color(item_entry, route_id)
                         block_id = item_entry['TRAIN_ID']
                         track = item_entry['TRACK']
                         stop_id = data['STATION']['STATION_2CHAR']
@@ -169,3 +169,15 @@ class NjtRailGtfsRealtimeTranslator:
         if data['LINEABBREVIATION'] == 'AMTK':
             return data['LINE']
         return data['LINEABBREVIATION']
+
+    @classmethod
+    def __get_route_color(cls, data, route_id):
+        if route_id == 'AMTK':
+            return '#FFFF00'
+        return data['BACKCOLOR']
+
+    @classmethod
+    def __get_route_text_color(cls, data, route_id):
+        if route_id == 'AMTK':
+            return '#000000'
+        return data['FORECOLOR']
