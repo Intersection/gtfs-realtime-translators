@@ -41,8 +41,8 @@ class SeptaRegionalRailTranslator:
             raise ValueError('root_key: unexpected format')
         
         arrivals_body = json_data[root_key]
-        northbound = [ direction_list['Northbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Northbound' ][0]
-        southbound = [ direction_list['Southbound'] for direction_list in arrivals_body if [*direction_list][0] == 'Southbound' ][0]
+        northbound = self.get_arrivals_from_direction_list('Northbound', arrivals_body)
+        southbound = self.get_arrivals_from_direction_list('Southbound', arrivals_body)
         arrivals = northbound + southbound
 
         transformed_arrivals = [ self.transform_arrival(arrival) for arrival in arrivals ]
@@ -50,6 +50,18 @@ class SeptaRegionalRailTranslator:
 
         entities = [ self.__make_trip_update(idx, self.stop_id, arrival) for idx, arrival in enumerate(filtered_arrivals) ]
         return FeedMessage.create(entities=entities)
+
+    @classmethod
+    def get_arrivals_from_direction_list(cls, direction_string, arrivals_body):
+        arrivals = []
+        for direction_list in arrivals_body:
+            # When there are no arrivals, the API gives us an empty list instead
+            # of a dictionary
+            if isinstance(direction_list, dict) \
+                    and [*direction_list][0] == direction_string:
+                arrivals.append(direction_list[direction_string])
+        if arrivals:
+            return arrivals[0]
 
     @classmethod
     def calculate_time_at(cls, **kwargs):
