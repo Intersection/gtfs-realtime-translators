@@ -35,7 +35,8 @@ class NjtBusGtfsRealtimeTranslator:
     @classmethod
     def __make_trip_updates(cls, data, filtered_stops):
         trip_updates = []
-        trips = data['SCHEDULEROWSET'].values()
+        schedule_row_set = data.get('SCHEDULEROWSET', {})
+        trips = schedule_row_set.values()
 
         for value in trips:
             for idx, item_entry in enumerate(value):
