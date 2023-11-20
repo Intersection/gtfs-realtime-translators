@@ -62,6 +62,7 @@ class SeptaRegionalRailTranslator:
                 arrivals.append(direction_list[direction_string])
         if arrivals:
             return arrivals[0]
+        return []
 
     @classmethod
     def calculate_time_at(cls, **kwargs):
