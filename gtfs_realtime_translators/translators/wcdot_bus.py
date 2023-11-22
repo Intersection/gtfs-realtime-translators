@@ -31,8 +31,12 @@ class WcdotGtfsRealTimeTranslator:
                 arrival = update.get("arrival")
                 departure = update.get("departure")
                 if stop_id == self.stop_id:
-                    arrival_delay = arrival.get('delay',None)
-                    departure_delay = departure.get('delay',None)
+                    arrival_delay = None
+                    departure_delay = None
+                    if arrival:
+                        arrival_delay = arrival.get('delay',None)
+                    if departure:
+                        departure_delay = departure.get('delay',None)
                     trip_update = TripUpdate.create(
                         entity_id=entity_id,
                         arrival_delay=arrival_delay,

@@ -11,10 +11,12 @@ class MbtaGtfsRealtimeTranslator:
 
     def __call__(self, data):
         json_data = json.loads(data)
-        predictions = json_data['data']
-        static_relationships = json_data['included']
-        static_data = self.__get_static_data(static_relationships)
-        entities = self.__make_trip_updates(predictions, static_data)
+        entities = []
+        predictions = json_data.get('data')
+        static_relationships = json_data.get('included')
+        if predictions and static_relationships:
+            static_data = self.__get_static_data(static_relationships)
+            entities = self.__make_trip_updates(predictions, static_data)
         return FeedMessage.create(entities=entities)
 
     @classmethod
