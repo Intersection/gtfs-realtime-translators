@@ -39,7 +39,7 @@ class SwiftlyGtfsRealtimeTranslator:
         for destination in data["destinations"]:
             # Intersection Extension
             headsign = destination.get("headsign")
-            
+            direction_id = destination.get("directionId", -1)
             # realtime predictions
             predictions = enumerate(destination["predictions"])
             for _idx, arrival in predictions:
@@ -57,7 +57,9 @@ class SwiftlyGtfsRealtimeTranslator:
                                                 route_long_name=route_long_name,
                                                 stop_id=stop_id,
                                                 stop_name=stop_name,
-                                                headsign=headsign)
+                                                headsign=headsign,
+                                                direction_id=direction_id,
+                                                )
 
                 trip_updates.append(trip_update)
             
