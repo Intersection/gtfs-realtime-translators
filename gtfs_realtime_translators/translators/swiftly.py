@@ -23,7 +23,7 @@ class SwiftlyGtfsRealtimeTranslator:
             RequiredFieldValidator.validate_field_value('stop_id', stop_id)
             trip_updates = self.__make_trip_updates(data, stop_id)
             entities.extend(trip_updates)
-        
+
         return FeedMessage.create(entities=entities)
 
     @classmethod
@@ -31,7 +31,7 @@ class SwiftlyGtfsRealtimeTranslator:
         trip_updates = []
         route_id = data.get("routeId")
 
-        ##### Intersection Extensions
+        # Intersection Extensions
         route_short_name = data.get("routeShortName")
         route_long_name = data.get("routeName")
         stop_name = data.get("stopName")
@@ -45,7 +45,8 @@ class SwiftlyGtfsRealtimeTranslator:
             for _idx, arrival in predictions:
                 entity_id = str(_idx + 1)
                 now = int(pendulum.now().timestamp())
-                arrival_or_departure_time = now + math.floor(arrival.get("sec") / 60) * 60
+                arrival_or_departure_time = now + \
+                    math.floor(arrival.get("sec") / 60) * 60
                 trip_id = arrival.get('tripId')
 
                 trip_update = TripUpdate.create(entity_id=entity_id,
@@ -62,5 +63,5 @@ class SwiftlyGtfsRealtimeTranslator:
                                                 )
 
                 trip_updates.append(trip_update)
-            
+
         return trip_updates
