@@ -28,7 +28,11 @@ class MnmtGtfsRealtimeTranslator:
             entity_id = str(index + 1)
 
             trip_id = departure.get('trip_id')
+
             stop_id = departure.get('stop_id')
+            if stop_id:
+                stop_id = str(stop_id)
+
             headsign = departure.get('description')
             route_id = departure.get('route_id')
             route_short_name = departure.get('route_short_name')
