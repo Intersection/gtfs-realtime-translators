@@ -68,7 +68,7 @@ class MnmtGtfsRealtimeTranslator:
     def __is_realtime_departure(cls, departure):
         departure_text = departure.get('departure_text', '')
         try:
-            pendulum.from_format(departure_text, 'H:mm:ss')
+            pendulum.from_format(departure_text, 'H:mm')
             return True
         except ValueError:
             return False
