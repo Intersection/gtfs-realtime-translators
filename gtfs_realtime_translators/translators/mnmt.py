@@ -22,7 +22,7 @@ class MnmtGtfsRealtimeTranslator:
     @classmethod
     def __make_trip_updates(cls, stops_list, departures_list):
         trip_updates = []
-        stop_name = stops_list[0].get("stop_name")
+        stop_name = stops_list[0].get("description")
 
         for index, departure in enumerate(departures_list):
             entity_id = str(index + 1)
