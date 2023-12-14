@@ -10,3 +10,4 @@ from .path_new import PathNewGtfsRealtimeTranslator
 from .swiftly import SwiftlyGtfsRealtimeTranslator
 from .wcdot_bus import WcdotGtfsRealTimeTranslator
 from .mbta import MbtaGtfsRealtimeTranslator
+from .mnmt import MnmtGtfsRealtimeTranslator
