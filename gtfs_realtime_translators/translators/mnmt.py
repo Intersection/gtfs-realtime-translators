@@ -59,6 +59,7 @@ class MnmtGtfsRealtimeTranslator:
                                             stop_name=stop_name,
                                             headsign=headsign,
                                             direction_id=direction_id,
+                                            agency_timezone=cls.TIMEZONE
                                             )
 
             trip_updates.append(trip_update)
