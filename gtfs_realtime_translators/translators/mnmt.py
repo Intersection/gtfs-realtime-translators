@@ -6,6 +6,7 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 
 class MnmtGtfsRealtimeTranslator:
+    TIMEZONE = 'America/Chicago'
 
     def __call__(self, data):
         json_data = json.loads(data)
