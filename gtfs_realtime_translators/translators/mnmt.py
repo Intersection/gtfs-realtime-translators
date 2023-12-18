@@ -40,18 +40,13 @@ class MnmtGtfsRealtimeTranslator:
             direction_id = departure.get('direction_id')
 
             departure_time, scheduled_departure_time = None, None
-            arrival_time, scheduled_arrival_time = None, None
-            if cls.__is_scheduled_departure(departure):
-                scheduled_departure_time = departure.get('departure_time')
-                scheduled_arrival_time = scheduled_departure_time
-            else:
+            if cls.__is_realtime_departure(departure):
                 departure_time = departure.get('departure_time')
-                arrival_time = departure_time
+            else:
+                scheduled_departure_time = departure.get('departure_time')
             trip_update = TripUpdate.create(entity_id=entity_id,
                                             departure_time=departure_time,
                                             scheduled_departure_time=scheduled_departure_time,
-                                            arrival_time=arrival_time,
-                                            scheduled_arrival_time=scheduled_arrival_time,
                                             trip_id=trip_id,
                                             route_id=route_id,
                                             route_short_name=route_short_name,
@@ -67,10 +62,5 @@ class MnmtGtfsRealtimeTranslator:
         return trip_updates
 
     @classmethod
-    def __is_scheduled_departure(cls, departure):
-        departure_text = departure.get('departure_text', '')
-        try:
-            pendulum.from_format(departure_text, 'H:mm')
-            return True
-        except ValueError:
-            return False
+    def __is_realtime_departure(cls, departure):
+        return departure.get('actual') is True
