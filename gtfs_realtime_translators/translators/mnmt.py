@@ -36,7 +36,6 @@ class MnmtGtfsRealtimeTranslator:
 
             headsign = departure.get('description')
             route_id = departure.get('route_id')
-            route_short_name = departure.get('route_short_name')
             direction_id = departure.get('direction_id')
 
             departure_time, scheduled_departure_time = None, None
@@ -47,6 +46,9 @@ class MnmtGtfsRealtimeTranslator:
             else:
                 scheduled_departure_time = departure.get('departure_time')
                 scheduled_arrival_time = scheduled_departure_time
+
+            route_short_name = cls.__get_route_short_name(departure)
+
             trip_update = TripUpdate.create(entity_id=entity_id,
                                             departure_time=departure_time,
                                             arrival_time=arrival_time,
@@ -69,3 +71,11 @@ class MnmtGtfsRealtimeTranslator:
     @classmethod
     def __is_realtime_departure(cls, departure):
         return departure.get('actual') is True
+
+    @classmethod
+    def __get_route_short_name(cls, departure):
+        terminal = departure.get('terminal')
+        route_short_name = departure.get('route_short_name')
+        if terminal:
+            return f'{route_short_name}{terminal}'
+        return route_short_name
