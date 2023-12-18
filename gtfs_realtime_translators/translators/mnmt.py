@@ -40,13 +40,18 @@ class MnmtGtfsRealtimeTranslator:
             direction_id = departure.get('direction_id')
 
             departure_time, scheduled_departure_time = None, None
+            arrival_time, scheduled_arrival_time = None, None
             if cls.__is_realtime_departure(departure):
                 departure_time = departure.get('departure_time')
+                arrival_time = departure_time
             else:
                 scheduled_departure_time = departure.get('departure_time')
+                scheduled_arrival_time = scheduled_departure_time
             trip_update = TripUpdate.create(entity_id=entity_id,
                                             departure_time=departure_time,
+                                            arrival_time=arrival_time,
                                             scheduled_departure_time=scheduled_departure_time,
+                                            scheduled_arrival_time=scheduled_arrival_time,
                                             trip_id=trip_id,
                                             route_id=route_id,
                                             route_short_name=route_short_name,
