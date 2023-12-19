@@ -1,0 +1,45 @@
+{
+    "stops": [
+        {
+            "stop_id": 11191,
+            "latitude": 45.013401,
+            "longitude": -93.287947,
+            "description": "Lyndale Ave N & Lowry Ave N"
+        }
+    ],
+    "alerts": [
+        {
+            "stop_closed": false,
+            "alert_text": "The following stop is closed for Routes 3, 7 and 22 until further notice: Washington Ave S & Park Ave - Stop #19306 (westbound)"
+        }
+    ],
+    "departures": [
+        {
+            "actual": true,
+            "trip_id": "24557038-DEC23-MVS-BUS-Weekday-03",
+            "stop_id": 11191,
+            "departure_text": "14 Min",
+            "departure_time": 1702923655,
+            "description": "Brklyn Ctr Tc / N Lyndale / Via Penn Av",
+            "route_id": "22",
+            "route_short_name": "22",
+            "direction_id": 0,
+            "direction_text": "NB",
+            "terminal": "A",
+            "schedule_relationship": "Scheduled"
+        },
+        {
+            "actual": false,
+            "trip_id": "24557032-DEC23-MVS-BUS-Weekday-03",
+            "stop_id": 11191,
+            "departure_text": "12:42",
+            "departure_time": 1702924920,
+            "description": "Brklyn Ctr Tc / N Lyndale / Via Humboldt",
+            "route_id": "22",
+            "route_short_name": "22",
+            "direction_id": 0,
+            "direction_text": "NB",
+            "schedule_relationship": "Scheduled"
+        }
+    ]
+}
