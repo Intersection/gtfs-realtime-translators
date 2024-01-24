@@ -34,9 +34,22 @@ class CtaSubwayGtfsRealtimeTranslator:
         headsign = prediction['destNm']
         scheduled_arrival_time = parsed_arrival_time if is_scheduled else None
 
+        parsed_prediction_time = cls.__to_unix_time(prediction['prdt'])
+        custom_status = cls.__get_custom_status(parsed_arrival_time,
+                                                parsed_prediction_time)
+
         return TripUpdate.create(entity_id=entity_id,
-                                route_id=route_id,
-                                stop_id=stop_id,
-                                arrival_time=arrival_time,
-                                headsign=headsign,
-                                scheduled_arrival_time=scheduled_arrival_time)
+                                 route_id=route_id,
+                                 stop_id=stop_id,
+                                 arrival_time=arrival_time,
+                                 headsign=headsign,
+                                 scheduled_arrival_time=scheduled_arrival_time,
+                                 custom_status=custom_status,
+                                 agency_timezone=cls.TIMEZONE)
+
+    @classmethod
+    def __get_custom_status(cls, arrival_time, prediction_time):
+        minutes_until_train_arrives = (arrival_time - prediction_time) / 60
+        if minutes_until_train_arrives <= 1:
+            return 'DUE'
+        return f'{round(minutes_until_train_arrives)} min'
