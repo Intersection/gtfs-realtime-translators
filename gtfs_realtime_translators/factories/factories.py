@@ -10,7 +10,7 @@ class Entity:
 
 
 class TripUpdate:
-    
+
     @staticmethod
     def __set_stop_time_events(arrival_time, departure_time):
         arrival = gtfs_realtime.TripUpdate.StopTimeEvent(time=arrival_time)
@@ -60,6 +60,7 @@ class TripUpdate:
         block_id = kwargs.get('block_id', None)
         agency_timezone = kwargs.get('agency_timezone', None)
         custom_status = kwargs.get('custom_status', None)
+        scheduled_interval = kwargs.get('scheduled_interval', None)
 
         trip_descriptor = gtfs_realtime.TripDescriptor(trip_id=trip_id,
                                                        route_id=route_id,
@@ -97,6 +98,8 @@ class TripUpdate:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].agency_timezone = agency_timezone
         if custom_status:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].custom_status = custom_status
+        if scheduled_interval:
+            trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].scheduled_interval = scheduled_interval
 
         return Entity.create(entity_id,
                              trip_update=trip_update)

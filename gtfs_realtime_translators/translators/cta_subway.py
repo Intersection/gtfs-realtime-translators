@@ -37,6 +37,8 @@ class CtaSubwayGtfsRealtimeTranslator:
         parsed_prediction_time = cls.__to_unix_time(prediction['prdt'])
         custom_status = cls.__get_custom_status(parsed_arrival_time,
                                                 parsed_prediction_time)
+        scheduled_interval = cls.__get_scheduled_interval(is_scheduled,
+                                                          prediction['schInt'])
 
         return TripUpdate.create(entity_id=entity_id,
                                  route_id=route_id,
@@ -45,7 +47,8 @@ class CtaSubwayGtfsRealtimeTranslator:
                                  headsign=headsign,
                                  scheduled_arrival_time=scheduled_arrival_time,
                                  custom_status=custom_status,
-                                 agency_timezone=cls.TIMEZONE)
+                                 agency_timezone=cls.TIMEZONE,
+                                 scheduled_interval=scheduled_interval)
 
     @classmethod
     def __get_custom_status(cls, arrival_time, prediction_time):
@@ -53,3 +56,10 @@ class CtaSubwayGtfsRealtimeTranslator:
         if minutes_until_train_arrives <= 1:
             return 'DUE'
         return f'{round(minutes_until_train_arrives)} min'
+
+    @classmethod
+    def __get_scheduled_interval(cls, is_scheduled, scheduled_interval):
+        if is_scheduled:
+            scheduled_interval_seconds = int(scheduled_interval) * 60
+            return scheduled_interval_seconds
+        return None
