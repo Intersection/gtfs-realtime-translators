@@ -25,21 +25,26 @@ class CtaBusGtfsRealtimeTranslator:
         entity_id = str(_id + 1)
         route_id = prediction['rt']
         stop_id = prediction['stpid']
+        stop_name = prediction['stpnm']
+        trip_id = prediction['tatripid']
 
-        # Per the docs, the prediction is either for a scheduled departure, or realtime arrival
-        departure_type = 'D'
-        is_scheduled = prediction['typ'] == departure_type
-
-        parsed_arrival_time = cls.__to_unix_time(prediction['prdtm'])
-        arrival_time = None if is_scheduled else parsed_arrival_time
+        arrival_time = cls.__to_unix_time(prediction['prdtm'])
 
         ##### Intersection Extensions
         headsign = prediction['des']
-        scheduled_arrival_time = parsed_arrival_time if is_scheduled else None
+        custom_status = cls.__get_custom_status(prediction['prdctdn'])
 
         return TripUpdate.create(entity_id=entity_id,
-                                route_id=route_id,
-                                stop_id=stop_id,
-                                arrival_time=arrival_time,
-                                headsign=headsign,
-                                scheduled_arrival_time=scheduled_arrival_time)
+                                 route_id=route_id,
+                                 stop_id=stop_id,
+                                 stop_name=stop_name,
+                                 trip_id=trip_id,
+                                 arrival_time=arrival_time,
+                                 headsign=headsign,
+                                 custom_status=custom_status)
+
+    @classmethod
+    def __get_custom_status(cls, prediction_time):
+        if prediction_time == 'DUE':
+            return prediction_time
+        return f'{prediction_time} min'
