@@ -8,10 +8,22 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 class CtaSubwayGtfsRealtimeTranslator:
     TIMEZONE = 'America/Chicago'
 
+    def __init__(self, **kwargs):
+        stop_list = kwargs.get('stop_list')
+        if stop_list:
+            self.stop_list = stop_list.split(',')
+        else:
+            self.stop_list = None
+
     def __call__(self, data):
         json_data = json.loads(data)
-        prediction = json_data['ctatt']['eta']
-        entities = [self.__make_trip_update(idx, arr) for idx, arr in enumerate(prediction)]
+        predictions = json_data['ctatt']['eta']
+
+        entities = []
+        for idx, prediction in enumerate(predictions):
+            stop_id = prediction['stpId']
+            if not self.stop_list or stop_id in self.stop_list:
+                entities.append(self.__make_trip_update(idx, prediction))
 
         return FeedMessage.create(entities=entities)
 
