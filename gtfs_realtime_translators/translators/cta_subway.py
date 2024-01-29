@@ -8,10 +8,22 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 class CtaSubwayGtfsRealtimeTranslator:
     TIMEZONE = 'America/Chicago'
 
+    def __init__(self, **kwargs):
+        stop_list = kwargs.get('stop_list')
+        if stop_list:
+            self.stop_list = stop_list.split(',')
+        else:
+            self.stop_list = None
+
     def __call__(self, data):
         json_data = json.loads(data)
-        prediction = json_data['ctatt']['eta']
-        entities = [self.__make_trip_update(idx, arr) for idx, arr in enumerate(prediction)]
+        predictions = json_data['ctatt']['eta']
+
+        entities = []
+        for idx, prediction in enumerate(predictions):
+            stop_id = prediction['stpId']
+            if not self.stop_list or stop_id in self.stop_list:
+                entities.append(self.__make_trip_update(idx, prediction))
 
         return FeedMessage.create(entities=entities)
 
@@ -34,9 +46,32 @@ class CtaSubwayGtfsRealtimeTranslator:
         headsign = prediction['destNm']
         scheduled_arrival_time = parsed_arrival_time if is_scheduled else None
 
+        parsed_prediction_time = cls.__to_unix_time(prediction['prdt'])
+        custom_status = cls.__get_custom_status(parsed_arrival_time,
+                                                parsed_prediction_time)
+        scheduled_interval = cls.__get_scheduled_interval(is_scheduled,
+                                                          prediction['schInt'])
+
         return TripUpdate.create(entity_id=entity_id,
-                                route_id=route_id,
-                                stop_id=stop_id,
-                                arrival_time=arrival_time,
-                                headsign=headsign,
-                                scheduled_arrival_time=scheduled_arrival_time)
+                                 route_id=route_id,
+                                 stop_id=stop_id,
+                                 arrival_time=arrival_time,
+                                 headsign=headsign,
+                                 scheduled_arrival_time=scheduled_arrival_time,
+                                 custom_status=custom_status,
+                                 agency_timezone=cls.TIMEZONE,
+                                 scheduled_interval=scheduled_interval)
+
+    @classmethod
+    def __get_custom_status(cls, arrival_time, prediction_time):
+        minutes_until_train_arrives = (arrival_time - prediction_time) / 60
+        if minutes_until_train_arrives <= 1:
+            return 'DUE'
+        return f'{round(minutes_until_train_arrives)} min'
+
+    @classmethod
+    def __get_scheduled_interval(cls, is_scheduled, scheduled_interval):
+        if is_scheduled:
+            scheduled_interval_seconds = int(scheduled_interval) * 60
+            return scheduled_interval_seconds
+        return None
