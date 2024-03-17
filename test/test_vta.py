@@ -16,7 +16,7 @@ def vta_rail():
 
 def test_vta_data(vta_rail):
     translator = SwiftlyGtfsRealtimeTranslator(stop_id='5236')
-    with pendulum.test(pendulum.datetime(2019,2,20,17,0,0)):
+    with pendulum.travel_to(pendulum.datetime(2019,2,20,17,0,0)):
         message = translator(vta_rail)
 
     entity = message.entity[0]
