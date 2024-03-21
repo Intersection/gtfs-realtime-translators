@@ -24,7 +24,7 @@ def test_njt_data(njt_rail):
     assert entity.id == '7'
 
     assert trip_update.trip.trip_id == ''
-    assert trip_update.trip.route_id == '9'
+    assert trip_update.trip.route_id == '10'
 
     assert stop_time_update.stop_id == 'NP'
     assert stop_time_update.departure.time == 1570045710
@@ -69,8 +69,8 @@ def test_njt_data_amtrak(njt_rail):
     assert intersection_trip_update.headsign == 'Boston'
     assert intersection_trip_update.route_short_name == 'AMTRAK'
     assert intersection_trip_update.route_long_name == 'Amtrak'
-    assert intersection_trip_update.route_color == 'yellow'
-    assert intersection_trip_update.route_text_color == 'black'
+    assert intersection_trip_update.route_color == '#FFFF00'
+    assert intersection_trip_update.route_text_color == '#000000'
     assert intersection_trip_update.block_id == 'A176'
     assert intersection_trip_update.agency_timezone == 'America/New_York'
     assert intersection_trip_update.custom_status == 'All Aboard'
@@ -98,8 +98,8 @@ def test_njt_data_amtrak(njt_rail):
     assert intersection_trip_update.headsign == 'Washington'
     assert intersection_trip_update.route_short_name == 'ACELA EXPRESS'
     assert intersection_trip_update.route_long_name == 'Amtrak Acela Express'
-    assert intersection_trip_update.route_color == 'yellow'
-    assert intersection_trip_update.route_text_color == 'black'
+    assert intersection_trip_update.route_color == '#FFFF00'
+    assert intersection_trip_update.route_text_color == '#000000'
     assert intersection_trip_update.block_id == 'A2165'
     assert intersection_trip_update.agency_timezone == 'America/New_York'
     assert intersection_trip_update.custom_status == ''
