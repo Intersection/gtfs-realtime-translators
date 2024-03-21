@@ -33,6 +33,6 @@ setup(
         f'{PACKAGE_ROOT}.bindings',
         f'{PACKAGE_ROOT}.validators',
     ],
-    license='MIT license',
+    license=about['__license__'],
     install_requires=requirements,
 )
