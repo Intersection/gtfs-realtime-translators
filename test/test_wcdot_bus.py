@@ -20,7 +20,7 @@ def test_wcdot_data(wcdot_bus):
     assert trip_update.trip.trip_id == '8612'
     assert stop_time_update.arrival.delay == -60
     assert stop_time_update.departure.delay == -60
-    assert trip_update.trip.route_id == "0066"
+    assert trip_update.trip.route_id == "66"
     assert entity.id == "130"
     assert stop_time_update.stop_id == "5142"
 
