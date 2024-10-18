@@ -61,6 +61,7 @@ class TripUpdate:
         agency_timezone = kwargs.get('agency_timezone', None)
         custom_status = kwargs.get('custom_status', None)
         scheduled_interval = kwargs.get('scheduled_interval', None)
+        route_icon = kwargs.get('route_icon', None)
 
         trip_descriptor = gtfs_realtime.TripDescriptor(trip_id=trip_id,
                                                        route_id=route_id,
@@ -100,6 +101,8 @@ class TripUpdate:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].custom_status = custom_status
         if scheduled_interval:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].scheduled_interval = scheduled_interval
+        if route_icon:
+            trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].route_icon = route_icon
 
         return Entity.create(entity_id,
                              trip_update=trip_update)
