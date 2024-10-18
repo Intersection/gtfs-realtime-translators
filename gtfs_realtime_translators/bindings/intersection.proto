@@ -12,6 +12,7 @@ message IntersectionTripUpdate {
   optional string agency_timezone = 7;
   optional string custom_status = 8;
   optional int32 scheduled_interval = 9;
+  optional string route_icon = 10;
 }
 
 message IntersectionStopTimeUpdate {
