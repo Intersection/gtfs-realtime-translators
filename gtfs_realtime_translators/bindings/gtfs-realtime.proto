@@ -663,3 +663,8 @@ message TranslatedString {
   // modifications to the spec.
   extensions 1000 to 1999;
 }
+
+// Add list field type for route icon
+message RouteIconString {
+  string route_icon = 1; 
+}
