@@ -186,6 +186,9 @@ class NjtRailGtfsRealtimeTranslator:
     
     @classmethod
     def __get_route_icon(cls, headsign):
+
+        if '&#9992' in headsign and '-SEC' in headsign:
+            return 'airport,secaucus'
         if '-SEC' in headsign:
             return 'secaucus'
         if '&#9992' in headsign:
