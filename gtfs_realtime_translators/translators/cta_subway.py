@@ -51,6 +51,8 @@ class CtaSubwayGtfsRealtimeTranslator:
                                                 parsed_prediction_time)
         scheduled_interval = cls.__get_scheduled_interval(is_scheduled,
                                                           prediction['schInt'])
+        
+        route_icon = cls.__get_route_icon(prediction['flags'], headsign)
 
         return TripUpdate.create(entity_id=entity_id,
                                  route_id=route_id,
@@ -60,7 +62,8 @@ class CtaSubwayGtfsRealtimeTranslator:
                                  scheduled_arrival_time=scheduled_arrival_time,
                                  custom_status=custom_status,
                                  agency_timezone=cls.TIMEZONE,
-                                 scheduled_interval=scheduled_interval)
+                                 scheduled_interval=scheduled_interval,
+                                 route_icon = route_icon)
 
     @classmethod
     def __get_custom_status(cls, arrival_time, prediction_time):
@@ -74,4 +77,12 @@ class CtaSubwayGtfsRealtimeTranslator:
         if is_scheduled:
             scheduled_interval_seconds = int(scheduled_interval) * 60
             return scheduled_interval_seconds
+        return None
+    
+    @classmethod
+    def __get_route_icon(cls, flags, headsign):
+        if flags and flags.lower() == 'h':
+            return 'holiday' 
+        if headsign and headsign.lower() in ["midway", "o'hare"]:
+            return 'airport'
         return None

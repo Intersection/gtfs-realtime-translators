@@ -61,6 +61,7 @@ class NjtRailGtfsRealtimeTranslator:
                         departure_time = int(scheduled_datetime.add(seconds=int(item_entry['SEC_LATE'])).timestamp())
                         scheduled_departure_time = int(scheduled_datetime.timestamp())
                         custom_status = item_entry['STATUS']
+                        route_icon = cls.__get_route_icon(headsign)
 
                         trip_update = TripUpdate.create(entity_id=str(idx + 1),
                                                     departure_time=departure_time,
@@ -78,7 +79,8 @@ class NjtRailGtfsRealtimeTranslator:
                                                     track=track,
                                                     block_id=block_id,
                                                     agency_timezone=cls.TIMEZONE,
-                                                    custom_status=custom_status)
+                                                    custom_status=custom_status,
+                                                    route_icon=route_icon)
                         trip_updates.append(trip_update)
 
         return trip_updates
@@ -181,3 +183,14 @@ class NjtRailGtfsRealtimeTranslator:
         if route_id == 'AMTK':
             return '#000000'
         return data['FORECOLOR']
+    
+    @classmethod
+    def __get_route_icon(cls, headsign):
+
+        if '&#9992' in headsign and '-SEC' in headsign:
+            return 'airport,secaucus'
+        if '-SEC' in headsign:
+            return 'secaucus'
+        if '&#9992' in headsign:
+            return 'airport'
+        return None
