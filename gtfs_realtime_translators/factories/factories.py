@@ -62,6 +62,7 @@ class TripUpdate:
         custom_status = kwargs.get('custom_status', None)
         scheduled_interval = kwargs.get('scheduled_interval', None)
         route_icon = kwargs.get('route_icon', None)
+        run_number = kwargs.get('run_number', None)
 
         trip_descriptor = gtfs_realtime.TripDescriptor(trip_id=trip_id,
                                                        route_id=route_id,
@@ -70,6 +71,8 @@ class TripUpdate:
         stop_time_update = gtfs_realtime.TripUpdate.StopTimeUpdate(arrival=arrival,
                                                                    departure=departure,
                                                                    stop_id=stop_id)
+        
+        vehicle_descriptor = gtfs_realtime.TripUpdate.VehicleDescriptor(run_number=run_number)
 
         if track:
             stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].track = track
@@ -79,9 +82,12 @@ class TripUpdate:
             stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].scheduled_departure.time = scheduled_departure
         if stop_name:
             stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].stop_name = stop_name
+        if run_number:
+            vehicle_descriptor.Extensions[intersection_gtfs_realtime.intersection_vehicle_descriptor].run_number = run_number
 
         trip_update = gtfs_realtime.TripUpdate(trip=trip_descriptor,
-                                               stop_time_update=[stop_time_update])
+                                               stop_time_update=[stop_time_update],
+                                               run_number=run_number)
 
         if headsign:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].headsign = headsign

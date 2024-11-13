@@ -53,6 +53,7 @@ class CtaSubwayGtfsRealtimeTranslator:
                                                           prediction['schInt'])
         
         route_icon = cls.__get_route_icon(prediction['flags'], headsign)
+        run_number = prediction['rn']
 
         return TripUpdate.create(entity_id=entity_id,
                                  route_id=route_id,
@@ -63,7 +64,8 @@ class CtaSubwayGtfsRealtimeTranslator:
                                  custom_status=custom_status,
                                  agency_timezone=cls.TIMEZONE,
                                  scheduled_interval=scheduled_interval,
-                                 route_icon = route_icon)
+                                 route_icon=route_icon,
+                                 run_number=run_number)
 
     @classmethod
     def __get_custom_status(cls, arrival_time, prediction_time):
