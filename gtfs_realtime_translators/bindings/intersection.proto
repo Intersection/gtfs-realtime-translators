@@ -36,5 +36,5 @@ message IntersectionVehicleDescriptor {
 }
 
 extend transit_realtime.VehicleDescriptor {
-  optional IntersectionVehicleDescriptor intersection_vehicle_descriptor = 1988;
+  optional IntersectionVehicleDescriptor intersection_vehicle_descriptor = 1987;
 }
