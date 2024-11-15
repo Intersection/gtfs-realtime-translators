@@ -82,12 +82,12 @@ class TripUpdate:
             stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].scheduled_departure.time = scheduled_departure
         if stop_name:
             stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].stop_name = stop_name
-        if run_number:
-            vehicle_descriptor.Extensions[intersection_gtfs_realtime.intersection_vehicle_descriptor].run_number = run_number
+        # if run_number:
+        #     vehicle_descriptor.Extensions[intersection_gtfs_realtime.intersection_vehicle_descriptor].run_number = run_number
 
         trip_update = gtfs_realtime.TripUpdate(trip=trip_descriptor,
                                                stop_time_update=[stop_time_update],
-                                               vehicle=run_number)
+                                               vehicle=vehicle_descriptor)
 
         if headsign:
             trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update].headsign = headsign
