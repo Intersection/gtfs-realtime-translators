@@ -72,7 +72,7 @@ class TripUpdate:
                                                                    departure=departure,
                                                                    stop_id=stop_id)
         
-        vehicle_descriptor = gtfs_realtime.VehicleDescriptor(id=run_number)
+        vehicle_descriptor = gtfs_realtime.VehicleDescriptor(run_number=run_number)
 
         if track:
             stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update].track = track
