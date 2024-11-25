@@ -29,3 +29,12 @@ extend transit_realtime.TripUpdate {
 extend transit_realtime.TripUpdate.StopTimeUpdate {
   optional IntersectionStopTimeUpdate intersection_stop_time_update = 1987;
 }
+
+
+message IntersectionVehicleDescriptor {
+  optional uint32 run_number = 1;
+}
+
+extend transit_realtime.VehicleDescriptor {
+  optional IntersectionVehicleDescriptor intersection_vehicle_descriptor = 1987;
+}
