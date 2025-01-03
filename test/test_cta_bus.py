@@ -32,9 +32,7 @@ def test_cta_bus_realtime_arrival(cta_bus):
     # Test Intersection extensions
     intersection_trip_update = trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update]
     assert intersection_trip_update.headsign == 'Howard Station'
-
-    intersection_stop_time_update = stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update]
-    assert intersection_stop_time_update.scheduled_arrival.time == 0
+    assert intersection_trip_update.custom_status == '3 min'
 
 def test_cta_bus_scheduled_departure(cta_bus):
     translator = CtaBusGtfsRealtimeTranslator()
@@ -46,8 +44,9 @@ def test_cta_bus_scheduled_departure(cta_bus):
     stop_time_update = trip_update.stop_time_update[0]
 
     assert entity.id == '2'
-    assert stop_time_update.arrival.time == 0
+    assert stop_time_update.arrival.time == 1570531500
 
     # Test Intersection extensions
-    intersection_stop_time_update = stop_time_update.Extensions[intersection_gtfs_realtime.intersection_stop_time_update]
-    assert intersection_stop_time_update.scheduled_arrival.time == 1570531500
+    intersection_trip_update = trip_update.Extensions[intersection_gtfs_realtime.intersection_trip_update]
+    assert intersection_trip_update.custom_status == '10 min'
+
