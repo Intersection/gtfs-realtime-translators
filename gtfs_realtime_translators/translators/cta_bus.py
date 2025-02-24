@@ -41,7 +41,8 @@ class CtaBusGtfsRealtimeTranslator:
                                  trip_id=trip_id,
                                  arrival_time=arrival_time,
                                  headsign=headsign,
-                                 custom_status=custom_status)
+                                 custom_status=custom_status,
+                                 agency_timezone=cls.TIMEZONE)
 
     @classmethod
     def __get_custom_status(cls, prediction_time):

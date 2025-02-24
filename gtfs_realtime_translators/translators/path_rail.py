@@ -132,7 +132,8 @@ class PathGtfsRealtimeTranslator:
                                                     arrival_time=arrival_time,
                                                     route_id=route_id,
                                                     stop_id=stop_id,
-                                                    headsign=headsign)
+                                                    headsign=headsign,
+                                                    agency_timezone=cls.TIMEZONE)
                     trip_updates.append(trip_update)
                 except KeyError:
                     warnings.warn(f'Could not generate trip_update for update [{update}] in arrival [{arrival}]',

@@ -110,4 +110,5 @@ class SeptaRegionalRailTranslator:
                                  scheduled_arrival_time=arrival['sched_time'],
                                  scheduled_departure_time=arrival['depart_time'],
                                  track=arrival['track'],
-                                 headsign=arrival['destination'])
+                                 headsign=arrival['destination'],
+                                 agency_timezone=cls.TIMEZONE)
