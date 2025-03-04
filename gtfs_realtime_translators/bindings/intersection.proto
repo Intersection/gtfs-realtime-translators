@@ -32,7 +32,7 @@ extend transit_realtime.TripUpdate.StopTimeUpdate {
 
 
 message IntersectionVehicleDescriptor {
-  optional uint32 run_number = 1;
+  optional string run_number = 1;
 }
 
 extend transit_realtime.VehicleDescriptor {
