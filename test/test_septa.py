@@ -16,7 +16,7 @@ def septa_trolley_lines():
 
 def test_septa_trolley_data(septa_trolley_lines):
     translator = SwiftlyGtfsRealtimeTranslator(stop_id='20646')
-    with pendulum.test(pendulum.datetime(2021,6,16,12,0,0)):
+    with pendulum.travel_to(pendulum.datetime(2021,6,16,12,0,0)):
         message = translator(septa_trolley_lines)
 
     # check first entity
