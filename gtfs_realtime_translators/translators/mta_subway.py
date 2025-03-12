@@ -4,6 +4,8 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 
 
 class MtaSubwayGtfsRealtimeTranslator:
+    TIMEZONE = 'America/New_York'
+
     def __call__(self, data):
         json_data = json.loads(data)
         entities = []
@@ -51,4 +53,5 @@ class MtaSubwayGtfsRealtimeTranslator:
                                 headsign=headsign,
                                 scheduled_arrival_time=scheduled_arrival_time,
                                 scheduled_departure_time=scheduled_departure_time,
-                                track=track)
+                                track=track,
+                                agency_timezone=cls.TIMEZONE)

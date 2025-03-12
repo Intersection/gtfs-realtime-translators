@@ -4,6 +4,8 @@ from gtfs_realtime_translators.validators import RequiredFieldValidator
 
 
 class WcdotGtfsRealTimeTranslator:
+    TIMEZONE = 'America/New_York'
+
     def __init__(self, stop_id=None):
         RequiredFieldValidator.validate_field_value('stop_id', stop_id)
         self.stop_id = stop_id
@@ -43,7 +45,8 @@ class WcdotGtfsRealTimeTranslator:
                         departure_delay=departure_delay,
                         trip_id=trip_id,
                         route_id=route_id,
-                        stop_id=stop_id
+                        stop_id=stop_id,
+                        agency_timezone=self.TIMEZONE
                     )
                     trip_updates.append(trip_update)
         return trip_updates

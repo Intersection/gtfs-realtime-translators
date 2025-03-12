@@ -8,9 +8,11 @@ from gtfs_realtime_translators.validators import RequiredFieldValidator
 
 
 class SwiftlyGtfsRealtimeTranslator:
-    # stop_id is not required in constructor as it is being sent as a part of feed but
-    # vta feeds are already configured with stop_id in all environment so remove it when
-    # get a chance to clean up the feed
+    AGENCY_TIMEZONE_MAP = {
+        'lametro': 'America/Los_Angeles',
+        'septa': 'America/New_York',
+    }
+
     def __init__(self, stop_id=None):
         RequiredFieldValidator.validate_field_value('stop_id', stop_id)
         self.stop_id = stop_id
@@ -18,16 +20,18 @@ class SwiftlyGtfsRealtimeTranslator:
     def __call__(self, data):
         json_data = json.loads(data)
         entities = []
+        agency_key = json_data.get("agencyKey", None)
+        timezone = self.__get_timezone(agency_key)
         for data in json_data["data"]["predictionsData"]:
             stop_id = data.get("stopId", None)
             RequiredFieldValidator.validate_field_value('stop_id', stop_id)
-            trip_updates = self.__make_trip_updates(data, stop_id)
+            trip_updates = self.__make_trip_updates(data, stop_id, timezone)
             entities.extend(trip_updates)
 
         return FeedMessage.create(entities=entities)
 
     @classmethod
-    def __make_trip_updates(cls, data, stop_id):
+    def __make_trip_updates(cls, data, stop_id, timezone):
         trip_updates = []
         route_id = data.get("routeId")
 
@@ -60,8 +64,15 @@ class SwiftlyGtfsRealtimeTranslator:
                                                 stop_name=stop_name,
                                                 headsign=headsign,
                                                 direction_id=direction_id,
+                                                agency_timezone=timezone
                                                 )
 
                 trip_updates.append(trip_update)
 
         return trip_updates
+
+    @classmethod
+    def __get_timezone(cls, agency_key):
+        if not agency_key:
+            return None
+        return cls.AGENCY_TIMEZONE_MAP.get(agency_key, None)
