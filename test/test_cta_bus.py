@@ -15,7 +15,7 @@ def cta_bus():
 
 def test_cta_bus_realtime_arrival(cta_bus):
     translator = CtaBusGtfsRealtimeTranslator()
-    with pendulum.test(pendulum.datetime(2019, 2, 20, 17)):
+    with pendulum.travel_to(pendulum.datetime(2019, 2, 20, 17)):
         message = translator(cta_bus)
 
     entity = message.entity[0]
@@ -36,7 +36,7 @@ def test_cta_bus_realtime_arrival(cta_bus):
 
 def test_cta_bus_scheduled_departure(cta_bus):
     translator = CtaBusGtfsRealtimeTranslator()
-    with pendulum.test(pendulum.datetime(2019, 2, 20, 17)):
+    with pendulum.travel_to(pendulum.datetime(2019, 2, 20, 17)):
         message = translator(cta_bus)
 
     entity = message.entity[1]

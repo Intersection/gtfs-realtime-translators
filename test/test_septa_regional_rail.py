@@ -15,7 +15,7 @@ def septa_regional_rail():
 
 
 def test_septa_regional_rail(septa_regional_rail):
-    with pendulum.test(pendulum.datetime(2019,4,26,15,0,0, tz='America/New_York')):
+    with pendulum.travel_to(pendulum.datetime(2019,4,26,15,0,0, tz='America/New_York')):
         translator = SeptaRegionalRailTranslator(stop_id='90004', filter_seconds=7200)
         message = translator(septa_regional_rail)
 
@@ -39,7 +39,7 @@ def test_septa_regional_rail(septa_regional_rail):
 
 
 def test_septa_regional_rail_with_delay(septa_regional_rail):
-    with pendulum.test(pendulum.datetime(2019,4,26,15,0,0, tz='America/New_York')):
+    with pendulum.travel_to(pendulum.datetime(2019,4,26,15,0,0, tz='America/New_York')):
         translator = SeptaRegionalRailTranslator(stop_id='90004', filter_seconds=7200)
         message = translator(septa_regional_rail)
 
@@ -98,5 +98,5 @@ def test_calculate_realtime():
 
 
 def test_time_at():
-    with pendulum.test(pendulum.datetime(2019,3,8,12,0,0)):
+    with pendulum.travel_to(pendulum.datetime(2019,3,8,12,0,0)):
         assert SeptaRegionalRailTranslator.calculate_time_at(seconds=1) == int(pendulum.datetime(2019,3,8,12,0,1).timestamp())
