@@ -17,7 +17,7 @@ class CtaSubwayGtfsRealtimeTranslator:
 
     def __call__(self, data):
         json_data = json.loads(data)
-        predictions = json_data['ctatt']['eta']
+        predictions = json_data.get('ctatt', {}).get('eta', [])
 
         entities = []
         for idx, prediction in enumerate(predictions):
