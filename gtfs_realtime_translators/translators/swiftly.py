@@ -10,6 +10,7 @@ from gtfs_realtime_translators.validators import RequiredFieldValidator
 class SwiftlyGtfsRealtimeTranslator:
     AGENCY_TIMEZONE_MAP = {
         'lametro': 'America/Los_Angeles',
+        'lametro-rail': 'America/Los_Angeles',
         'septa': 'America/New_York',
     }
 
@@ -17,12 +18,13 @@ class SwiftlyGtfsRealtimeTranslator:
         RequiredFieldValidator.validate_field_value('stop_id', stop_id)
         self.stop_id = stop_id
 
-    def __call__(self, data):
-        json_data = json.loads(data)
+    def __call__(self, feed):
+        json_feed = json.loads(feed)
+        json_data = json_feed.get("data", {})
         entities = []
         agency_key = json_data.get("agencyKey", None)
         timezone = self.__get_timezone(agency_key)
-        for data in json_data["data"]["predictionsData"]:
+        for data in json_data.get("predictionsData", []):
             stop_id = data.get("stopId", None)
             RequiredFieldValidator.validate_field_value('stop_id', stop_id)
             trip_updates = self.__make_trip_updates(data, stop_id, timezone)
