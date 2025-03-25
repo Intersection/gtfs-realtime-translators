@@ -10,7 +10,7 @@ class CtaBusGtfsRealtimeTranslator:
 
     def __call__(self, data):
         json_data = json.loads(data)
-        predictions = json_data['bustime-response']['prd']
+        predictions = json_data.get('bustime-response', {}).get('prd', [])
         entities = [self.__make_trip_update(idx, arr) for idx, arr in enumerate(predictions)]
 
         return FeedMessage.create(entities=entities)
