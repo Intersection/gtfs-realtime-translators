@@ -46,6 +46,8 @@ class CtaBusGtfsRealtimeTranslator:
 
     @classmethod
     def __get_custom_status(cls, prediction_time):
-        if prediction_time == 'DUE':
+        if not prediction_time:
+            return None
+        elif prediction_time == 'DUE':
             return prediction_time
         return f'{prediction_time} min'

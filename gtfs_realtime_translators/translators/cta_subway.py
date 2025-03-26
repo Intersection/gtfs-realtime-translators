@@ -83,7 +83,7 @@ class CtaSubwayGtfsRealtimeTranslator:
 
     @classmethod
     def __get_scheduled_interval(cls, is_scheduled, scheduled_interval):
-        if is_scheduled:
+        if is_scheduled and scheduled_interval:
             scheduled_interval_seconds = int(scheduled_interval) * 60
             return scheduled_interval_seconds
         return None
