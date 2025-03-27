@@ -223,7 +223,8 @@ class PathNewGtfsRealtimeTranslator:
                                                         'stop_id'),
                                                     headsign=arrival_data.get(
                                                         'headsign'),
-                                                    stop_name=arrival_data.get('stop_name'))
+                                                    stop_name=arrival_data.get('stop_name'),
+                                                    agency_timezone=cls.TIMEZONE)
                     trip_updates.append(trip_update)
 
         return trip_updates

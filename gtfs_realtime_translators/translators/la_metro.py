@@ -8,6 +8,8 @@ from gtfs_realtime_translators.validators import RequiredFieldValidator
 
 
 class LaMetroGtfsRealtimeTranslator:
+    TIMEZONE = 'America/Los_Angeles'
+
     def __init__(self, stop_id=None):
         RequiredFieldValidator.validate_field_value('stop_id', stop_id)
         self.stop_id = stop_id
@@ -40,4 +42,5 @@ class LaMetroGtfsRealtimeTranslator:
                                  arrival_time=arrival_time,
                                  trip_id=trip_id,
                                  route_id=route_id,
-                                 stop_id=stop_id)
+                                 stop_id=stop_id,
+                                 agency_timezone=cls.TIMEZONE)

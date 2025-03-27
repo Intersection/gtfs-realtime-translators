@@ -10,7 +10,7 @@ class CtaBusGtfsRealtimeTranslator:
 
     def __call__(self, data):
         json_data = json.loads(data)
-        predictions = json_data['bustime-response']['prd']
+        predictions = json_data.get('bustime-response', {}).get('prd', [])
         entities = [self.__make_trip_update(idx, arr) for idx, arr in enumerate(predictions)]
 
         return FeedMessage.create(entities=entities)
@@ -41,10 +41,13 @@ class CtaBusGtfsRealtimeTranslator:
                                  trip_id=trip_id,
                                  arrival_time=arrival_time,
                                  headsign=headsign,
-                                 custom_status=custom_status)
+                                 custom_status=custom_status,
+                                 agency_timezone=cls.TIMEZONE)
 
     @classmethod
     def __get_custom_status(cls, prediction_time):
-        if prediction_time == 'DUE':
+        if not prediction_time:
+            return None
+        elif prediction_time == 'DUE':
             return prediction_time
         return f'{prediction_time} min'

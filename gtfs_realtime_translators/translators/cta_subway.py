@@ -17,7 +17,7 @@ class CtaSubwayGtfsRealtimeTranslator:
 
     def __call__(self, data):
         json_data = json.loads(data)
-        predictions = json_data['ctatt']['eta']
+        predictions = json_data.get('ctatt', {}).get('eta', [])
 
         entities = []
         for idx, prediction in enumerate(predictions):
@@ -54,7 +54,7 @@ class CtaSubwayGtfsRealtimeTranslator:
                                                           prediction['schInt'])
 
         route_icon = cls.__get_route_icon(prediction['flags'], headsign)
-        run_number = int(prediction['rn'])
+        run_number = prediction['rn']
 
         return TripUpdate.create(entity_id=entity_id,
                                  route_id=route_id,
@@ -83,7 +83,7 @@ class CtaSubwayGtfsRealtimeTranslator:
 
     @classmethod
     def __get_scheduled_interval(cls, is_scheduled, scheduled_interval):
-        if is_scheduled:
+        if is_scheduled and scheduled_interval:
             scheduled_interval_seconds = int(scheduled_interval) * 60
             return scheduled_interval_seconds
         return None
