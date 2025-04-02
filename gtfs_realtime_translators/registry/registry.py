@@ -27,7 +27,7 @@ class TranslatorRegistry:
         'wcdot-bus': WcdotGtfsRealTimeTranslator,
         'mbta': MbtaGtfsRealtimeTranslator,
         'mnmt': MnmtGtfsRealtimeTranslator,
-        'marta': MartaRailGtfsRealtimeTranslator
+        'marta-rail': MartaRailGtfsRealtimeTranslator
     }
 
     @classmethod
