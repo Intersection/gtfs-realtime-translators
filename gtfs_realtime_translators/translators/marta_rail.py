@@ -8,11 +8,11 @@ from gtfs_realtime_translators.factories import TripUpdate, FeedMessage
 class MartaRailGtfsRealtimeTranslator:
     TIMEZONE = 'America/New_York'
 
-    LINE_ROUTE_ID_MAP = {
-        'BLUE': '24548',
-        'GOLD': '24549',
-        'GREEN': '24550',
-        'RED': '24551'
+    LINE_ROUTE_DATA_MAP = {
+        'BLUE': ('BLUE', 'Blue Line', '0075B2', 'FFFFFF'),
+        'GOLD': ('GOLD', 'Gold Line', 'D4A723', '000000'),
+        'GREEN': ('GREEN', 'Green Line', '009D4B', '000000'),
+        'RED': ('RED', 'Red Line', 'CE242B', 'FFFFFF'),
     }
 
     LINE_STATION_DESTINATION_STOP_ID_MAP = {
@@ -44,7 +44,12 @@ class MartaRailGtfsRealtimeTranslator:
         station = prediction.get('STATION')
         line = prediction.get('LINE')
 
-        route_id = cls.__get_route_id(line)
+        route_data = cls.__get_route_data(line)
+        route_short_name = route_data[0]
+        route_long_name = route_data[1]
+        route_color = route_data[2]
+        route_text_color = route_data[3]
+
         stop_id = cls.__get_stop_id(line, station, headsign)
 
         unix_arrival_time = cls.__to_unix_time(prediction.get('NEXT_ARR'),
@@ -55,7 +60,10 @@ class MartaRailGtfsRealtimeTranslator:
         scheduled_arrival_time = None if is_realtime else unix_arrival_time
 
         return TripUpdate.create(entity_id=entity_id,
-                                 route_id=route_id,
+                                 route_short_name=route_short_name,
+                                 route_long_name=route_long_name,
+                                 route_color=route_color,
+                                 route_text_color=route_text_color,
                                  stop_id=stop_id,
                                  vehicle_id=vehicle_id,
                                  stop_name=stop_name,
@@ -66,8 +74,8 @@ class MartaRailGtfsRealtimeTranslator:
                                  agency_timezone=cls.TIMEZONE)
 
     @classmethod
-    def __get_route_id(cls, line):
-        return cls.LINE_ROUTE_ID_MAP.get(line)
+    def __get_route_data(cls, line):
+        return cls.LINE_ROUTE_DATA_MAP.get(line)
 
     @classmethod
     def __get_stop_id(cls, line, station, headsign):
