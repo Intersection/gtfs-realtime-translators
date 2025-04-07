@@ -4,7 +4,8 @@ from gtfs_realtime_translators.translators import LaMetroGtfsRealtimeTranslator,
     SeptaRegionalRailTranslator, MtaSubwayGtfsRealtimeTranslator, NjtRailGtfsRealtimeTranslator, \
     CtaSubwayGtfsRealtimeTranslator, CtaBusGtfsRealtimeTranslator, PathGtfsRealtimeTranslator, \
     PathNewGtfsRealtimeTranslator, SwiftlyGtfsRealtimeTranslator, WcdotGtfsRealTimeTranslator, \
-    NjtBusGtfsRealtimeTranslator, MbtaGtfsRealtimeTranslator, MnmtGtfsRealtimeTranslator
+    NjtBusGtfsRealtimeTranslator, MbtaGtfsRealtimeTranslator, MnmtGtfsRealtimeTranslator, \
+    MartaRailGtfsRealtimeTranslator
 
 
 class TranslatorKeyWarning(Warning):
@@ -25,7 +26,8 @@ class TranslatorRegistry:
         'swiftly': SwiftlyGtfsRealtimeTranslator,
         'wcdot-bus': WcdotGtfsRealTimeTranslator,
         'mbta': MbtaGtfsRealtimeTranslator,
-        'mnmt': MnmtGtfsRealtimeTranslator
+        'mnmt': MnmtGtfsRealtimeTranslator,
+        'marta-rail': MartaRailGtfsRealtimeTranslator
     }
 
     @classmethod
