@@ -34,8 +34,8 @@ class NjtRailGtfsRealtimeTranslator:
     @classmethod
     def __make_trip_updates(cls, data):
         trip_updates = []
-        stop_id = data.get('STATION_2CHAR')
-        stop_name = data.get('STATIONNAME')
+        stop_id = data['STATION_2CHAR']
+        stop_name = data['STATIONNAME']
         items = data.get('ITEMS', [])
         for index, item in enumerate(items):
             stops = item.get('STOPS')
