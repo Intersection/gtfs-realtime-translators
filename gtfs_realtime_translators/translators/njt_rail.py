@@ -1,7 +1,7 @@
 import pendulum
 
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
-import xmltodict
+import json
 
 
 class NjtRailGtfsRealtimeTranslator:
@@ -14,56 +14,54 @@ class NjtRailGtfsRealtimeTranslator:
         1) The APIs do not provide a trip_id
         2) The documentation notes that their realtime data may not always accurately map to their GTFS data
 
-    :param data: XML formatted realtime feed
+    :param data: JSON formatted realtime feed
 
-    https://usermanual.wiki/Document/NJTRANSIT20REAL20Time20Data20Interface20Instructions2020Ver2025.785373145.pdf
     """
 
     TIMEZONE = 'America/New_York'
 
     def __call__(self, data):
-        station_data = xmltodict.parse(data)
-        entities = self.__make_trip_updates(station_data)
+        data = json.loads(data)
+        entities = self.__make_trip_updates(data)
         return FeedMessage.create(entities=entities)
 
     @classmethod
     def __to_unix_time(cls, time):
-        datetime = pendulum.from_format(time, 'DD-MMM-YYYY HH:mm:ss A', tz=cls.TIMEZONE).in_tz('UTC')
+        datetime = pendulum.from_format(time, 'DD-MMM-YYYY HH:mm:ss A',
+                                        tz=cls.TIMEZONE).in_tz('UTC')
         return datetime
 
     @classmethod
     def __make_trip_updates(cls, data):
         trip_updates = []
+        stop_id = data.get('STATION_2CHAR')
+        stop_name = data.get('STATIONNAME')
+        items = data.get('ITEMS', [])
+        for index, item in enumerate(items):
+            stops = item.get('STOPS')
+            if stops:
+                origin_and_destination = [stops[0], stops[-1]]
+                route_id = cls.__get_route_id(item, origin_and_destination)
+                if route_id:
+                    # Intersection Extensions
+                    headsign = item['DESTINATION']
+                    route_short_name = cls.__get_route_short_name(item)
+                    route_long_name = cls.__get_route_long_name(item)
+                    route_color = cls.__get_route_color(item, route_id)
+                    route_text_color = cls.__get_route_text_color(item,
+                                                                  route_id)
+                    block_id = item['TRAIN_ID']
+                    track = item['TRACK']
+                    scheduled_datetime = cls.__to_unix_time(
+                        item['SCHED_DEP_DATE'])
+                    departure_time = int(scheduled_datetime.add(
+                        seconds=int(item['SEC_LATE'])).timestamp())
+                    scheduled_departure_time = int(
+                        scheduled_datetime.timestamp())
+                    custom_status = item['STATUS']
+                    route_icon = cls.__get_route_icon(headsign)
 
-        station_data_item = data['STATION']['ITEMS'].values()
-        for value in station_data_item:
-            for idx, item_entry in enumerate(value):
-                origin_and_destination = None
-                stops = item_entry['STOPS']
-                if stops:
-                    for stop in stops.values():
-                        origin_and_destination = [stop[i] for i in (0, -1)]
-
-                    route_id = cls.__get_route_id(item_entry,
-                                                  origin_and_destination)
-                    if route_id:
-                        # Intersection Extensions
-                        headsign = item_entry['DESTINATION']
-                        route_short_name = cls.__get_route_short_name(item_entry)
-                        route_long_name = cls.__get_route_long_name(item_entry)
-                        route_color = cls.__get_route_color(item_entry, route_id)
-                        route_text_color = cls.__get_route_text_color(item_entry, route_id)
-                        block_id = item_entry['TRAIN_ID']
-                        track = item_entry['TRACK']
-                        stop_id = data['STATION']['STATION_2CHAR']
-                        stop_name = data['STATION']['STATIONNAME']
-                        scheduled_datetime = cls.__to_unix_time(item_entry['SCHED_DEP_DATE'])
-                        departure_time = int(scheduled_datetime.add(seconds=int(item_entry['SEC_LATE'])).timestamp())
-                        scheduled_departure_time = int(scheduled_datetime.timestamp())
-                        custom_status = item_entry['STATUS']
-                        route_icon = cls.__get_route_icon(headsign)
-
-                        trip_update = TripUpdate.create(entity_id=str(idx + 1),
+                    trip_update = TripUpdate.create(entity_id=str(index + 1),
                                                     departure_time=departure_time,
                                                     scheduled_departure_time=scheduled_departure_time,
                                                     arrival_time=departure_time,
@@ -81,7 +79,7 @@ class NjtRailGtfsRealtimeTranslator:
                                                     agency_timezone=cls.TIMEZONE,
                                                     custom_status=custom_status,
                                                     route_icon=route_icon)
-                        trip_updates.append(trip_update)
+                    trip_updates.append(trip_update)
 
         return trip_updates
 
@@ -183,7 +181,7 @@ class NjtRailGtfsRealtimeTranslator:
         if route_id == 'AMTK':
             return '#000000'
         return data['FORECOLOR']
-    
+
     @classmethod
     def __get_route_icon(cls, headsign):
 
