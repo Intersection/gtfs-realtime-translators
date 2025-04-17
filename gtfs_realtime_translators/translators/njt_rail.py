@@ -48,16 +48,12 @@ class NjtRailGtfsRealtimeTranslator:
                     route_short_name = cls.__get_route_short_name(item)
                     route_long_name = cls.__get_route_long_name(item)
                     route_color = cls.__get_route_color(item, route_id)
-                    route_text_color = cls.__get_route_text_color(item,
-                                                                  route_id)
+                    route_text_color = cls.__get_route_text_color(item, route_id)
                     block_id = item['TRAIN_ID']
                     track = item['TRACK']
-                    scheduled_datetime = cls.__to_unix_time(
-                        item['SCHED_DEP_DATE'])
-                    departure_time = int(scheduled_datetime.add(
-                        seconds=int(item['SEC_LATE'])).timestamp())
-                    scheduled_departure_time = int(
-                        scheduled_datetime.timestamp())
+                    scheduled_datetime = cls.__to_unix_time(item['SCHED_DEP_DATE'])
+                    departure_time = int(scheduled_datetime.add(seconds=int(item['SEC_LATE'])).timestamp())
+                    scheduled_departure_time = int(scheduled_datetime.timestamp())
                     custom_status = item['STATUS']
                     route_icon = cls.__get_route_icon(headsign)
 
