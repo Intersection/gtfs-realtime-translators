@@ -2,6 +2,7 @@ from .la_metro import LaMetroGtfsRealtimeTranslator
 from .septa_regional_rail import SeptaRegionalRailTranslator
 from .mta_subway import MtaSubwayGtfsRealtimeTranslator
 from .njt_rail import NjtRailGtfsRealtimeTranslator
+from .njt_rail_json import NjtRailJsonGtfsRealtimeTranslator
 from .njt_bus import NjtBusGtfsRealtimeTranslator
 from .cta_subway import CtaSubwayGtfsRealtimeTranslator
 from .cta_bus import CtaBusGtfsRealtimeTranslator
