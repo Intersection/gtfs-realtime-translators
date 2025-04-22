@@ -5,7 +5,7 @@ from gtfs_realtime_translators.translators import LaMetroGtfsRealtimeTranslator,
     CtaSubwayGtfsRealtimeTranslator, CtaBusGtfsRealtimeTranslator, PathGtfsRealtimeTranslator, \
     PathNewGtfsRealtimeTranslator, SwiftlyGtfsRealtimeTranslator, WcdotGtfsRealTimeTranslator, \
     NjtBusGtfsRealtimeTranslator, MbtaGtfsRealtimeTranslator, MnmtGtfsRealtimeTranslator, \
-    MartaRailGtfsRealtimeTranslator
+    MartaRailGtfsRealtimeTranslator, NjtRailJsonGtfsRealtimeTranslator
 
 
 class TranslatorKeyWarning(Warning):
@@ -20,6 +20,7 @@ class TranslatorRegistry:
         'cta-bus': CtaBusGtfsRealtimeTranslator,
         'mta-subway': MtaSubwayGtfsRealtimeTranslator,
         'njt-rail': NjtRailGtfsRealtimeTranslator,
+        'njt-rail-json': NjtRailJsonGtfsRealtimeTranslator,
         'njt-bus': NjtBusGtfsRealtimeTranslator,
         'path-old': PathGtfsRealtimeTranslator,
         'path-new': PathNewGtfsRealtimeTranslator,
