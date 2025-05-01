@@ -174,25 +174,25 @@ class NjtRailGtfsRealtimeTranslator:
         abbreviation = data['LINEABBREVIATION']
         if abbreviation == 'AMTK':
             return amtrak_prefix.title() if data['LINE'] == amtrak_prefix else f"Amtrak {data['LINE']}".title()
-        return data['LINE']
+        return None
 
     @classmethod
     def __get_route_short_name(cls, data):
         if data['LINEABBREVIATION'] == 'AMTK':
             return data['LINE']
-        return data['LINEABBREVIATION']
+        return None
 
     @classmethod
     def __get_route_color(cls, data, route_id):
         if route_id == 'AMTK':
             return '#FFFF00'
-        return data['BACKCOLOR']
+        return None
 
     @classmethod
     def __get_route_text_color(cls, data, route_id):
         if route_id == 'AMTK':
             return '#000000'
-        return data['FORECOLOR']
+        return None
 
     @classmethod
     def __get_route_icon(cls, headsign):
