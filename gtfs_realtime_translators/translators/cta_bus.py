@@ -32,7 +32,9 @@ class CtaBusGtfsRealtimeTranslator:
 
         ##### Intersection Extensions
         headsign = prediction['des']
-        custom_status = cls.__get_custom_status(prediction['prdctdn'])
+        custom_status = cls.__get_custom_status(prediction['dyn'],
+                                                prediction['dly'],
+                                                prediction['prdctdn'])
 
         return TripUpdate.create(entity_id=entity_id,
                                  route_id=route_id,
@@ -45,7 +47,15 @@ class CtaBusGtfsRealtimeTranslator:
                                  agency_timezone=cls.TIMEZONE)
 
     @classmethod
-    def __get_custom_status(cls, prediction_time):
+    def __get_custom_status(cls, dynamic_action_type, delay, prediction_time):
+        if dynamic_action_type == 1:
+            return 'CANCELED'
+        if dynamic_action_type == 4:
+            return 'EXPRESSED'
+
+        if delay:
+            return 'DELAYED'
+
         if not prediction_time:
             return None
         elif prediction_time == 'DUE':
