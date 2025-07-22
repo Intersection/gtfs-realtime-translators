@@ -127,7 +127,7 @@ class NjtRailGtfsRealtimeTranslator:
         destination_name = destination['NAME'].replace(' ', '_').lower()
 
         key = data['LINE'].replace(' ', '_').lower()
-        if key == 'montclair-boonton_line':
+        if 'montclair-boonton' in key:
             hoboken = 'hoboken'
             origins_and_destinations = {'denville', 'dover', 'mount_olive',
                                         'lake_hopatcong', 'hackettstown'}
