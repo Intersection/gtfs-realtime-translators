@@ -9,8 +9,8 @@ class NjtBusJsonGtfsRealtimeTranslator:
 
     TIMEZONE = 'America/New_York'
 
-    def __init__(self, stop_id):
-        self.stop_id = stop_id
+    def __init__(self, **kwargs):
+        self.stop_id = kwargs.get('stop_id')
 
     def __call__(self, data):
         data = json.loads(data)
