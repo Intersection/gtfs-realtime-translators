@@ -4,6 +4,7 @@ from .mta_subway import MtaSubwayGtfsRealtimeTranslator
 from .njt_rail import NjtRailGtfsRealtimeTranslator
 from .njt_rail_json import NjtRailJsonGtfsRealtimeTranslator
 from .njt_bus import NjtBusGtfsRealtimeTranslator
+from .njt_bus_json import NjtBusJsonGtfsRealtimeTranslator
 from .cta_subway import CtaSubwayGtfsRealtimeTranslator
 from .cta_bus import CtaBusGtfsRealtimeTranslator
 from .path_rail import PathGtfsRealtimeTranslator
