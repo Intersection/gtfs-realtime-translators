@@ -73,7 +73,7 @@ class NjtBusJsonGtfsRealtimeTranslator:
         try:
             dt = pendulum.from_format(time_str, "M/D/YYYY h:mm:ss A",
                                       tz=cls.TIMEZONE)
-        except pendulum.parsing.exceptions.ParserError:
+        except Exception as e:
             today = pendulum.today(tz=cls.TIMEZONE).to_date_string()
             dt = pendulum.from_format(f"{today} {time_str}",
                                       "YYYY-MM-DD h:mm A",
