@@ -20,9 +20,12 @@ class NjtRailJsonGtfsRealtimeTranslator:
 
     TIMEZONE = 'America/New_York'
 
+    def __init__(self, **kwargs):
+        self.stop_id = kwargs.get('station_id')
+
     def __call__(self, data):
         data = json.loads(data)
-        entities = self.__make_trip_updates(data)
+        entities = self.__make_trip_updates(data, self.stop_id)
         return FeedMessage.create(entities=entities)
 
     @classmethod
@@ -32,9 +35,8 @@ class NjtRailJsonGtfsRealtimeTranslator:
         return datetime
 
     @classmethod
-    def __make_trip_updates(cls, data):
+    def __make_trip_updates(cls, data, stop_id):
         trip_updates = []
-        stop_id = data['STATION_2CHAR']
         stop_name = data['STATIONNAME']
         items = data.get('ITEMS', [])
         for index, item in enumerate(items):
