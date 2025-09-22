@@ -21,7 +21,7 @@ class NjtRailJsonGtfsRealtimeTranslator:
     TIMEZONE = 'America/New_York'
 
     def __init__(self, **kwargs):
-        self.stop_id = kwargs.get('station_id')
+        self.stop_id = kwargs.get('stop_id')
 
     def __call__(self, data):
         data = json.loads(data)
