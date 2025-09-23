@@ -110,8 +110,8 @@ class NjtRailJsonGtfsRealtimeTranslator:
     def __get_route_id_by_origin_or_destination(cls, data, origin_and_destination):
         origin = origin_and_destination[0]
         destination = origin_and_destination[1]
-        origin_name = origin['NAME'].replace(' ', '_').lower()
-        destination_name = destination['NAME'].replace(' ', '_').lower()
+        origin_name = origin['STATIONNAME'].replace(' ', '_').lower()
+        destination_name = destination['STATIONNAME'].replace(' ', '_').lower()
 
         key = data['LINE'].replace(' ', '_').lower()
         if key == 'montclair-boonton_line':
