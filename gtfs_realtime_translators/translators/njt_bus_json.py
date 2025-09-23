@@ -1,5 +1,5 @@
 import pendulum
-from datetime import datetime
+import re
 
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 import json
@@ -28,7 +28,7 @@ class NjtBusJsonGtfsRealtimeTranslator:
         
         for index, item in enumerate(items):
             route_short_name = item.get('public_route', '')
-            headsign = item.get('header', '')
+            headsign = re.sub(r'^\d+\s*', '', item.get('header', ''))
             track = item.get('lanegate', '')
             
             departure_time_str = item.get('departuretime', '')
