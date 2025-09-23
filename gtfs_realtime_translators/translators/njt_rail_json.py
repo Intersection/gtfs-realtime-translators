@@ -172,13 +172,13 @@ class NjtRailJsonGtfsRealtimeTranslator:
     def __get_route_color(cls, data, route_id):
         if route_id == 'AMTK':
             return '#FFFF00'
-        return data['BACKCOLOR']
+        return None
 
     @classmethod
     def __get_route_text_color(cls, data, route_id):
         if route_id == 'AMTK':
             return '#000000'
-        return data['FORECOLOR']
+        return None
 
     @classmethod
     def __get_route_icon(cls, headsign):
