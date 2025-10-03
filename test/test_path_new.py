@@ -15,7 +15,7 @@ def path_new():
 
 def test_path_data(path_new):
     translator = PathNewGtfsRealtimeTranslator()
-    with pendulum.test(pendulum.datetime(2020, 2, 22, 12, 0, 0)):
+    with pendulum.travel_to(pendulum.datetime(2020, 2, 22, 12, 0, 0)):
         message = translator(path_new)
     assert message.header.gtfs_realtime_version == FeedMessage.VERSION
     entity = message.entity[0]

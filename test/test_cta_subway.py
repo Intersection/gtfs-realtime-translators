@@ -16,7 +16,7 @@ def cta_subway():
 
 def test_cta_subway_realtime_arrival(cta_subway):
     translator = CtaSubwayGtfsRealtimeTranslator()
-    with pendulum.test(pendulum.datetime(2019, 2, 20, 17)):
+    with pendulum.travel_to(pendulum.datetime(2019, 2, 20, 17)):
         message = translator(cta_subway)
 
     entity = message.entity[0]
@@ -39,7 +39,7 @@ def test_cta_subway_realtime_arrival(cta_subway):
 
 def test_cta_subway_scheduled_arrival(cta_subway):
     translator = CtaSubwayGtfsRealtimeTranslator()
-    with pendulum.test(pendulum.datetime(2019, 2, 20, 17)):
+    with pendulum.travel_to(pendulum.datetime(2019, 2, 20, 17)):
         message = translator(cta_subway)
 
     entity = message.entity[1]
