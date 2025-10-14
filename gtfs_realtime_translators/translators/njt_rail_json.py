@@ -123,7 +123,7 @@ class NjtRailJsonGtfsRealtimeTranslator:
                 return '3'
             return '4'
 
-        if key == 'north_jersey_coast_line':
+        if key in ['north_jersey_coast_line', 'no_jersey_coast']:
             origins_and_destinations = {'new_york_penn_station'}
             if origin_name in origins_and_destinations or destination_name in origins_and_destinations:
                 return '11'
