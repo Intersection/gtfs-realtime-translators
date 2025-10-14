@@ -141,6 +141,7 @@ class NjtRailJsonGtfsRealtimeTranslator:
             'morris_&_essex_line': '8',
             'gladstone_branch': '9',
             'northeast_corridor_line': '10',
+            'northeast_corrdr': '10',
             'pascack_valley_line': '14',
             'princeton_branch': '15',
             'raritan_valley_line': '16',
