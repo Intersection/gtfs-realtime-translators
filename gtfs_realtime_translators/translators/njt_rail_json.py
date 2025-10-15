@@ -161,6 +161,13 @@ class NjtRailJsonGtfsRealtimeTranslator:
         abbreviation = data['LINEABBREVIATION']
         if abbreviation == 'AMTK':
             return amtrak_prefix.title() if data['LINE'] == amtrak_prefix else f"Amtrak {data['LINE']}".title()
+
+        key = data['LINE'].replace(' ', '_').lower()
+        if key in ['north_jersey_coast_line', 'no_jersey_coast']:
+            return 'North Jersey Coast Line'
+        if key in ['northeast_corridor_line', 'northeast_corrdr']:
+            return 'Northeast Corridor Line'
+
         return data['LINE']
 
     @classmethod
