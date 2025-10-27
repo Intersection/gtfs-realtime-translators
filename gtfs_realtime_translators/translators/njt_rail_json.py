@@ -134,7 +134,6 @@ class NjtRailJsonGtfsRealtimeTranslator:
     def __get_route_id_by_line_data(cls, data):
         route_id_lookup = {
             'atlantic_city_line': '1',
-            'betmgm_meadowlands': '2',
             'main_line': '6',
             'bergen_county_line': '6',
             'morristown_line': '8',
@@ -152,7 +151,10 @@ class NjtRailJsonGtfsRealtimeTranslator:
             return amtrak_route_id
 
         key = data['LINE'].replace(' ', '_').lower()
-        route_id = route_id_lookup.get(key, None)
+        if 'meadowlands' in key:
+            route_id = '2'
+        else:
+            route_id = route_id_lookup.get(key, None)
         return route_id if route_id else None
 
     @classmethod
