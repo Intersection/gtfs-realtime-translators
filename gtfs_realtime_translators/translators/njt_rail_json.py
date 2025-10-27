@@ -118,10 +118,10 @@ class NjtRailJsonGtfsRealtimeTranslator:
             hoboken = 'hoboken'
             origins_and_destinations = {'denville', 'dover', 'mount_olive', 'lake_hopatcong', 'hackettstown'}
             if origin_name == hoboken and destination_name in origins_and_destinations:
-                return '3'
+                return '2'
             if origin_name in origins_and_destinations and destination_name == hoboken:
-                return '3'
-            return '4'
+                return '2'
+            return '3'
 
         if key in ['north_jersey_coast_line', 'no_jersey_coast']:
             origins_and_destinations = {'new_york_penn_station'}
@@ -134,12 +134,11 @@ class NjtRailJsonGtfsRealtimeTranslator:
     def __get_route_id_by_line_data(cls, data):
         route_id_lookup = {
             'atlantic_city_line': '1',
-            'betmgm_meadowlands': '2',
-            'main_line': '6',
-            'bergen_county_line': '6',
-            'morristown_line': '8',
-            'morris_&_essex_line': '8',
-            'gladstone_branch': '9',
+            'main_line': '5',
+            'bergen_county_line': '5',
+            'morristown_line': '7',
+            'morris_&_essex_line': '7',
+            'gladstone_branch': '8',
             'northeast_corridor_line': '10',
             'northeast_corrdr': '10',
             'pascack_valley_line': '14',
@@ -152,7 +151,10 @@ class NjtRailJsonGtfsRealtimeTranslator:
             return amtrak_route_id
 
         key = data['LINE'].replace(' ', '_').lower()
-        route_id = route_id_lookup.get(key, None)
+        if 'meadowlands' in key:
+            route_id = '9'
+        else:
+            route_id = route_id_lookup.get(key, None)
         return route_id if route_id else None
 
     @classmethod
