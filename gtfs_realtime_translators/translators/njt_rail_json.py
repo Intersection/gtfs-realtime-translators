@@ -20,6 +20,19 @@ class NjtRailJsonGtfsRealtimeTranslator:
 
     TIMEZONE = 'America/New_York'
 
+    LINECODE_TO_ROUTE_ID = {
+        'AC': '1',  # Atlantic City Line -> ATLC
+        'SL': '2',  # BetMGM Meadowlands -> MRL
+        'ML': '6',  # Main Line -> MNBN (Main/Bergen County)
+        'BC': '6',  # Bergen County Line -> MNBN (Main/Bergen County)
+        'ME': '8',  # Morris & Essex Line -> MNE
+        'GS': '9',  # Gladstone Branch -> MNEG
+        'NE': '10',  # Northeast Corridor Line -> NEC
+        'PV': '14',  # Pascack Valley Line -> PASC
+        'PR': '15',  # Princeton Branch -> PRIN
+        'RV': '16',  # Raritan Valley Line -> RARV
+    }
+
     def __init__(self, **kwargs):
         self.stop_id = kwargs.get('stop_id')
 
@@ -92,13 +105,15 @@ class NjtRailJsonGtfsRealtimeTranslator:
 
         For #2, this logic is necessary to discern multiple routes that are mapped to the same line. For instance, the
         North Jersey Coast Line operates two different routes. All trains with an origin or destination
-        of New York Penn Station should resolve to route_id 10 and the others route_id 11
+        of New York Penn Station should resolve to route_id 11 and the others route_id 12
 
         :param data: keyword args containing data needed to perform the route logic
         :param origin_and_destination: an array containing the origin at index 0 and destination at index 1
         :return: route_id
         """
-
+        route_id = cls.__get_route_id_by_line_code(data)
+        if route_id:
+            return route_id
         route_id = cls.__get_route_id_by_line_data(data)
         if route_id:
             return route_id
@@ -107,14 +122,19 @@ class NjtRailJsonGtfsRealtimeTranslator:
         return None
 
     @classmethod
+    def __get_route_id_by_line_code(cls, data):
+        linecode = data['LINECODE']
+        return cls.LINECODE_TO_ROUTE_ID.get(linecode)
+
+    @classmethod
     def __get_route_id_by_origin_or_destination(cls, data, origin_and_destination):
         origin = origin_and_destination[0]
         destination = origin_and_destination[1]
         origin_name = origin['STATIONNAME'].replace(' ', '_').lower()
         destination_name = destination['STATIONNAME'].replace(' ', '_').lower()
 
-        key = data['LINE'].replace(' ', '_').lower()
-        if key == 'montclair-boonton_line':
+        linecode = data['LINECODE']
+        if linecode == 'MC':
             hoboken = 'hoboken'
             origins_and_destinations = {'denville', 'dover', 'mount_olive', 'lake_hopatcong', 'hackettstown'}
             if origin_name == hoboken and destination_name in origins_and_destinations:
@@ -123,7 +143,7 @@ class NjtRailJsonGtfsRealtimeTranslator:
                 return '3'
             return '4'
 
-        if key in ['north_jersey_coast_line', 'no_jersey_coast']:
+        if linecode == 'NC':
             origins_and_destinations = {'new_york_penn_station'}
             if origin_name in origins_and_destinations or destination_name in origins_and_destinations:
                 return '11'
@@ -164,10 +184,10 @@ class NjtRailJsonGtfsRealtimeTranslator:
         if abbreviation == 'AMTK':
             return amtrak_prefix.title() if data['LINE'] == amtrak_prefix else f"Amtrak {data['LINE']}".title()
 
-        key = data['LINE'].replace(' ', '_').lower()
-        if key in ['north_jersey_coast_line', 'no_jersey_coast']:
+        linecode = data['LINECODE']
+        if linecode == 'NC':
             return 'North Jersey Coast Line'
-        if key in ['northeast_corridor_line', 'northeast_corrdr']:
+        if linecode == 'NE':
             return 'Northeast Corridor Line'
 
         return data['LINE']
