@@ -203,18 +203,7 @@ class NjtRailJsonGtfsRealtimeTranslator:
         abbreviation = data['LINEABBREVIATION']
         if abbreviation == 'AMTK':
             return amtrak_prefix.title() if data['LINE'] == amtrak_prefix else f"Amtrak {data['LINE']}".title()
-
-        route_long_name = cls.ROUTE_ID_TO_LONG_NAME.get(route_id)
-        if route_long_name:
-            return route_long_name
-
-        linecode = data['LINECODE']
-        if linecode == 'NC':
-            return 'North Jersey Coast Line'
-        if linecode == 'NE':
-            return 'Northeast Corridor Line'
-
-        return data['LINE']
+        return None
 
     @classmethod
     def __get_route_short_name(cls, data):
