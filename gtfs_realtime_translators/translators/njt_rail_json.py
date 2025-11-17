@@ -20,6 +20,19 @@ class NjtRailJsonGtfsRealtimeTranslator:
 
     TIMEZONE = 'America/New_York'
 
+    LINECODE_TO_ROUTE_ID = {
+        'AC': '1',
+        'SL': '2',
+        'ML': '6',
+        'BC': '6',
+        'ME': '8',
+        'GS': '9',
+        'NE': '10',
+        'PV': '14',
+        'PR': '15',
+        'RV': '16',
+    }
+
     def __init__(self, **kwargs):
         self.stop_id = kwargs.get('stop_id')
 
@@ -48,7 +61,7 @@ class NjtRailJsonGtfsRealtimeTranslator:
                     # Intersection Extensions
                     headsign = item['DESTINATION']
                     route_short_name = cls.__get_route_short_name(item)
-                    route_long_name = cls.__get_route_long_name(item)
+                    route_long_name = cls.__get_route_long_name(item, route_id)
                     route_color = cls.__get_route_color(item, route_id)
                     route_text_color = cls.__get_route_text_color(item, route_id)
                     block_id = item['TRAIN_ID']
@@ -92,13 +105,15 @@ class NjtRailJsonGtfsRealtimeTranslator:
 
         For #2, this logic is necessary to discern multiple routes that are mapped to the same line. For instance, the
         North Jersey Coast Line operates two different routes. All trains with an origin or destination
-        of New York Penn Station should resolve to route_id 10 and the others route_id 11
+        of New York Penn Station should resolve to route_id 11 and the others route_id 12
 
         :param data: keyword args containing data needed to perform the route logic
         :param origin_and_destination: an array containing the origin at index 0 and destination at index 1
         :return: route_id
         """
-
+        route_id = cls.__get_route_id_by_line_code(data)
+        if route_id:
+            return route_id
         route_id = cls.__get_route_id_by_line_data(data)
         if route_id:
             return route_id
@@ -107,14 +122,19 @@ class NjtRailJsonGtfsRealtimeTranslator:
         return None
 
     @classmethod
+    def __get_route_id_by_line_code(cls, data):
+        linecode = data['LINECODE']
+        return cls.LINECODE_TO_ROUTE_ID.get(linecode)
+
+    @classmethod
     def __get_route_id_by_origin_or_destination(cls, data, origin_and_destination):
         origin = origin_and_destination[0]
         destination = origin_and_destination[1]
         origin_name = origin['STATIONNAME'].replace(' ', '_').lower()
         destination_name = destination['STATIONNAME'].replace(' ', '_').lower()
 
-        key = data['LINE'].replace(' ', '_').lower()
-        if key == 'montclair-boonton_line':
+        linecode = data['LINECODE']
+        if linecode == 'MC':
             hoboken = 'hoboken'
             origins_and_destinations = {'denville', 'dover', 'mount_olive', 'lake_hopatcong', 'hackettstown'}
             if origin_name == hoboken and destination_name in origins_and_destinations:
@@ -123,7 +143,7 @@ class NjtRailJsonGtfsRealtimeTranslator:
                 return '3'
             return '4'
 
-        if key in ['north_jersey_coast_line', 'no_jersey_coast']:
+        if linecode == 'NC':
             origins_and_destinations = {'new_york_penn_station'}
             if origin_name in origins_and_destinations or destination_name in origins_and_destinations:
                 return '11'
@@ -158,19 +178,12 @@ class NjtRailJsonGtfsRealtimeTranslator:
         return route_id if route_id else None
 
     @classmethod
-    def __get_route_long_name(cls, data):
+    def __get_route_long_name(cls, data, route_id):
         amtrak_prefix = 'AMTRAK'
         abbreviation = data['LINEABBREVIATION']
         if abbreviation == 'AMTK':
             return amtrak_prefix.title() if data['LINE'] == amtrak_prefix else f"Amtrak {data['LINE']}".title()
-
-        key = data['LINE'].replace(' ', '_').lower()
-        if key in ['north_jersey_coast_line', 'no_jersey_coast']:
-            return 'North Jersey Coast Line'
-        if key in ['northeast_corridor_line', 'northeast_corrdr']:
-            return 'Northeast Corridor Line'
-
-        return data['LINE']
+        return None
 
     @classmethod
     def __get_route_short_name(cls, data):
