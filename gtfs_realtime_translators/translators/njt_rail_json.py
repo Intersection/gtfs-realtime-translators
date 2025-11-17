@@ -21,16 +21,36 @@ class NjtRailJsonGtfsRealtimeTranslator:
     TIMEZONE = 'America/New_York'
 
     LINECODE_TO_ROUTE_ID = {
-        'AC': '1',  # Atlantic City Line -> ATLC
-        'SL': '2',  # BetMGM Meadowlands -> MRL
-        'ML': '6',  # Main Line -> MNBN (Main/Bergen County)
-        'BC': '6',  # Bergen County Line -> MNBN (Main/Bergen County)
-        'ME': '8',  # Morris & Essex Line -> MNE
-        'GS': '9',  # Gladstone Branch -> MNEG
-        'NE': '10',  # Northeast Corridor Line -> NEC
-        'PV': '14',  # Pascack Valley Line -> PASC
-        'PR': '15',  # Princeton Branch -> PRIN
-        'RV': '16',  # Raritan Valley Line -> RARV
+        'AC': '1',
+        'SL': '2',
+        'ML': '6',
+        'BC': '6',
+        'ME': '8',
+        'GS': '9',
+        'NE': '10',
+        'PV': '14',
+        'PR': '15',
+        'RV': '16',
+    }
+
+    ROUTE_ID_TO_LONG_NAME = {
+        "1": "Atlantic City Rail",
+        "2": "Meadowlands",
+        "3": "Montclair-Boonton",
+        "4": "Montclair-Boonton",
+        "5": "Hudson-Bergen",
+        "6": "Main/Bergen County",
+        "7": "Port Jervis",
+        "8": "Morris & Essex",
+        "9": "Gladstone Branch",
+        "10": "Northeast Corridor",
+        "11": "North Jersey Coast",
+        "12": "North Jersey Coast",
+        "13": "Newark",
+        "14": "Pascack Valley",
+        "15": "Princeton Shuttle",
+        "16": "Raritan Valley",
+        "17": "Riverline",
     }
 
     def __init__(self, **kwargs):
@@ -61,7 +81,7 @@ class NjtRailJsonGtfsRealtimeTranslator:
                     # Intersection Extensions
                     headsign = item['DESTINATION']
                     route_short_name = cls.__get_route_short_name(item)
-                    route_long_name = cls.__get_route_long_name(item)
+                    route_long_name = cls.__get_route_long_name(item, route_id)
                     route_color = cls.__get_route_color(item, route_id)
                     route_text_color = cls.__get_route_text_color(item, route_id)
                     block_id = item['TRAIN_ID']
@@ -178,11 +198,15 @@ class NjtRailJsonGtfsRealtimeTranslator:
         return route_id if route_id else None
 
     @classmethod
-    def __get_route_long_name(cls, data):
+    def __get_route_long_name(cls, data, route_id):
         amtrak_prefix = 'AMTRAK'
         abbreviation = data['LINEABBREVIATION']
         if abbreviation == 'AMTK':
             return amtrak_prefix.title() if data['LINE'] == amtrak_prefix else f"Amtrak {data['LINE']}".title()
+
+        route_long_name = cls.ROUTE_ID_TO_LONG_NAME.get(route_id)
+        if route_long_name:
+            return route_long_name
 
         linecode = data['LINECODE']
         if linecode == 'NC':
