@@ -33,26 +33,6 @@ class NjtRailJsonGtfsRealtimeTranslator:
         'RV': '16',
     }
 
-    ROUTE_ID_TO_LONG_NAME = {
-        "1": "Atlantic City Rail",
-        "2": "Meadowlands",
-        "3": "Montclair-Boonton",
-        "4": "Montclair-Boonton",
-        "5": "Hudson-Bergen",
-        "6": "Main/Bergen County",
-        "7": "Port Jervis",
-        "8": "Morris & Essex",
-        "9": "Gladstone Branch",
-        "10": "Northeast Corridor",
-        "11": "North Jersey Coast",
-        "12": "North Jersey Coast",
-        "13": "Newark",
-        "14": "Pascack Valley",
-        "15": "Princeton Shuttle",
-        "16": "Raritan Valley",
-        "17": "Riverline",
-    }
-
     def __init__(self, **kwargs):
         self.stop_id = kwargs.get('stop_id')
 
