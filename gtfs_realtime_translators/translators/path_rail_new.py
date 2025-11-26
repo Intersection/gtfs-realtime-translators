@@ -4,7 +4,7 @@ import pendulum
 from gtfs_realtime_translators.factories import FeedMessage, TripUpdate
 
 
-class PathNewGtfsRealtimeTranslator:
+class PathRailNewGtfsRealtimeTranslator:
     TIMEZONE = 'America/New_York'
 
     GREY_TRAIN_SERVICE_NUMBER = 0
