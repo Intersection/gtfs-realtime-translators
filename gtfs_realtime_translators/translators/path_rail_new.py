@@ -48,9 +48,9 @@ class PathRailNewGtfsRealtimeTranslator:
         'WTC': {
             "stop_name": 'World Trade Center',
             "tracks": {
-                "Track 1": '7817471T1',
-                "Track 2": '7817471T2',
-                "Track 3": '7817471T3',
+                "Track 1": '781747T1',
+                "Track 2": '781747T2',
+                "Track 3": '781747T3',
                 "Track 4": '781750T4',
                 "Track 5": '781750T5',
             }
