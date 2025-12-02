@@ -14,3 +14,4 @@ from .wcdot_bus import WcdotGtfsRealTimeTranslator
 from .mbta import MbtaGtfsRealtimeTranslator
 from .mnmt import MnmtGtfsRealtimeTranslator
 from .marta_rail import MartaRailGtfsRealtimeTranslator
+from .path_rail_new import PathRailNewGtfsRealtimeTranslator
