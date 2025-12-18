@@ -13,7 +13,7 @@ class PathRailNewGtfsRealtimeTranslator:
         '5': {
             'JSQ': 'Journal Square Via Hoboken',
             '33S': '33rd St Via Hoboken',
-            'HOB': 'Hoboken',
+            'HOB': 'Journal Square Via Hoboken',
             'route_id': 'ATW'
         },
         '4': {
