@@ -12,7 +12,7 @@ class PathRailNewGtfsRealtimeTranslator:
     SERVICE_LOOKUP = {
         '5': {
             'JSQ': 'Journal Square Via Hoboken',
-            '33S': '33rd St Via Hoboken',
+            '33S': '33 St Via Hoboken',
             'HOB': 'Journal Square Via Hoboken',
             'route_id': 'ATW'
         },
@@ -22,13 +22,13 @@ class PathRailNewGtfsRealtimeTranslator:
             'route_id': 'GRE'
         },
         '3': {
-            '33S': '33rd Street',
+            '33S': '33 St',
             'HOB': 'Hoboken',
             'route_id': 'BLU'
         },
         '2': {
             'JSQ': 'Journal Square',
-            '33S': '33rd Street',
+            '33S': '33 St',
             'route_id': 'YEL'
         },
         '1': {
@@ -122,7 +122,7 @@ class PathRailNewGtfsRealtimeTranslator:
             }
         },
         "33S": {
-            "stop_name": '33rd Street',
+            "stop_name": '33 St',
             "tracks": {
                 "Track 1": '781742T1',
                 "Track 2": '781740',
