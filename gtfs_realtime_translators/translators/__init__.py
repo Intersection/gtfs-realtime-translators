@@ -7,6 +7,7 @@ from .njt_bus import NjtBusGtfsRealtimeTranslator
 from .njt_bus_json import NjtBusJsonGtfsRealtimeTranslator
 from .cta_subway import CtaSubwayGtfsRealtimeTranslator
 from .cta_bus import CtaBusGtfsRealtimeTranslator
+from .cta_realtime import CtaGtfsRealtimeTranslator
 from .path_rail import PathGtfsRealtimeTranslator
 from .path_new import PathNewGtfsRealtimeTranslator
 from .swiftly import SwiftlyGtfsRealtimeTranslator
